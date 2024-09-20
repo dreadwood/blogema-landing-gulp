@@ -4,6 +4,7 @@ import csso from 'gulp-csso'
 import { deleteAsync } from 'del'
 import gulp from 'gulp'
 import gulpWebp from 'gulp-webp'
+import gulpAvif from 'gulp-avif'
 import imagemin, { mozjpeg, optipng, svgo } from 'gulp-imagemin'
 import order from 'gulp-order'
 import plumber from 'gulp-plumber'
@@ -77,6 +78,13 @@ const webp = () => {
     .pipe(gulp.dest('dist/img'))
 }
 
+const avif = () => {
+  return gulp
+    .src('src/img/*.{png,jpg}')
+    .pipe(gulpAvif({ quality: 80 }))
+    .pipe(gulp.dest('dist/img'))
+}
+
 const sprite = () => {
   return gulp
     .src('src/icons/*.svg')
@@ -142,6 +150,7 @@ export const build = gulp.series(
   js,
   images,
   webp,
+  avif,
   sprite,
   html
 )

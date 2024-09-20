@@ -2,6 +2,8 @@
 mixin picture({ image, width, height, altText, className })
   - const path = image.split(".")[0];
   picture
+    source(type="image/avif"
+      srcset=`${path}.avif`)
     source(type="image/webp"
       srcset=`${path}.webp`)
     img(class=className
