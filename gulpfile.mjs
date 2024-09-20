@@ -61,8 +61,8 @@ const images = () => {
       imagemin(
         [
           optipng({ optimizationLevel: 3 }),
-          mozjpeg({ progressive: true }),
-          svgo({ plugins: [{ removeUnknownsAndDefaults: false }] })
+          mozjpeg({ progressive: true })
+          // svgo({ plugins: [{ removeUnknownsAndDefaults: false }] })
         ],
         { silent: true }
       )
