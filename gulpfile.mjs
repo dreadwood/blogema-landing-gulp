@@ -60,8 +60,8 @@ const images = () => {
     .pipe(
       imagemin(
         [
-          optipng({ optimizationLevel: 3 }),
-          mozjpeg({ progressive: true })
+          // optipng({ optimizationLevel: 3 }),
+          // mozjpeg({ progressive: true })
           // svgo({ plugins: [{ removeUnknownsAndDefaults: false }] })
         ],
         { silent: true }
