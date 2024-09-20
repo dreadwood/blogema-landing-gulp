@@ -1,0 +1,10 @@
+include ../components/card-blogger
+
+mixin block-bloggers({ className, color })
+  section.b-bloggers(class=className)
+    include ../mocks/bloggers
+    h2.b-bloggers__title Номинации
+    .b-bloggers__list
+      each it in bloggersMock
+        +card-blogger({ it, color })
+

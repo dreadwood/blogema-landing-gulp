@@ -1,0 +1,29 @@
+extends ../elements/layout-page
+include ../components/block-backgroung
+include ../components/block-hero-category
+include ../components/block-bloggers
+include ../components/block-experts
+include ../components/block-sponsors
+include ../components/block-nominations
+include ../components/block-stages
+
+
+block data
+  - title = "Блогема. Премия блогеров и инфлюенсоров"
+  - const heading = 'Прорыв/ <br> открытие года'
+  - const headingMobile = 'Прорыв/ <br> открытие <br> года'
+
+block background
+  +block-backgroung({
+    img: "/img/hero-main-discovery-year.jpg",
+    imgMobile: "/img/hero-main-discovery-year-mobile.jpg"
+  })
+
+block content
+  +block-hero-category({ title: heading, titleMobile: headingMobile })
+  +block-bloggers({ color: "blue" })
+  +block-experts({ color: "blue" })
+  +block-stages({})
+  +block-nominations({})
+
+block modal

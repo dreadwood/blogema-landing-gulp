@@ -1,0 +1,11 @@
+include ../elements/images
+
+mixin block-manifest({ className })
+  section.b-manifest#manifest(class=className)
+    include ../data/manifest
+    h2.b-manifest__title
+      +svg({ name: "start", width: 88, height: 52 })
+      | Манифест
+    .b-manifest__list
+      each it in manifestData
+        .b-manifest__card !{it}

@@ -1,0 +1,26 @@
+extends ../elements/layout-page
+include ../components/block-backgroung
+include ../components/block-hero
+include ../components/block-sponsors
+include ../components/block-nominations
+include ../components/block-manifest
+include ../components/block-stages
+
+
+block data
+  - title = "Блогема. Премия блогеров и инфлюенсоров"
+
+block background
+  +block-backgroung({
+    img: "/img/hero-main.jpg",
+    imgMobile: "/img/hero-main-mobile.jpg"
+  })
+
+block content
+  +block-hero({})
+  +block-sponsors({})
+  +block-manifest({})
+  +block-nominations({})
+  +block-stages({})
+
+block modal

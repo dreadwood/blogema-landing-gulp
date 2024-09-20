@@ -1,0 +1,19 @@
+include ../elements/head
+include ../components/block-header
+include ../components/block-footer
+
+- let title = ""
+
+block data
+
+doctype html
+html(lang="ru")
+  +head({title})
+  body
+    block background
+    +block-header({})
+    main
+      block content
+    +block-footer({})
+    block modal
+    include ../elements/script

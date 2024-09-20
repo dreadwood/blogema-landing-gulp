@@ -1,0 +1,47 @@
+include ../elements/images
+
+mixin block-sponsors({})
+  section.b-sponsors#sponsors
+    -
+      let brands = [
+        {
+          img: '/img/sponsor-president.png',
+          class: 'logo-president'
+        },
+        {
+          img: "/img/sponsor-invite.png",
+          class: 'logo-invite',
+          text: 'guest-management партнер'
+        },
+        {
+          img: "/img/sponsor-vk.png",
+          class: 'logo-vk',
+          text: 'официальная социальная сеть премии'
+        },
+        {
+          img: "/img/sponsor-sts.png",
+          class: 'logo-sts',
+          text: 'тв-партнёр'
+        },
+        {
+          img: "/img/sponsor-smm.png",
+          class: 'logo-smm',
+          text: 'SMM-партнер'
+        },
+        {
+          img: "/img/sponsor-russian-blogger.png",
+          class: 'logo-bloggers'
+        },
+        {
+          img: "/img/sponsor-aba.png",
+          class: 'logo-aba'
+        }
+      ]
+    .b-sponsors__content
+      each line in ['list1', 'list2']
+        .b-sponsors__list(class=line)
+          each it in brands
+            .b-sponsors__item
+              .b-sponsors__logo
+                +picture({ image: it.img, className: it.class })
+              .label=it.text

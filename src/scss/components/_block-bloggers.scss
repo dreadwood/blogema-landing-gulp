@@ -1,0 +1,32 @@
+.b-bloggers {
+  padding: $apx-60 $apx-108;
+  @include mobile {
+    padding: $apx-m-60 $apx-m-24;
+  }
+}
+.b-bloggers__title {
+  margin: 0;
+  font-family: $font-title;
+  font-size: $apx-80;
+  line-height: $apx-96;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: $apx-m-36;
+    line-height: $apx-m-43;
+  }
+}
+.b-bloggers__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $apx-58 $apx-24;
+  margin-top: $apx-34;
+  @include mobile {
+    grid-template-columns: auto;
+    gap: $apx-m-51;
+    margin-top: $apx-m-51;
+  }
+}

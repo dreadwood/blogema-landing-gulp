@@ -1,0 +1,19 @@
+.b-backgroung__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  &.mobile {
+    display: none;
+  }
+  @include mobile {
+    &.desktop {
+      display: none;
+    }
+    &.mobile {
+      display: block;
+    }
+  }
+}

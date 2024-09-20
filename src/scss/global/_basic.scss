@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: $font-default;
+  font-size: $apx-18;
+  line-height: $apx-25;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  color: $color-white;
+  word-break: break-word;
+  background-color: $color-black;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+picture {
+  flex-shrink: 0;
+}
+img,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+// TODO: check
+.body-content {
+  max-width: $apx-1920;
+}
+.svg-sprite {
+  display: none;
+}

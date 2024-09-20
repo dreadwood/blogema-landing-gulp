@@ -1,0 +1,13 @@
+include ../elements/images
+
+mixin card-expert({ it, color, className })
+  .c-expert(
+    class=color
+    class=className
+  )
+    .c-expert__photo-wrp
+      .c-expert__photo-border(class=color)
+      img.c-expert__photo(src=it.image width="238" height="238" alt="")
+    .c-expert__company=it.company
+    .c-expert__name !{it.name}
+    .c-expert__job-title=it.jobTitle

@@ -1,0 +1,300 @@
+.c-blogger {
+  position: relative;
+  flex-shrink: 0;
+  padding-top: $apx-94;
+  &.actv {
+    .c-blogger__card .c-blogger__background-gradient::after {
+      background-color: color.adjust($color-black, $alpha: -0.4);
+    }
+    .c-blogger__btn {
+      opacity: 1;
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &.pink {
+    .c-blogger__photo-border {
+      background: $gradient-pink;
+    }
+    .c-blogger__background-gradient {
+      background: $gradient-pink;
+      &::after {
+        background-color: color.adjust($color-black, $alpha: -0.15);
+      }
+    }
+    .c-blogger__btn {
+      &::after {
+        background: $gradient-pink;
+      }
+    }
+  }
+  &.green {
+    .c-blogger__photo-border {
+      background: $gradient-green;
+    }
+    .c-blogger__background-gradient {
+      background: $gradient-green;
+    }
+    .c-blogger__btn {
+      &::after {
+        background: $gradient-green;
+      }
+    }
+  }
+  &.purple {
+    .c-blogger__photo-border {
+      background: $gradient-purple;
+    }
+    .c-blogger__background-gradient {
+      background: $gradient-purple;
+    }
+    .c-blogger__btn {
+      &::after {
+        background: $gradient-purple;
+      }
+    }
+  }
+  &.blue {
+    .c-blogger__photo-border {
+      background: $gradient-blue;
+    }
+    .c-blogger__background-gradient {
+      background: $gradient-blue;
+    }
+    .c-blogger__btn {
+      &::after {
+        background: $gradient-blue;
+      }
+    }
+  }
+  @include mobile {
+    padding-top: $apx-m-75;
+  }
+}
+.c-blogger__photo-border {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  width: $apx-238;
+  height: $apx-238;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  mask: radial-gradient(circle $apx-98, transparent 100%, #ffffff 100%);
+  @include mobile {
+    width: $apx-m-190;
+    height: $apx-m-190;
+    mask: radial-gradient(circle $apx-m-79, transparent 100%, #ffffff 100%);
+  }
+}
+.c-blogger__photo {
+  position: absolute;
+  top: $apx-17;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  width: $apx-204;
+  height: $apx-204;
+  object-fit: cover;
+  border: $apx-1 solid $color-white;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  @include mobile {
+    top: $apx-m-13;
+    width: $apx-m-164;
+    height: $apx-m-164;
+    border-width: $apx-m-1;
+  }
+}
+.c-blogger__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $apx-167 $apx-15 $apx-24 $apx-15;
+  overflow: hidden;
+  font-weight: 400;
+  text-align: center;
+  color: $color-white;
+  border: $apx-1 solid $color-white;
+  border-radius: $apx-18;
+  @include mobile {
+    padding: $apx-m-133 $apx-m-12 $apx-m-18 $apx-m-12;
+    border-width: $apx-m-1;
+    border-radius: $apx-m-14;
+  }
+}
+.c-blogger__background-gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: $apx-664;
+  height: $apx-675;
+  transform: rotate(45.44deg) translate(-50%, -50%);
+  transform-origin: 1% 0%;
+  &::after {
+    @include transition(background-color);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: color.adjust($color-black, $alpha: -0.2);
+  }
+  @include mobile {
+    width: $apx-m-532;
+    height: $apx-m-541;
+  }
+}
+.c-blogger__name {
+  @include text-truncate-multiline(2);
+  height: $apx-92;
+  font-family: $font-title;
+  font-size: $apx-32;
+  line-height: $apx-46;
+  font-weight: 400;
+  color: $color-white;
+  @include mobile {
+    height: $apx-m-70;
+    font-size: $apx-m-24;
+    line-height: $apx-m-35;
+  }
+}
+.c-blogger__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $apx-10;
+  width: 100%;
+  margin-top: $apx-32;
+  @include mobile {
+    gap: $apx-m-6;
+    margin-top: $apx-m-25;
+  }
+}
+.c-blogger__social {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  gap: $apx-3;
+  font-size: $apx-14;
+  line-height: $apx-16;
+  text-align: center;
+  color: $color-white;
+  &[href]:hover,
+  &[href]:focus-visible {
+    .social-text {
+      color: $color-white;
+    }
+  }
+  @include mobile {
+    gap: $apx-m-2;
+    font-size: $apx-m-11;
+    line-height: $apx-m-13;
+  }
+}
+.c-blogger__social-count {
+  display: flex;
+  align-items: center;
+  gap: $apx-4;
+  svg {
+    width: $apx-18;
+    height: $apx-18;
+  }
+  @include mobile {
+    gap: $apx-m-4;
+    svg {
+      width: $apx-m-18;
+      height: $apx-m-18;
+    }
+  }
+}
+.c-blogger__social-text {
+  @include transition(color);
+  font-size: $apx-12;
+  line-height: $apx-14;
+  color: color.adjust($color-white, $alpha: -0.5);
+  @include mobile {
+    font-size: $apx-m-10;
+    line-height: $apx-m-11;
+  }
+}
+.c-blogger__btn {
+  @include transition(color, background-color);
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: $apx-38;
+  padding: $apx-18;
+  overflow: hidden;
+  font-size: $apx-18;
+  line-height: $apx-22;
+  color: $color-white;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+  border: $apx-1 solid $color-white;
+  border-radius: $apx-40;
+  cursor: pointer;
+  &::after {
+    @include transition(opacity);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    &::after {
+      opacity: 1;
+    }
+  }
+  &[disabled] {
+    cursor: default;
+    opacity: 0.4;
+  }
+  @include mobile {
+    margin-top: $apx-m-35;
+    padding: $apx-m-15;
+    font-size: $apx-m-14;
+    line-height: $apx-m-16;
+    border-radius: $apx-m-40;
+  }
+}
+.c-blogger__vote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $apx-16;
+  width: 100%;
+  margin-top: $apx-24;
+  font-size: $apx-16;
+  line-height: $apx-23;
+  color: color.adjust($color-white, $alpha: -0.5);
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: $apx-24;
+    height: $apx-24;
+  }
+  @include mobile {
+    gap: $apx-m-13;
+    margin-top: $apx-m-19;
+    font-size: $apx-m-13;
+    line-height: $apx-m-19;
+    svg {
+      width: $apx-m-19;
+      height: $apx-m-19;
+    }
+  }
+}

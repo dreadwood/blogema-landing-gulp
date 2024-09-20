@@ -1,0 +1,13 @@
+include ../elements/images
+include ../components/tab-categories
+include ../components/card-category
+
+mixin block-nominations({ className })
+  section.b-nominations#categories(class=className)
+    include ../data/nominations
+    h2.b-nominations__title Номинации
+    +tab-categories({ className: 'b-nominations__categories'})
+    .b-nominations__list
+      each it in nominationsData
+        +card-category({ it })
+    button.b-nominations__btn Показать больше

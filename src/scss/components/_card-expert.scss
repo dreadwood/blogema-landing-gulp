@@ -1,0 +1,108 @@
+.c-expert {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: $apx-28 $apx-15 $apx-34 $apx-15;
+  overflow: hidden;
+  font-weight: 400;
+  text-align: center;
+  color: $color-white;
+  text-transform: uppercase;
+  border: $apx-1 solid $color-white;
+  border-radius: $apx-18;
+  @include mobile {
+    width: $apx-m-280;
+    padding: $apx-m-19 $apx-m-10 $apx-m-24 $apx-m-10;
+    border-width: $apx-m-1;
+    border-radius: $apx-m-13;
+  }
+}
+.c-expert__photo-wrp {
+  position: relative;
+  margin: 0 auto;
+}
+.c-expert__photo-border {
+  width: $apx-238;
+  height: $apx-238;
+  border-radius: 50%;
+  opacity: 0.5;
+  mask: radial-gradient(circle $apx-103, transparent 100%, $color-white 100%);
+  &.pink {
+    background: $gradient-pink;
+  }
+  &.green {
+    background: $gradient-green;
+  }
+  &.purple {
+    background: $gradient-purple;
+  }
+  &.blue {
+    background: $gradient-blue;
+  }
+  @include mobile {
+    width: $apx-m-164;
+    height: $apx-m-164;
+    mask: radial-gradient(
+      circle $apx-m-70,
+      transparent 100%,
+      $color-white 100%
+    );
+  }
+}
+.c-expert__photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: $apx-206;
+  height: $apx-206;
+  object-fit: cover;
+  border: $apx-1 solid $color-white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  @include mobile {
+    width: $apx-m-140;
+    height: $apx-m-140;
+    border-width: $apx-m-1;
+  }
+}
+.c-expert__company {
+  margin-top: $apx-24;
+  font-size: $apx-16;
+  line-height: $apx-19;
+  text-transform: uppercase;
+  @include mobile {
+    width: $apx-m-202;
+    margin-top: $apx-16;
+    font-size: $apx-m-11;
+    line-height: $apx-m-13;
+  }
+}
+.c-expert__name {
+  margin-top: $apx-32;
+  font-family: $font-title;
+  font-size: $apx-30;
+  line-height: $apx-44;
+  font-weight: 400;
+  color: $color-white;
+  @include mobile {
+    margin-top: $apx-m-22;
+    font-size: $apx-m-24;
+    line-height: $apx-m-35;
+  }
+}
+.c-expert__job-title {
+  margin-top: $apx-32;
+  font-size: $apx-14;
+  line-height: $apx-20;
+  font-weight: 300;
+  color: color.adjust($color-white, $alpha: -0.5);
+  @include mobile {
+    margin-top: $apx-22;
+    font-size: $apx-m-10;
+    line-height: $apx-m-14;
+  }
+}

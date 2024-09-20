@@ -1,0 +1,44 @@
+.b-experts {
+  padding: $apx-60 $apx-108;
+  @include mobile {
+    padding: $apx-m-60 $apx-m-24;
+  }
+}
+.b-experts__title {
+  margin: 0;
+  font-family: $font-title;
+  font-size: $apx-80;
+  line-height: $apx-96;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: $apx-m-36;
+    line-height: $apx-m-43;
+  }
+}
+.b-experts__list {
+  @include hide-scroll;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $apx-24;
+  margin-top: $apx-40;
+  @include mobile {
+    display: flex;
+    align-items: stretch;
+    gap: $apx-m-24;
+    margin-top: $apx-m-40;
+    margin-right: -$apx-m-24;
+    margin-left: -$apx-m-24;
+    padding-right: $apx-m-24;
+    padding-left: $apx-m-24;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 $apx-m-24;
+    & > * {
+      scroll-snap-align: start;
+    }
+  }
+}

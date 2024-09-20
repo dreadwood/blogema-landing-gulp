@@ -1,0 +1,69 @@
+.b-manifest {
+  padding: $apx-48 $apx-108 $apx-60 $apx-108;
+  @include mobile {
+    padding: $apx-m-40 $apx-m-24 0 $apx-m-24;
+  }
+}
+.b-manifest__title {
+  display: flex;
+  align-items: center;
+  gap: $apx-24;
+  margin: 0;
+  font-family: $font-title;
+  font-size: $apx-144;
+  line-height: $apx-187;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  text-transform: uppercase;
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: $apx-161;
+    height: $apx-153;
+  }
+  @include mobile {
+    gap: $apx-m-26;
+    margin: 0 auto;
+    font-size: $apx-m-36;
+    line-height: $apx-m-46;
+    svg {
+      width: $apx-m-45;
+      height: $apx-m-42;
+    }
+  }
+}
+.b-manifest__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: $apx-70;
+  margin-top: $apx-40;
+  @include mobile {
+    grid-template-columns: auto;
+    gap: $apx-m-24;
+    margin-top: $apx-m-24;
+  }
+}
+.b-manifest__card {
+  padding: $apx-40;
+  font-family: $font-default;
+  font-size: $apx-18;
+  line-height: $apx-25;
+  font-weight: 300;
+  text-align: left;
+  color: $color-white;
+  letter-spacing: -0.02em;
+  background-color: $color-black;
+  border-radius: $apx-20;
+  b {
+    font-weight: 500;
+  }
+  @include mobile {
+    padding: $apx-m-24;
+    font-size: $apx-m-14;
+    line-height: $apx-m-20;
+    border: $apx-m-1 solid $color-white;
+    border-radius: $apx-m-20;
+  }
+}

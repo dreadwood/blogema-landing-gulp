@@ -1,0 +1,148 @@
+.b-stages {
+  padding: $apx-60 $apx-108;
+  @include mobile {
+    padding: $apx-m-60 $apx-m-24;
+  }
+}
+.b-stages__title {
+  margin: 0;
+  font-family: $font-title;
+  font-size: $apx-64;
+  line-height: $apx-77;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  span {
+    display: block;
+    font-size: $apx-86;
+    line-height: $apx-103;
+  }
+  @include mobile {
+    font-size: $apx-m-36;
+    line-height: $apx-m-43;
+    span {
+      font-size: $apx-m-36;
+      line-height: $apx-m-43;
+    }
+  }
+}
+.b-stages__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: $apx-48;
+  @include mobile {
+    grid-template-columns: auto;
+    margin-top: $apx-m-48;
+  }
+}
+.b-stages__stage {
+  display: grid;
+}
+.b-stages__date {
+  font-size: $apx-18;
+  line-height: $apx-21;
+  opacity: 0.5;
+  @include mobile {
+    font-size: $apx-m-18;
+    line-height: $apx-m-21;
+  }
+}
+.b-stages__name {
+  margin-top: $apx-8;
+  font-size: $apx-20;
+  line-height: $apx-29;
+  text-transform: uppercase;
+  @include mobile {
+    margin-top: $apx-m-8;
+    font-size: $apx-m-20;
+    line-height: $apx-m-29;
+  }
+}
+.b-stages__progress {
+  position: relative;
+  align-self: end;
+  margin-top: $apx-24;
+  &.first::before {
+    content: "";
+    position: absolute;
+    bottom: $apx-18;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: $apx-1;
+    background-color: $color-white;
+  }
+  &.mid::before {
+    content: "";
+    position: absolute;
+    bottom: $apx-18;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: $apx-1;
+    background-color: $color-white;
+  }
+  &.last::before {
+    content: "";
+    position: absolute;
+    bottom: $apx-18;
+    left: 0;
+    display: block;
+    height: $apx-1;
+  }
+  &::after {
+    content: "";
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: $apx-37;
+    height: $apx-37;
+    background-color: $color-gray-040;
+    border: $apx-1 solid $color-white;
+    border-radius: 50%;
+  }
+  &.actv {
+    &.first::before,
+    &.mid::before {
+      bottom: $apx-16;
+      height: $apx-5;
+    }
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  @include mobile {
+    margin-top: $apx-m-24;
+    &.first::before {
+      bottom: $apx-m-19;
+      left: $apx-m-24;
+      width: 100%;
+    }
+    &.mid::before {
+      bottom: $apx-m-19;
+      left: -$apx-m-24;
+      width: calc(100% + ($apx-m-24 * 2));
+    }
+    &.last::before {
+      bottom: $apx-m-19;
+      left: -$apx-m-24;
+      width: $apx-m-24;
+      background-color: $color-white;
+    }
+    &::after {
+      width: $apx-m-37;
+      height: $apx-m-37;
+      border-width: $apx-m-1;
+    }
+    &.actv {
+      &.first::before,
+      &.mid::before,
+      &.last::before {
+        bottom: $apx-m-15;
+        height: $apx-m-5;
+      }
+    }
+  }
+}

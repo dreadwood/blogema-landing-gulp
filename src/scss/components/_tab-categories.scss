@@ -1,0 +1,94 @@
+.tab-categories {
+  position: relative;
+}
+.tab-categories__drop-btn {
+  display: none;
+  @include mobile {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: $apx-m-17 $apx-m-23;
+    font-family: $font-default;
+    font-size: $apx-m-18;
+    line-height: $apx-m-22;
+    font-weight: 400;
+    text-align: left;
+    color: $color-white;
+    text-transform: uppercase;
+    background-color: $color-black;
+    border: $apx-m-1 solid $color-white;
+    border-radius: $apx-m-40;
+    cursor: pointer;
+    &:hover,
+    &:focus-visible {
+      background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+    }
+    svg {
+      @include transition(transform);
+      flex-shrink: 0;
+      width: $apx-m-24;
+      height: $apx-m-24;
+    }
+    &.actv {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.tab-categories__list {
+  display: flex;
+  align-items: center;
+  gap: $apx-19;
+  @include mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    gap: 0;
+    width: 100%;
+    padding-top: $apx-m-60;
+    padding-bottom: $apx-m-16;
+    background: color.adjust($color-black, $alpha: -0.2);
+    border: $apx-m-1 solid $color-white;
+    border-radius: $apx-m-30 $apx-m-30 $apx-m-40 $apx-m-40;
+    &.open {
+      display: grid;
+    }
+  }
+}
+.tab-categories__btn {
+  width: max-content;
+  margin: 0;
+  padding: $apx-24 $apx-42;
+  font-family: $font-default;
+  font-size: $apx-24;
+  line-height: $apx-29;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: $apx-1 solid $color-white;
+  border-radius: $apx-60;
+  cursor: pointer;
+  &.actv {
+    background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+  }
+  @include mobile {
+    width: 100%;
+    padding: $apx-m-20 $apx-m-24;
+    font-size: $apx-m-18;
+    line-height: $apx-m-21;
+    border: 0;
+    border-radius: 0;
+    &.actv {
+      display: none;
+    }
+  }
+}

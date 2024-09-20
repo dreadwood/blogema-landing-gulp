@@ -1,0 +1,4 @@
+mixin block-backgroung({ img, imgMobile, className })
+  .b-backgroung(class=className)
+    +picture({ image: img, className: "b-backgroung__img desktop" })
+    +picture({ image: imgMobile, className: "b-backgroung__img mobile" })

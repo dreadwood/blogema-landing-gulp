@@ -1,0 +1,37 @@
+include ../elements/images
+
+mixin tab-categories({ className })
+  .tab-categories(class=className)
+    -
+      let btnsCategories = [
+        {
+          idCategory: 0,
+          text: 'Все',
+          isActv: true
+        },
+        {
+          idCategory: 1,
+          text: 'Категория 1'
+        },
+        {
+          idCategory: 2,
+          text: 'Категория 2'
+        },
+        {
+          idCategory: 3,
+          text: 'Категория 3'
+        },
+        {
+          idCategory: 4,
+          text: 'Категория 4'
+        }
+      ]
+    button.tab-categories__drop-btn.js-drop-btn
+      span Все
+      +svg({ name: "arrow-circle-bottom" })
+    .tab-categories__list.js-drop-menu
+      each it in btnsCategories
+        button.tab-categories__btn.js-drop-value(
+          class=(it.isActv && "actv")
+          data-category-id-btn=it.idCategory
+        )=it.text

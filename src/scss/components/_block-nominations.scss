@@ -1,0 +1,66 @@
+.b-nominations {
+  padding: $apx-60 $apx-108;
+  @include mobile {
+    padding: $apx-m-60 $apx-m-24 0 $apx-m-24;
+  }
+}
+.b-nominations__title {
+  margin: 0;
+  font-family: $font-title;
+  font-size: $apx-80;
+  line-height: $apx-96;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: $apx-m-36;
+    line-height: $apx-m-43;
+  }
+}
+.b-nominations__categories {
+  margin-top: $apx-40;
+  @include mobile {
+    margin-top: $apx-m-40;
+    // display: none;
+  }
+}
+.b-nominations__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $apx-24;
+  margin-top: $apx-40;
+  @include mobile {
+    grid-template-columns: auto;
+    gap: $apx-m-24;
+    margin-top: $apx-m-40;
+  }
+}
+.b-nominations__btn {
+  display: none;
+  @include mobile {
+    @include transition(color, background-color);
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    min-width: $apx-m-280;
+    margin: $apx-m-24 auto 0 auto;
+    padding: $apx-m-19 $apx-m-22;
+    font: inherit;
+    font-size: $apx-m-18;
+    line-height: $apx-m-21;
+    text-align: center;
+    color: $color-black;
+    text-transform: uppercase;
+    background-color: $color-white;
+    border: 0;
+    border-radius: $apx-m-40;
+    cursor: pointer;
+    &:hover,
+    &:focus-visible {
+      color: $color-white;
+      background-color: transparent;
+    }
+  }
+}

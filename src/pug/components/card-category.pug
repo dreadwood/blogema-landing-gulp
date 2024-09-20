@@ -1,0 +1,17 @@
+include ../elements/images
+
+mixin card-category({ it, className })
+  a.c-category(
+    class=className
+    href=(it.link || '#')
+    data-category-id-card=it.idCategory
+  )
+    if it.image
+      +picture({ image: it.image, className: "c-category__img" })
+    if it.animation
+      .circle(class=it.animation)
+    .c-category__top
+      =it.category
+      +svg({ name: "arrow-circle-right" })
+    .c-category__name !{it.name}
+    .c-category__link Подробнее

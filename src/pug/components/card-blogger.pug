@@ -1,0 +1,49 @@
+include ../elements/images
+
+mixin card-blogger({ it, color, className })
+  .c-blogger(
+    class=color
+    class=className
+    data-card-blogger=it.id
+  )
+    -
+      let socials = [
+        {
+          icon: 'icon-instagram',
+          label: 'в инстаграмме более 10 тысяч',
+          value: '> 120к'
+        },
+        {
+          icon: 'icon-telegram',
+          label: 'в телеграмме более 10 тысяч',
+          value: '> 10к'
+        },
+        {
+          icon: 'icon-youtube',
+          label: 'в ютубе более 10 тысяч',
+          value: '> 500к'
+        },
+        {
+          icon: 'icon-vk',
+          label: 'во вконтакте более 10 тысяч',
+          value: '> 5м'
+        }
+      ]
+    .c-blogger__photo-border
+    img.c-blogger__photo(src=it.image width="238" height="238" alt="")
+    .c-blogger__card
+      .c-blogger__background-gradient
+      .c-blogger__name !{it.name}
+      .c-blogger__list
+        each item in socials
+          a.c-blogger__social(href="#")
+            .c-blogger__social-count
+              +svg({ name: item.icon })
+              .visually-hidden=item.label
+              .c-blogger__social-count-text(aria-hidden="true")=item.value
+            .c-blogger__social-text подписчиков
+      button.c-blogger__btn(data-card-blogger-btn=it.id disabled) Голосовать
+      .c-blogger__vote
+        +svg({ name: `like-${color}` })
+        span(data-card-blogger-vote)=it.vote
+        | голосов
