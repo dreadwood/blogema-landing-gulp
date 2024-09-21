@@ -4,8 +4,8 @@ import csso from 'gulp-csso'
 import { deleteAsync } from 'del'
 import gulp from 'gulp'
 import gulpWebp from 'gulp-webp'
-import gulpAvif from 'gulp-avif'
 import imagemin, { mozjpeg, optipng, svgo } from 'gulp-imagemin'
+import imageminAvif from 'imagemin-avif'
 import order from 'gulp-order'
 import plumber from 'gulp-plumber'
 import postcss from 'gulp-postcss'
@@ -17,7 +17,6 @@ import gulpSass from 'gulp-sass'
 import sourcemap from 'gulp-sourcemaps'
 import svgstore from 'gulp-svgstore'
 import sync from 'browser-sync'
-// import uglify from 'gulp-uglify'
 
 const clean = async () => {
   return await deleteAsync(['dist'])
@@ -33,7 +32,7 @@ const copy = () => {
         'src/robots.txt',
         'src/favicon.ico'
       ],
-      { base: 'src' }
+      { base: 'src', encoding: false }
     )
     .pipe(gulp.dest('dist'))
 }
@@ -57,13 +56,15 @@ const css = () => {
 
 const images = () => {
   return gulp
-    .src('src/img/*.{png,jpg,jpeg,svg}')
+    .src('src/img/*.{png,jpg,jpeg,svg}', { encoding: false })
     .pipe(
       imagemin(
         [
-          // optipng({ optimizationLevel: 3 }),
-          // mozjpeg({ progressive: true })
-          // svgo({ plugins: [{ removeUnknownsAndDefaults: false }] })
+          optipng({ optimizationLevel: 3 }),
+          mozjpeg({ quality: 80, progressive: true }),
+          svgo({
+            plugins: [{ name: 'removeUnknownsAndDefaults', active: false }]
+          })
         ],
         { silent: true }
       )
@@ -73,15 +74,16 @@ const images = () => {
 
 const webp = () => {
   return gulp
-    .src('src/img/*.{png,jpg,jpeg}')
+    .src('src/img/*.{png,jpg,jpeg}', { encoding: false })
     .pipe(gulpWebp({ quality: 80 }))
     .pipe(gulp.dest('dist/img'))
 }
 
 const avif = () => {
   return gulp
-    .src('src/img/*.{png,jpg}')
-    .pipe(gulpAvif({ quality: 80 }))
+    .src('src/img/*.{png,jpg,jpeg}', { encoding: false })
+    .pipe(imagemin([imageminAvif({ quality: 50 })], { silent: true }))
+    .pipe(rename((path) => (path.extname = '.avif')))
     .pipe(gulp.dest('dist/img'))
 }
 

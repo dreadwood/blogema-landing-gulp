@@ -4,7 +4,9 @@
     "dev": "gulp dev",
     "build": "gulp build",
     "stylelint": "stylelint \"src/scss/**/*.scss\"",
-    "stylelint:fix": "stylelint \"src/scss/**/*.scss\" --fix"
+    "stylelint:fix": "stylelint \"src/scss/**/*.scss\" --fix",
+    "gh-pages": "push-dir --dir=dist --branch=gh-pages",
+    "public": "pnpm run build && pnpm run gh-pages"
   },
   "author": "dreadwood",
   "devDependencies": {
@@ -12,7 +14,7 @@
     "browser-sync": "3.0.2",
     "del": "7.1.0",
     "eslint": "8.57.0",
-    "gulp": "4.0.2",
+    "gulp": "5.0.0",
     "gulp-avif": "1.1.1",
     "gulp-concat": "2.6.1",
     "gulp-csso": "4.0.1",
@@ -25,9 +27,9 @@
     "gulp-sass": "5.1.0",
     "gulp-sourcemaps": "3.0.0",
     "gulp-svgstore": "9.0.0",
-    "gulp-uglify": "3.0.2",
     "gulp-uglify-es": "3.0.0",
     "gulp-webp": "5.0.0",
+    "imagemin-avif": "0.1.6",
     "postcss": "8.4.38",
     "postcss-scss": "4.0.9",
     "pug": "3.0.2",
