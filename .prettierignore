@@ -2,5 +2,5 @@
 package-lock.json
 pnpm-lock.yaml
 
-# vendoe
+# vendor
 swiper-bundle.min.js
