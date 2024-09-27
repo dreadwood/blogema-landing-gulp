@@ -94,15 +94,21 @@
   }
 }
 .b-header__link {
-  @include transition(color);
+  @include transition(text-decoration);
+  // position: relative;
+  // display: block;
+  // overflow: hidden;
   font-size: $apx-18;
   line-height: $apx-21;
   color: $color-white;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   text-decoration: none;
   &:hover,
   &:focus-visible {
-    color: color.adjust($color-white, $alpha: -0.3);
+    .b-header__link-text::after {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
   @include mobile {
     display: block;
@@ -112,6 +118,32 @@
     font-size: $apx-m-18;
     line-height: $apx-m-22;
     text-align: center;
+  }
+}
+.b-header__link-text {
+  position: relative;
+  width: max-content;
+  overflow: hidden;
+  text-transform: uppercase;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $apx-1;
+    background-color: currentcolor;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition:
+      opacity 300ms,
+      transform 300ms;
+  }
+  @include mobile {
+    margin: 0 auto;
+    &::after {
+      height: $apx-m-1;
+    }
   }
 }
 .b-header__burger {

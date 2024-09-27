@@ -8,10 +8,13 @@ mixin block-header({ className })
       nav.b-header__menu
         ul.b-header__list
           li
-            a.b-header__link.js-link(href='#manifest') О премии
+            a.b-header__link.js-link(href='#manifest')
+              .b-header__link-text О премии
           li
-            a.b-header__link.js-link(href='#categories') Номинации
+            a.b-header__link.js-link(href='#categories')
+              .b-header__link-text Номинации
           li
-            a.b-header__link.js-link(href='#') Прямая трансляция
+            a.b-header__link.js-link(href='#')
+              .b-header__link-text Прямая трансляция
       button.b-header__burger.js-burger
 
