@@ -28,23 +28,24 @@ mixin card-blogger({ it, color, className })
           label: 'в saturn более 10 тысяч',
           value: '> 10к'
         },
-
         {
           icon: 'icon-youtube',
           label: 'в ютубе более 10 тысяч',
           value: '> 500к'
         },
-        {
-          icon: 'icon-vk',
-          label: 'во вконтакте более 10 тысяч',
-          value: '> 5м'
-        }
+        //- {
+        //-   icon: 'icon-vk',
+        //-   label: 'во вконтакте более 10 тысяч',
+        //-   value: '> 5м'
+        //- }
       ]
     .c-blogger__photo-border
     img.c-blogger__photo(src=it.image width="238" height="238" alt="")
     .c-blogger__card
       .c-blogger__background-gradient
-      .c-blogger__name !{it.name}
+      .c-blogger__name
+        div=it.name
+        div
       .c-blogger__list
         each item in socials
           a.c-blogger__social(href="#")
