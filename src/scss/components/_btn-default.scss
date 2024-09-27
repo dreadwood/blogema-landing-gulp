@@ -1,0 +1,157 @@
+$ghost-gradiend: linear-gradient(
+  150.76deg,
+  #81aac5 32.48%,
+  #3b3740 69.76%,
+  #000000 108.57%
+);
+$white-gradiend: linear-gradient(
+  150.76deg,
+  #81aac5 32.48%,
+  #3b3740 69.76%,
+  #000000 108.57%
+);
+.btn-default {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: $apx-24 $apx-50;
+  overflow: hidden;
+  font: inherit;
+  font-size: $apx-24;
+  line-height: $apx-29;
+  color: $color-white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 0;
+  border-radius: $apx-60;
+  cursor: pointer;
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: $apx-33;
+    height: 144px;
+    background: $ghost-gradiend;
+    opacity: 0;
+    filter: blur(5px);
+    transition:
+      left 0.5s ease-in-out,
+      rotate 0.5s ease-in-out;
+    translate: -50% -50%;
+  }
+  &::before {
+    left: -$apx-33;
+    opacity: 0;
+    rotate: 0deg;
+  }
+  &::after {
+    left: calc(100% + $apx-33);
+    opacity: 0.5;
+    rotate: 20deg;
+  }
+  &:hover,
+  &:focus-visible {
+    &::before {
+      left: 50%;
+      opacity: 0.5;
+      rotate: 41deg;
+    }
+    &::after {
+      left: 50%;
+      opacity: 0;
+      rotate: 41deg;
+    }
+  }
+  &.ghost {
+    padding: $apx-22 $apx-48;
+    border: $apx-2 solid $color-white;
+    &::before,
+    &::after {
+      background: $ghost-gradiend;
+    }
+  }
+  &.white {
+    color: $color-black;
+    background-color: $color-white;
+    &::before,
+    &::after {
+      background: $white-gradiend;
+    }
+  }
+  @include mobile {
+    width: 100%;
+    padding: $apx-m-19 $apx-m-30;
+    font-size: $apx-m-18;
+    line-height: $apx-m-22;
+    border-radius: $apx-m-40;
+    &.ghost {
+      padding: $apx-m-18 $apx-m-29;
+      border-width: $apx-m-1;
+      &::after {
+        opacity: 1;
+      }
+      &:hover,
+      &:focus-visible {
+        &::before {
+          opacity: 1;
+        }
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+.btn-default-ghost {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    display: block;
+    width: 33px;
+    height: 144px;
+    background: linear-gradient(
+      150.76deg,
+      #81aac5 32.48%,
+      #3b3740 69.76%,
+      #000000 108.57%
+    );
+    opacity: 0;
+    filter: blur(5px);
+    transition:
+      left 0.5s ease-in-out,
+      rotate 0.5s ease-in-out;
+    translate: -50% -50%;
+  }
+  &::before {
+    left: -33px;
+    opacity: 0;
+    rotate: 0;
+  }
+  &::after {
+    left: calc(100% + 33px);
+    opacity: 0.5;
+    rotate: 20deg;
+  }
+  &:hover,
+  &:focus-visible {
+    &::before {
+      left: 50%;
+      opacity: 0.5;
+      rotate: 40.59deg;
+    }
+    &::after {
+      left: 50%;
+      opacity: 0;
+      rotate: 40.59deg;
+    }
+  }
+}

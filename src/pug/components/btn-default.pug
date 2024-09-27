@@ -1,0 +1,8 @@
+mixin btn-default({ text, color, className, type, isDisabled })
+  button.btn-default(
+    class=className
+    class=color
+    type=(type || 'button')
+    disabled=isDisabled
+  )
+    span=text

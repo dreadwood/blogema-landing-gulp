@@ -27,41 +27,7 @@
   }
 }
 .b-hero__btn {
-  @include transition(color, background-color);
-  display: block;
-  margin: 0;
-  padding: $apx-24 $apx-50;
-  font: inherit;
-  font-size: $apx-24;
-  line-height: $apx-29;
-  color: $color-white;
-  text-transform: uppercase;
-  background-color: transparent;
-  border: $apx-1 solid $color-white;
-  border-radius: $apx-60;
-  cursor: pointer;
-  &:hover,
-  &:focus-visible {
-    color: $color-black;
-    background-color: $color-white;
-  }
-  &.white {
-    color: $color-black;
-    background-color: $color-white;
-    &:hover,
-    &:focus-visible {
-      color: $color-white;
-      background-color: transparent;
-    }
-  }
-  @include mobile {
-    width: 100%;
-    padding: $apx-m-19 $apx-m-30;
-    font-size: $apx-m-18;
-    line-height: $apx-m-22;
-    border-width: $apx-m-1;
-    border-radius: $apx-m-40;
-  }
+  //
 }
 .b-hero__info {
   text-align: right;
