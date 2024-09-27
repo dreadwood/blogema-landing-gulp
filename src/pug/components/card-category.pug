@@ -9,7 +9,9 @@ mixin card-category({ it, className })
     if it.image
       +picture({ image: it.image, className: "c-category__img" })
     if it.animation
-      .circle(class=it.animation)
+      .ring(class=it.animation)
+    if it.gradient
+      .gradient(class=it.gradient)
     .c-category__top
       =it.category
       +svg({ name: "arrow-circle-right" })

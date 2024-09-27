@@ -1,0 +1,289 @@
+.ring {
+  position: absolute;
+  z-index: -1;
+  display: grid;
+  place-items: center;
+  width: $apx-295;
+  height: $apx-295;
+  border-radius: 50%;
+  opacity: 0.3;
+  &::after {
+    content: "";
+    display: block;
+    width: $apx-255;
+    height: $apx-255;
+    background: $color-black;
+    border-radius: 50%;
+  }
+  @include mobile {
+    width: $apx-m-236;
+    height: $apx-m-236;
+    &::after {
+      width: $apx-m-204;
+      height: $apx-m-204;
+    }
+  }
+}
+.ring-pink-a {
+  top: 50%;
+  left: 50%;
+  background: $gradient-pink;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.ring-pink-b {
+  top: 50%;
+  left: 50%;
+  background: $gradient-pink;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.ring-pink-c {
+  top: 50%;
+  left: 50%;
+  background: $gradient-pink;
+  // transform: translate(-41%, -20%) rotate(135deg);
+  transform: rotate(135deg);
+  animation-name: ring-pink-a;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  @include mobile {
+    animation-name: ring-pink-a-mobile;
+  }
+}
+.ring-green-a {
+  top: 50%;
+  left: 50%;
+  background: $gradient-green;
+  transform: translate(-2%, -21%) rotate(-45deg);
+  opacity: 0.5;
+  animation-name: ring-green-a;
+  animation-duration: 38s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  @include mobile {
+    animation-name: ring-green-a-mobile;
+  }
+}
+.ring-green-b {
+  top: 50%;
+  left: 50%;
+  background: $gradient-green;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  opacity: 0.5;
+}
+.ring-blue-a {
+  top: 50%;
+  left: 50%;
+  width: $apx-318;
+  height: $apx-318;
+  background: $gradient-blue;
+  // transform: translate(-1%, -81%) rotate(-45deg);
+  transform: rotate(-45deg);
+  opacity: 0.5;
+  animation-name: ring-blue-a;
+  animation-duration: 23s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  @include mobile {
+    animation-name: ring-blue-a-mobile;
+  }
+  &::after {
+    width: $apx-278;
+    height: $apx-278;
+  }
+  @include mobile {
+    width: $apx-m-236;
+    height: $apx-m-236;
+    &::after {
+      width: $apx-m-204;
+      height: $apx-m-204;
+    }
+  }
+}
+.ring-blue-b {
+  top: 50%;
+  left: 50%;
+  background: $gradient-blue;
+  transform: translate(-2%, -21%) rotate(-45deg);
+  opacity: 0.5;
+}
+
+// закрашенные карточки
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.gradient-pink {
+  background: $gradient-pink;
+}
+.gradient-purple {
+  background: $gradient-purple;
+  filter: blur(25px);
+}
+
+// анимация
+@keyframes ring-green-a {
+  0% {
+    top: -$apx-150;
+    left: $apx-250;
+  }
+  20% {
+    top: $apx-250;
+    left: $apx-150;
+  }
+  40% {
+    top: -$apx-120;
+    left: $apx-250;
+  }
+  60% {
+    top: $apx-100;
+    left: $apx-350;
+  }
+  70% {
+    top: $apx-230;
+    left: $apx-100;
+  }
+  100% {
+    top: -$apx-150;
+    left: $apx-250;
+  }
+}
+
+@keyframes ring-green-a-mobile {
+  0% {
+    top: -$apx-m-150;
+    left: $apx-m-250;
+  }
+  20% {
+    top: $apx-m-250;
+    left: $apx-m-150;
+  }
+  40% {
+    top: -$apx-m-120;
+    left: $apx-m-250;
+  }
+  60% {
+    top: $apx-m-100;
+    left: $apx-m-350;
+  }
+  70% {
+    top: $apx-m-230;
+    left: $apx-m-100;
+  }
+  100% {
+    top: -$apx-m-150;
+    left: $apx-m-250;
+  }
+}
+
+@keyframes ring-blue-a {
+  0% {
+    top: $apx-150;
+    left: $apx-100;
+  }
+  20% {
+    top: -$apx-150;
+    left: $apx-250;
+  }
+  40% {
+    top: -$apx-100;
+    left: $apx-300;
+  }
+  60% {
+    top: $apx-150;
+    left: $apx-100;
+  }
+  70% {
+    top: -$apx-150;
+    left: -$apx-150;
+  }
+  100% {
+    top: $apx-150;
+    left: $apx-100;
+  }
+}
+
+@keyframes ring-blue-a-mobile {
+  0% {
+    top: $apx-m-150;
+    left: $apx-m-100;
+  }
+  20% {
+    top: -$apx-m-150;
+    left: $apx-m-250;
+  }
+  40% {
+    top: -$apx-m-100;
+    left: $apx-m-300;
+  }
+  60% {
+    top: $apx-m-150;
+    left: $apx-m-100;
+  }
+  70% {
+    top: -$apx-m-150;
+    left: -$apx-m-150;
+  }
+  100% {
+    top: $apx-m-150;
+    left: $apx-m-100;
+  }
+}
+
+@keyframes ring-pink-a {
+  0% {
+    top: -$apx-150;
+    left: -$apx-150;
+  }
+  20% {
+    top: $apx-250;
+    left: $apx-50;
+  }
+  40% {
+    top: -$apx-120;
+    left: $apx-250;
+  }
+  60% {
+    top: $apx-100;
+    left: $apx-350;
+  }
+  70% {
+    top: $apx-230;
+    left: $apx-100;
+  }
+  100% {
+    top: -$apx-150;
+    left: -$apx-150;
+  }
+}
+
+@keyframes ring-pink-a-mobile {
+  0% {
+    top: -$apx-m-150;
+    left: -$apx-m-150;
+  }
+  20% {
+    top: $apx-m-250;
+    left: $apx-m-50;
+  }
+  40% {
+    top: -$apx-m-120;
+    left: $apx-m-250;
+  }
+  60% {
+    top: $apx-m-100;
+    left: $apx-m-350;
+  }
+  70% {
+    top: $apx-m-230;
+    left: $apx-m-100;
+  }
+  100% {
+    top: -$apx-m-150;
+    left: -$apx-m-150;
+  }
+}
