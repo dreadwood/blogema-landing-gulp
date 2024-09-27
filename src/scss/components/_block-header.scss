@@ -95,13 +95,9 @@
 }
 .b-header__link {
   @include transition(text-decoration);
-  // position: relative;
-  // display: block;
-  // overflow: hidden;
   font-size: $apx-18;
   line-height: $apx-21;
   color: $color-white;
-  // text-transform: uppercase;
   text-decoration: none;
   &:hover,
   &:focus-visible {
