@@ -7,7 +7,10 @@
     "stylelint": "stylelint \"src/scss/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/scss/**/*.scss\" --fix",
     "gh-pages": "push-dir --dir=dist --branch=gh-pages",
-    "public": "pnpm run build && pnpm run gh-pages"
+    "public": "pnpm run build && pnpm run gh-pages",
+    "prepare": "husky",
+    "prepush-check": "pnpm run ensure-committed && pnpm run build && git add . && git commit -m 'build' || echo 'Nothing to commit'",
+    "ensure-committed": "git diff --exit-code || (echo 'Uncommitted changes found. Please commit them before pushing.' && exit 1)"
   },
   "author": "dreadwood",
   "devDependencies": {
