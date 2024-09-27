@@ -114,6 +114,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
   padding: $apx-167 $apx-15 $apx-24 $apx-15;
   overflow: hidden;
   font-weight: 400;
@@ -172,6 +173,7 @@
   gap: $apx-10;
   width: 100%;
   margin-top: $apx-32;
+  margin-bottom: auto;
   @include mobile {
     gap: $apx-m-6;
     margin-top: $apx-m-25;
