@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
+    "image": "gulp image",
     "stylelint": "stylelint \"src/scss/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/scss/**/*.scss\" --fix",
     "gh-pages": "push-dir --dir=dist --branch=gh-pages",

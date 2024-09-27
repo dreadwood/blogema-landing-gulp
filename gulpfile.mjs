@@ -145,16 +145,8 @@ const server = () => {
   gulp.watch('src/js/**/*.js', gulp.series(js, refresh))
 }
 
-export const build = gulp.series(
-  clean,
-  copy,
-  css,
-  js,
-  images,
-  webp,
-  avif,
-  sprite,
-  html
-)
+const common = gulp.series(clean, copy, css, js, sprite, images, html)
 
-export const dev = gulp.series(build, server)
+export const image = gulp.series(webp, avif)
+export const build = gulp.series(common, image)
+export const dev = gulp.series(common, server)
