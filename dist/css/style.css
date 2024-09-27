@@ -1443,37 +1443,42 @@ input[type=file].visually-hidden {
 }
 
 .c-blogger__name {
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  display: -webkit-box;
-  overflow: hidden;
-  height: 4.791636vw;
+  width: 100%;
   font-family: "KazukiReiwa", serif;
   font-size: 1.666656vw;
   line-height: 2.395818vw;
   font-weight: 400;
   color: #ffffff;
 }
+.c-blogger__name div {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 2.395818vw;
+}
 @media (max-width: 1023px) {
   .c-blogger__name {
-    height: 18.66669vw;
     font-size: 6.400008vw;
     line-height: 9.333345vw;
+  }
+  .c-blogger__name div {
+    height: 9.333345vw;
   }
 }
 
 .c-blogger__list {
   display: flex;
   justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 0.52083vw;
+  gap: 1.04166vw;
   width: 100%;
   margin-top: 1.666656vw;
   margin-bottom: auto;
 }
 @media (max-width: 1023px) {
   .c-blogger__list {
-    gap: 1.600002vw;
+    gap: 3.733338vw;
     margin-top: 6.666675vw;
   }
 }
