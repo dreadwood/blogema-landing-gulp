@@ -1,0 +1,30 @@
+.gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: $apx-690;
+  height: $apx-690;
+  filter: blur($apx-55);
+  transition: translate 0.7s ease-in-out;
+  translate: -125% -125%;
+  rotate: -41.11deg;
+  &.pink {
+    background: $gradient-pink;
+  }
+  &.green {
+    background: $gradient-green;
+  }
+  &.purple {
+    background: $gradient-purple;
+  }
+  &.blue {
+    background: $gradient-blue;
+  }
+  @include mobile {
+    width: $apx-m-690;
+    height: $apx-m-690;
+    filter: blur($apx-m-55);
+  }
+}

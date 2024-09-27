@@ -15,6 +15,18 @@
   &[hidden] {
     display: none;
   }
+  &:hover,
+  &:focus-visible {
+    .gradient {
+      translate: -50% -50%;
+    }
+    .ring {
+      opacity: 0;
+    }
+    .c-category__link {
+      color: color.adjust($color-white, $alpha: -0.2);
+    }
+  }
   @include mobile {
     height: $apx-m-295;
     padding: $apx-m-15;
@@ -73,6 +85,7 @@
   line-height: $apx-17;
   color: color.adjust($color-white, $alpha: -0.5);
   text-decoration: none;
+  transition: color 0.7s ease-in-out;
   @include mobile {
     margin-top: $apx-m-15;
     font-size: $apx-m-12;

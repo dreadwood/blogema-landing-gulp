@@ -6,12 +6,12 @@ mixin card-category({ it, className })
     href=(it.link || '#')
     data-category-id-card=it.idCategory
   )
+    if it.color
+      .gradient(class=it.color)
     if it.image
       +picture({ image: it.image, className: "c-category__img" })
     if it.animation
       .ring(class=it.animation)
-    if it.gradient
-      .gradient(class=it.gradient)
     .c-category__top
       =it.category
       +svg({ name: "arrow-circle-right" })

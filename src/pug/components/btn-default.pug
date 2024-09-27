@@ -6,3 +6,12 @@ mixin btn-default({ text, color, className, type, isDisabled })
     disabled=isDisabled
   )
     span=text
+
+mixin btn-color({ text, color, className, type, isDisabled })
+  button.btn-color(
+    class=className
+    class=color
+    type=(type || 'button')
+    disabled=isDisabled
+  )
+    span=text
