@@ -65,6 +65,9 @@ importers:
       gulp-webp:
         specifier: 5.0.0
         version: 5.0.0(gulp@5.0.0)
+      husky:
+        specifier: 9.1.6
+        version: 9.1.6
       imagemin-avif:
         specifier: 0.1.6
         version: 0.1.6
@@ -1730,6 +1733,11 @@ packages:
   human-signals@3.0.1:
     resolution: {integrity: sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==}
     engines: {node: '>=12.20.0'}
+
+  husky@9.1.6:
+    resolution: {integrity: sha512-sqbjZKK7kf44hfdE94EoX8MZNk0n7HeW37O4YrVGCF4wzgQjp+akPAkfUK5LZ6KuR/6sqeAVuXHji+RzQgOn5A==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -5382,6 +5390,8 @@ snapshots:
 
   human-signals@3.0.1:
     optional: true
+
+  husky@9.1.6: {}
 
   iconv-lite@0.4.24:
     dependencies:
