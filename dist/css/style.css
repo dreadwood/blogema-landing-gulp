@@ -1286,41 +1286,6 @@ input[type=file].visually-hidden {
   }
 }
 
-.btn-default-ghost::before, .btn-default-ghost::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  z-index: -1;
-  display: block;
-  width: 33px;
-  height: 144px;
-  background: linear-gradient(150.76deg, #81aac5 32.48%, #3b3740 69.76%, #000000 108.57%);
-  opacity: 0;
-  filter: blur(5px);
-  transition: left 0.5s ease-in-out, rotate 0.5s ease-in-out;
-  translate: -50% -50%;
-}
-.btn-default-ghost::before {
-  left: -33px;
-  opacity: 0;
-  rotate: 0;
-}
-.btn-default-ghost::after {
-  left: calc(100% + 33px);
-  opacity: 0.5;
-  rotate: 20deg;
-}
-.btn-default-ghost:hover::before, .btn-default-ghost:focus-visible::before {
-  left: 50%;
-  opacity: 0.5;
-  rotate: 40.59deg;
-}
-.btn-default-ghost:hover::after, .btn-default-ghost:focus-visible::after {
-  left: 50%;
-  opacity: 0;
-  rotate: 40.59deg;
-}
-
 .c-blogger {
   position: relative;
   flex-shrink: 0;
@@ -1667,6 +1632,15 @@ input[type=file].visually-hidden {
 .c-category[hidden] {
   display: none;
 }
+.c-category:hover .gradient, .c-category:focus-visible .gradient {
+  translate: -50% -50%;
+}
+.c-category:hover .ring, .c-category:focus-visible .ring {
+  opacity: 0;
+}
+.c-category:hover .c-category__link, .c-category:focus-visible .c-category__link {
+  color: rgba(255, 255, 255, 0.8);
+}
 @media (max-width: 1023px) {
   .c-category {
     height: 78.666765vw;
@@ -1735,6 +1709,7 @@ input[type=file].visually-hidden {
   line-height: 0.885411vw;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
+  transition: color 0.7s ease-in-out;
 }
 @media (max-width: 1023px) {
   .c-category__link {
@@ -1870,6 +1845,39 @@ input[type=file].visually-hidden {
   }
 }
 
+.gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: 35.93727vw;
+  height: 35.93727vw;
+  filter: blur(2.864565vw);
+  transition: translate 0.7s ease-in-out;
+  translate: -125% -125%;
+  rotate: -41.11deg;
+}
+.gradient.pink {
+  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+}
+.gradient.green {
+  background: linear-gradient(90deg, #6bc59b 0%, #394058 100%);
+}
+.gradient.purple {
+  background: linear-gradient(90deg, #b882f3 0%, #4c4482 100%);
+}
+.gradient.blue {
+  background: linear-gradient(90deg, #1e3ed7 0%, #02061b 100%);
+}
+@media (max-width: 1023px) {
+  .gradient {
+    width: 184.00023vw;
+    height: 184.00023vw;
+    filter: blur(14.666685vw);
+  }
+}
+
 .ring {
   position: absolute;
   z-index: -1;
@@ -1879,6 +1887,7 @@ input[type=file].visually-hidden {
   height: 15.364485vw;
   border-radius: 50%;
   opacity: 0.3;
+  transition: opacity 0.5s ease-in-out;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -1982,23 +1991,6 @@ input[type=file].visually-hidden {
   rotate: -45deg;
   animation-name: ring-blue-b;
   animation-duration: 30s;
-}
-
-.gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-}
-
-.gradient-pink {
-  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
-}
-
-.gradient-purple {
-  background: linear-gradient(90deg, #b882f3 0%, #4c4482 100%);
 }
 
 @keyframes ring-pink-a {
