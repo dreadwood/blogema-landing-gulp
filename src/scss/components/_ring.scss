@@ -7,6 +7,8 @@
   height: $apx-295;
   border-radius: 50%;
   opacity: 0.3;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   &::after {
     content: "";
     display: block;
@@ -28,13 +30,19 @@
   top: 50%;
   left: 50%;
   background: $gradient-pink;
-  transform: translate(-50%, -50%) rotate(135deg);
+  // transform: translate(-50%, -50%) rotate(135deg);
+  rotate: -135deg;
+  animation-name: ring-pink-a;
+  animation-duration: 30s;
 }
 .ring-pink-b {
   top: 50%;
   left: 50%;
   background: $gradient-pink;
-  transform: translate(-50%, -50%) rotate(135deg);
+  // transform: translate(-50%, -50%) rotate(135deg);
+  rotate: -135deg;
+  animation-name: ring-pink-b;
+  animation-duration: 10s;
 }
 .ring-pink-c {
   top: 50%;
@@ -42,34 +50,28 @@
   background: $gradient-pink;
   // transform: translate(-41%, -20%) rotate(135deg);
   transform: rotate(135deg);
-  animation-name: ring-pink-a;
-  animation-duration: 30s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  @include mobile {
-    animation-name: ring-pink-a-mobile;
-  }
+  animation-name: ring-pink-c;
+  animation-duration: 20s;
 }
 .ring-green-a {
   top: 50%;
   left: 50%;
   background: $gradient-green;
-  transform: translate(-2%, -21%) rotate(-45deg);
+  // transform: translate(-2%, -21%) rotate(-45deg);
+  rotate: -45deg;
   opacity: 0.5;
   animation-name: ring-green-a;
-  animation-duration: 38s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  @include mobile {
-    animation-name: ring-green-a-mobile;
-  }
+  animation-duration: 28s;
 }
 .ring-green-b {
   top: 50%;
   left: 50%;
   background: $gradient-green;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  // transform: translate(-50%, -50%) rotate(-45deg);
+  rotate: -45deg;
   opacity: 0.5;
+  animation-name: ring-green-b;
+  animation-duration: 15s;
 }
 .ring-blue-a {
   top: 50%;
@@ -82,11 +84,6 @@
   opacity: 0.5;
   animation-name: ring-blue-a;
   animation-duration: 23s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  @include mobile {
-    animation-name: ring-blue-a-mobile;
-  }
   &::after {
     width: $apx-278;
     height: $apx-278;
@@ -104,8 +101,11 @@
   top: 50%;
   left: 50%;
   background: $gradient-blue;
-  transform: translate(-2%, -21%) rotate(-45deg);
+  // transform: translate(-2%, -21%) rotate(-45deg);
   opacity: 0.5;
+  rotate: -45deg;
+  animation-name: ring-blue-b;
+  animation-duration: 30s;
 }
 
 // закрашенные карточки
@@ -122,168 +122,135 @@
 }
 .gradient-purple {
   background: $gradient-purple;
-  filter: blur(25px);
+  // filter: blur(25px);
 }
 
 // анимация
-@keyframes ring-green-a {
+@keyframes ring-pink-a {
   0% {
-    top: -$apx-150;
-    left: $apx-250;
+    translate: -50% -50%;
   }
   20% {
-    top: $apx-250;
-    left: $apx-150;
+    translate: -110% -100%;
   }
   40% {
-    top: -$apx-120;
-    left: $apx-250;
+    translate: -80% 0%;
   }
   60% {
-    top: $apx-100;
-    left: $apx-350;
-  }
-  70% {
-    top: $apx-230;
-    left: $apx-100;
+    translate: 30% -60%;
   }
   100% {
-    top: -$apx-150;
-    left: $apx-250;
+    translate: -50% -50%;
   }
 }
 
-@keyframes ring-green-a-mobile {
+@keyframes ring-pink-b {
   0% {
-    top: -$apx-m-150;
-    left: $apx-m-250;
+    translate: -40% -62%;
   }
-  20% {
-    top: $apx-m-250;
-    left: $apx-m-150;
+  25% {
+    translate: -32% -48%;
   }
-  40% {
-    top: -$apx-m-120;
-    left: $apx-m-250;
+  50% {
+    translate: -40% -39%;
   }
-  60% {
-    top: $apx-m-100;
-    left: $apx-m-350;
-  }
-  70% {
-    top: $apx-m-230;
-    left: $apx-m-100;
+  75% {
+    translate: -68% -50%;
   }
   100% {
-    top: -$apx-m-150;
-    left: $apx-m-250;
+    translate: -40% -62%;
+  }
+}
+
+@keyframes ring-pink-c {
+  0% {
+    translate: -41% -20%;
+  }
+  40% {
+    translate: -28% 120%;
+  }
+  50% {
+    translate: 200% 120%;
+  }
+  52% {
+    translate: 200% -200%;
+  }
+  53% {
+    translate: -70% -200%;
+  }
+  100% {
+    translate: -41% -20%;
+  }
+}
+
+@keyframes ring-green-a {
+  0% {
+    translate: -2% -21%;
+  }
+  20% {
+    translate: -12% -10%;
+  }
+  40% {
+    translate: -32% -16%;
+  }
+  60% {
+    translate: -28% -22%;
+  }
+  80% {
+    translate: -18% -30%;
+  }
+  100% {
+    translate: -2% -21%;
+  }
+}
+
+@keyframes ring-green-b {
+  0% {
+    translate: -50% -50%;
+  }
+  20% {
+    translate: -20% -30%;
+  }
+  40% {
+    translate: -55% 0%;
+  }
+  60% {
+    translate: -70% -15%;
+  }
+  70% {
+    translate: -60% -30%;
+  }
+  100% {
+    translate: -50% -50%;
   }
 }
 
 @keyframes ring-blue-a {
   0% {
-    top: $apx-150;
-    left: $apx-100;
-  }
-  20% {
-    top: -$apx-150;
-    left: $apx-250;
+    translate: -1% -81%;
   }
   40% {
-    top: -$apx-100;
-    left: $apx-300;
+    translate: -20% -20%;
   }
   60% {
-    top: $apx-150;
-    left: $apx-100;
-  }
-  70% {
-    top: -$apx-150;
-    left: -$apx-150;
+    translate: -60% -60%;
   }
   100% {
-    top: $apx-150;
-    left: $apx-100;
+    translate: -1% -81%;
   }
 }
 
-@keyframes ring-blue-a-mobile {
+@keyframes ring-blue-b {
   0% {
-    top: $apx-m-150;
-    left: $apx-m-100;
+    translate: -2% -21%;
   }
-  20% {
-    top: -$apx-m-150;
-    left: $apx-m-250;
+  33% {
+    translate: -45% -60%;
   }
-  40% {
-    top: -$apx-m-100;
-    left: $apx-m-300;
-  }
-  60% {
-    top: $apx-m-150;
-    left: $apx-m-100;
-  }
-  70% {
-    top: -$apx-m-150;
-    left: -$apx-m-150;
+  66% {
+    translate: -90% 10%;
   }
   100% {
-    top: $apx-m-150;
-    left: $apx-m-100;
-  }
-}
-
-@keyframes ring-pink-a {
-  0% {
-    top: -$apx-150;
-    left: -$apx-150;
-  }
-  20% {
-    top: $apx-250;
-    left: $apx-50;
-  }
-  40% {
-    top: -$apx-120;
-    left: $apx-250;
-  }
-  60% {
-    top: $apx-100;
-    left: $apx-350;
-  }
-  70% {
-    top: $apx-230;
-    left: $apx-100;
-  }
-  100% {
-    top: -$apx-150;
-    left: -$apx-150;
-  }
-}
-
-@keyframes ring-pink-a-mobile {
-  0% {
-    top: -$apx-m-150;
-    left: -$apx-m-150;
-  }
-  20% {
-    top: $apx-m-250;
-    left: $apx-m-50;
-  }
-  40% {
-    top: -$apx-m-120;
-    left: $apx-m-250;
-  }
-  60% {
-    top: $apx-m-100;
-    left: $apx-m-350;
-  }
-  70% {
-    top: $apx-m-230;
-    left: $apx-m-100;
-  }
-  100% {
-    top: -$apx-m-150;
-    left: -$apx-m-150;
+    translate: -2% -21%;
   }
 }
