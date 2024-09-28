@@ -2191,10 +2191,12 @@ input[type=file].visually-hidden {
 }
 
 .tab-categories__btn {
+  position: relative;
   width: -moz-max-content;
   width: max-content;
   margin: 0;
-  padding: 1.249992vw 2.187486vw;
+  padding: 1.145826vw 2.08332vw;
+  overflow: hidden;
   font-family: "Roboto", sans-serif;
   font-size: 1.249992vw;
   line-height: 1.510407vw;
@@ -2207,8 +2209,89 @@ input[type=file].visually-hidden {
   border-radius: 3.12498vw;
   cursor: pointer;
 }
-.tab-categories__btn.actv {
-  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+.tab-categories__btn span {
+  position: relative;
+  z-index: 1;
+}
+.tab-categories__btn.actv.ghost {
+  color: #000000;
+  background: #ffffff;
+}
+.tab-categories__btn.actv.green {
+  padding: 1.249992vw 2.187486vw;
+  background-image: linear-gradient(90deg, #6bc59b 0%, #394058 100%);
+  border: 0;
+}
+.tab-categories__btn.actv.pink {
+  padding: 1.249992vw 2.187486vw;
+  background-image: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+  border: 0;
+}
+.tab-categories__btn.actv.purple {
+  padding: 1.249992vw 2.187486vw;
+  background-image: linear-gradient(90deg, #b882f3 0%, #4c4482 100%);
+  border: 0;
+}
+.tab-categories__btn.actv.blue {
+  padding: 1.249992vw 2.187486vw;
+  background-image: linear-gradient(90deg, #1e3ed7 0%, #02061b 100%);
+  border: 0;
+}
+.tab-categories__btn::before, .tab-categories__btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 1.718739vw;
+  height: 144px;
+  opacity: 0;
+  filter: blur(5px);
+  transition: left 0.5s ease-in-out, rotate 0.5s ease-in-out;
+  translate: -50% -50%;
+}
+.tab-categories__btn::before {
+  left: -1.718739vw;
+  opacity: 0;
+  rotate: 0deg;
+}
+.tab-categories__btn::after {
+  left: calc(100% + 1.718739vw);
+  opacity: 0.5;
+  rotate: 20deg;
+}
+.tab-categories__btn:not(.actv):hover::before, .tab-categories__btn:not(.actv):focus-visible::before {
+  left: 50%;
+  opacity: 0.5;
+  rotate: 41deg;
+}
+.tab-categories__btn:not(.actv):hover::after, .tab-categories__btn:not(.actv):focus-visible::after {
+  left: 50%;
+  opacity: 0;
+  rotate: 41deg;
+}
+.tab-categories__btn.ghost::before, .tab-categories__btn.ghost::after {
+  background-image: linear-gradient(150.76deg, #81aac5 32.48%, #3b3740 69.76%, #000000 108.57%);
+}
+.tab-categories__btn.green::before, .tab-categories__btn.green::after {
+  background-image: linear-gradient(90deg, #6bc59b 0%, #394058 100%);
+}
+.tab-categories__btn.pink::before, .tab-categories__btn.pink::after {
+  background-image: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+}
+.tab-categories__btn.purple::before, .tab-categories__btn.purple::after {
+  background-image: linear-gradient(90deg, #b882f3 0%, #4c4482 100%);
+}
+.tab-categories__btn.blue::before, .tab-categories__btn.blue::after {
+  background-image: linear-gradient(90deg, #1e3ed7 0%, #02061b 100%);
+}
+.tab-categories__btn.blue::after {
+  opacity: 0.7;
+}
+.tab-categories__btn.blue:not(.actv):hover::before, .tab-categories__btn.blue:not(.actv):focus-visible::before {
+  opacity: 0.7;
+}
+.tab-categories__btn.blue:not(.actv):hover::after, .tab-categories__btn.blue:not(.actv):focus-visible::after {
+  opacity: 0;
 }
 @media (max-width: 1023px) {
   .tab-categories__btn {
