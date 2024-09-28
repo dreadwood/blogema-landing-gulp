@@ -1,4 +1,5 @@
 include ../elements/images
+include ../elements/console
 
 mixin card-blogger({ it, color, className })
   .c-blogger(
@@ -8,16 +9,16 @@ mixin card-blogger({ it, color, className })
   )
     -
       let socials = [
-        //- {
-        //-   icon: 'icon-instagram',
-        //-   label: 'в инстаграмме более 10 тысяч',
-        //-   value: '> 120к'
-        //- },
-        //- {
-        //-   icon: 'icon-telegram',
-        //-   label: 'в телеграмме более 10 тысяч',
-        //-   value: '> 10к'
-        //- },
+        {
+          icon: 'icon-instagram',
+          label: 'в инстаграмме более 10 тысяч',
+          value: '> 120к'
+        },
+        {
+          icon: 'icon-telegram',
+          label: 'в телеграмме более 10 тысяч',
+          value: '> 10к'
+        },
         {
           icon: 'icon-twitch',
           label: 'в твиче более 10 тысяч',
@@ -33,11 +34,11 @@ mixin card-blogger({ it, color, className })
           label: 'в ютубе более 10 тысяч',
           value: '> 500к'
         },
-        //- {
-        //-   icon: 'icon-vk',
-        //-   label: 'во вконтакте более 10 тысяч',
-        //-   value: '> 5м'
-        //- }
+        {
+          icon: 'icon-vk',
+          label: 'во вконтакте более 10 тысяч',
+          value: '> 5м'
+        }
       ]
     .c-blogger__photo-border
     img.c-blogger__photo(src=it.image width="238" height="238" alt="")
@@ -47,7 +48,7 @@ mixin card-blogger({ it, color, className })
         div=it.name
         div
       .c-blogger__list
-        each item in socials
+        each item in it.socialType === 1 ? socials.slice(0, 4) : socials.slice(2, 6)
           a.c-blogger__social(href="#")
             .c-blogger__social-count
               +svg({ name: item.icon })
