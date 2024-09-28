@@ -63,9 +63,11 @@
   }
 }
 .tab-categories__btn {
+  position: relative;
   width: max-content;
   margin: 0;
-  padding: $apx-24 $apx-42;
+  padding: $apx-22 $apx-40;
+  overflow: hidden;
   font-family: $font-default;
   font-size: $apx-24;
   line-height: $apx-29;
@@ -77,8 +79,115 @@
   border: $apx-1 solid $color-white;
   border-radius: $apx-60;
   cursor: pointer;
+  span {
+    position: relative;
+    z-index: 1;
+  }
   &.actv {
-    background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+    &.ghost {
+      color: $color-black;
+      background: $color-white;
+    }
+    &.green {
+      padding: $apx-24 $apx-42;
+      background-image: $gradient-green;
+      border: 0;
+    }
+    &.pink {
+      padding: $apx-24 $apx-42;
+      background-image: $gradient-pink;
+      border: 0;
+    }
+    &.purple {
+      padding: $apx-24 $apx-42;
+      background-image: $gradient-purple;
+      border: 0;
+    }
+    &.blue {
+      padding: $apx-24 $apx-42;
+      background-image: $gradient-blue;
+      border: 0;
+    }
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: $apx-33;
+    height: 144px;
+    opacity: 0;
+    filter: blur(5px);
+    transition:
+      left 0.5s ease-in-out,
+      rotate 0.5s ease-in-out;
+    translate: -50% -50%;
+  }
+  &::before {
+    left: -$apx-33;
+    opacity: 0;
+    rotate: 0deg;
+  }
+  &::after {
+    left: calc(100% + $apx-33);
+    opacity: 0.5;
+    rotate: 20deg;
+  }
+  &:not(.actv):hover,
+  &:not(.actv):focus-visible {
+    &::before {
+      left: 50%;
+      opacity: 0.5;
+      rotate: 41deg;
+    }
+    &::after {
+      left: 50%;
+      opacity: 0;
+      rotate: 41deg;
+    }
+  }
+  &.ghost {
+    &::before,
+    &::after {
+      background-image: $gradient-ghost;
+    }
+  }
+  &.green {
+    &::before,
+    &::after {
+      background-image: $gradient-green;
+    }
+  }
+  &.pink {
+    &::before,
+    &::after {
+      background-image: $gradient-pink;
+    }
+  }
+  &.purple {
+    &::before,
+    &::after {
+      background-image: $gradient-purple;
+    }
+  }
+  &.blue {
+    &::before,
+    &::after {
+      background-image: $gradient-blue;
+    }
+    &::after {
+      opacity: 0.7;
+    }
+    &:not(.actv):hover,
+    &:not(.actv):focus-visible {
+      &::before {
+        opacity: 0.7;
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
   }
   @include mobile {
     width: 100%;

@@ -7,23 +7,28 @@ mixin tab-categories({ className })
         {
           idCategory: 0,
           text: 'Все',
+          color: 'ghost',
           isActv: true
         },
         {
           idCategory: 1,
-          text: 'Категория 1'
+          color: 'green',
+          text: 'Прайм'
         },
         {
           idCategory: 2,
-          text: 'Категория 2'
+          color: 'pink',
+          text: 'Искра'
         },
         {
           idCategory: 3,
-          text: 'Категория 3'
+          color: 'purple',
+          text: 'Дива'
         },
         {
           idCategory: 4,
-          text: 'Категория 4'
+          color: 'blue',
+          text: 'Успех'
         }
       ]
     button.tab-categories__drop-btn.js-drop-btn
@@ -33,5 +38,7 @@ mixin tab-categories({ className })
       each it in btnsCategories
         button.tab-categories__btn.js-drop-value(
           class=(it.isActv && "actv")
+          class=it.color
           data-category-id-btn=it.idCategory
-        )=it.text
+        )
+          span=it.text
