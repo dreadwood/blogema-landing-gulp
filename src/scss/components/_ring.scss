@@ -7,24 +7,26 @@
   height: $apx-295;
   border-radius: 50%;
   opacity: 0.3;
-  transition: opacity 0.5s ease-in-out;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  mask: radial-gradient(circle $apx-126, transparent 100%, #ffffff 100%);
   &::after {
     content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    // z-index: 1;
     display: block;
-    width: $apx-255;
-    height: $apx-255;
-    background: $color-black;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
   }
   @include mobile {
     width: $apx-m-236;
     height: $apx-m-236;
-    &::after {
-      width: $apx-m-204;
-      height: $apx-m-204;
-    }
+    mask: radial-gradient(circle $apx-m-102, transparent 100%, #ffffff 100%);
   }
 }
 .ring-pink-a {
@@ -85,17 +87,11 @@
   opacity: 0.5;
   animation-name: ring-blue-a;
   animation-duration: 23s;
-  &::after {
-    width: $apx-278;
-    height: $apx-278;
-  }
+  mask: radial-gradient(circle $apx-139, transparent 100%, #ffffff 100%);
   @include mobile {
     width: $apx-m-236;
     height: $apx-m-236;
-    &::after {
-      width: $apx-m-204;
-      height: $apx-m-204;
-    }
+    mask: radial-gradient(circle $apx-m-102, transparent 100%, #ffffff 100%);
   }
 }
 .ring-blue-b {
