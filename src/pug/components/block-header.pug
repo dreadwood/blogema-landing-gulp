@@ -5,7 +5,8 @@ mixin block-header({ className })
     .b-header__content
       a.b-header__logo(href='/')
         +svg({ name: "logo-blogema-header", width: 88, height: 52 })
-      nav.b-header__menu
+      //- .b-header__menu-wrp
+      nav.b-header__menu.js-menu
         ul.b-header__list
           li
             a.b-header__link.js-link(href='#manifest')

@@ -84,6 +84,9 @@
     z-index: 1;
   }
   &.actv {
+    // &::after {
+    //   content: none;
+    // }
     &.ghost {
       color: $color-black;
       background: $color-white;
