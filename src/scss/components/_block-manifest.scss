@@ -1,7 +1,7 @@
 .b-manifest {
-  padding: $apx-48 $apx-108 $apx-60 $apx-108;
+  padding: 0 $apx-108 $apx-60 $apx-108;
   @include mobile {
-    padding: $apx-m-40 $apx-m-24 0 $apx-m-24;
+    padding: 0 $apx-m-24;
   }
 }
 .b-manifest__title {

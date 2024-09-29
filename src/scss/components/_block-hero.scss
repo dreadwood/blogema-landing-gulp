@@ -1,6 +1,13 @@
 .b-hero {
-  padding: $apx-400 $apx-108 $apx-332 $apx-108;
+  height: calc(100dvh - #{$apx-119} - #{$apx-134});
+  max-height: $apx-904;
+  min-height: $apx-650;
+  // padding: $apx-400 $apx-108 $apx-332 $apx-108;
+  padding: $apx-400 $apx-108 $apx-60 $apx-108;
   @include mobile {
+    height: auto;
+    max-height: none;
+    min-height: none;
     padding: $apx-m-450 $apx-m-24 $apx-m-31 $apx-m-24;
   }
 }

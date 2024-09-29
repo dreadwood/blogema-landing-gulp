@@ -1,7 +1,8 @@
 .b-sponsors {
-  padding: 0 $apx-108;
+  min-height: $apx-134;
+  padding: 0 $apx-108 $apx-48 $apx-108;
   @include mobile {
-    padding: 0;
+    padding: 0 0 $apx-m-40 0;
   }
 }
 .b-sponsors__content {

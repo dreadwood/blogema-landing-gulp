@@ -1,4 +1,5 @@
 .b-header {
+  min-height: $apx-119;
   padding: $apx-22 $apx-108;
   @include mobile {
     position: relative;
