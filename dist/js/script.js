@@ -148,6 +148,8 @@ window.utils = {
   const header = document.querySelector('.js-header')
   const links = document.querySelectorAll('.js-link')
 
+  const menu = document.querySelector('.js-menu')
+
   let isOpen = false
 
   burger?.addEventListener('click', () => {
@@ -164,12 +166,14 @@ window.utils = {
   function openMenu() {
     header?.classList.add('open')
     document.body.classList.add('scroll-lock')
+    menu.style = `height: ${menu.scrollHeight}px;`
     isOpen = true
   }
 
   function closeMenu() {
     header?.classList.remove('open')
     document.body.classList.remove('scroll-lock')
+    menu.style = ''
     isOpen = false
   }
 })()
@@ -190,12 +194,14 @@ window.utils = {
   function openMenu() {
     btnDrop?.classList.add('actv')
     menu?.classList.add('open')
+    menu.style = `height: ${menu.scrollHeight}px;`
     isOpen = true
   }
 
   function closeMenu() {
     btnDrop?.classList.remove('actv')
     menu?.classList.remove('open')
+    menu.style = ''
     isOpen = false
   }
 
@@ -220,6 +226,31 @@ window.utils = {
     it.addEventListener('click', () => {
       if (btnDropText) {
         btnDropText.textContent = it.textContent
+
+        const idBtn = it.dataset.categoryIdBtn
+
+        let btnDropColor = 'ghost'
+
+        switch (idBtn) {
+          case '1':
+            btnDropColor = 'green'
+            break
+          case '2':
+            btnDropColor = 'pink'
+            break
+          case '3':
+            btnDropColor = 'purple'
+            break
+          case '4':
+            btnDropColor = 'blue'
+            break
+
+          default:
+            btnDropColor = 'ghost'
+            break
+        }
+
+        btnDrop.dataset.categoryColorCard = btnDropColor
       }
 
       values.forEach((it) => it.classList.remove('actv'))

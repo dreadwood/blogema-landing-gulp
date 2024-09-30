@@ -26,7 +26,7 @@
           <svg width="88" height="52">
             <use xlink:href="img/sprite.svg#logo-blogema-header"></use>
           </svg></a>
-        <nav class="b-header__menu">
+        <nav class="b-header__menu js-menu">
           <ul class="b-header__list">
             <li><a class="b-header__link js-link" href="#manifest">
                 <div class="b-header__link-text">О премии</div></a></li>
@@ -555,17 +555,20 @@
       <section class="b-nominations" id="categories">
         <h2 class="b-nominations__title">Номинации</h2>
         <div class="tab-categories b-nominations__categories">
-          <button class="tab-categories__drop-btn js-drop-btn"><span>Все</span>
+          <button class="tab-categories__drop-btn js-drop-btn">
+            <div class="tab-categories__drop-bg ghost"></div><span>Все</span>
             <svg>
               <use xlink:href="img/sprite.svg#arrow-circle-bottom"></use>
             </svg>
           </button>
-          <div class="tab-categories__list js-drop-menu">
-            <button class="tab-categories__btn js-drop-value actv ghost" data-category-id-btn="0"><span>Все</span></button>
-            <button class="tab-categories__btn js-drop-value green" data-category-id-btn="1"><span>Прайм</span></button>
-            <button class="tab-categories__btn js-drop-value pink" data-category-id-btn="2"><span>Искра</span></button>
-            <button class="tab-categories__btn js-drop-value purple" data-category-id-btn="3"><span>Дива</span></button>
-            <button class="tab-categories__btn js-drop-value blue" data-category-id-btn="4"><span>Успех</span></button>
+          <div class="tab-categories__menu js-drop-menu">
+            <div class="tab-categories__list">
+              <button class="tab-categories__btn js-drop-value actv ghost" data-category-id-btn="0"><span>Все</span></button>
+              <button class="tab-categories__btn js-drop-value green" data-category-id-btn="1"><span>Прайм</span></button>
+              <button class="tab-categories__btn js-drop-value pink" data-category-id-btn="2"><span>Искра</span></button>
+              <button class="tab-categories__btn js-drop-value purple" data-category-id-btn="3"><span>Дива</span></button>
+              <button class="tab-categories__btn js-drop-value blue" data-category-id-btn="4"><span>Успех</span></button>
+            </div>
           </div>
         </div>
         <div class="b-nominations__list"><a class="c-category" href="/best-blogger-year-page.html" data-category-id-card="1">
@@ -630,6 +633,7 @@
             <div class="c-category__name">Стример <br> года</div>
             <div class="c-category__link">Подробнее</div></a><a class="c-category" href="/beauty-blogger-page.html" data-category-id-card="3">
             <div class="gradient purple"></div>
+            <div class="ring ring-purple-a"></div>
             <div class="c-category__top">Дива
               <svg>
                 <use xlink:href="img/sprite.svg#arrow-circle-right"></use>
@@ -719,8 +723,8 @@
             <nav>
               <ul class="b-footer__list">
                 <li><a class="b-footer__link" href="#manifest">О премии</a></li>
-                <li><a class="b-footer__link" href="undefined">Номинации</a></li>
-                <li><a class="b-footer__link" href="undefined">Прямая трансляция</a></li>
+                <li><a class="b-footer__link" href="#">Номинации</a></li>
+                <li><a class="b-footer__link" href="#">Прямая трансляция</a></li>
               </ul>
             </nav>
           </div>
