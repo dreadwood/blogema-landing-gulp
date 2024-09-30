@@ -1,5 +1,5 @@
 {
-  "name": "rent-eco",
+  "name": "bloggema",
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",

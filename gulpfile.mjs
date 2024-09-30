@@ -96,26 +96,15 @@ const sprite = () => {
 }
 
 const js = () => {
-  return (
-    gulp
-      .src('src/js/*.js')
-      // .pipe(
-      //   plumber({
-      //     errorHandler: (err) => {
-      //       console.log('An error occurred:', err.message)
-      //       // throw new Error('test')
-      //     }
-      //   })
-      // )
-      // .pipe(plumber())
-      .pipe(order(['utils.js', '*.js']))
-      .pipe(concat(`script.js`))
-      .pipe(gulp.dest('dist/js'))
-      .pipe(uglify.default())
-      // .pipe(uglify())
-      .pipe(rename(`script.min.js`))
-      .pipe(gulp.dest('dist/js'))
-  )
+  return gulp
+    .src('src/js/*.js')
+    .pipe(plumber())
+    .pipe(order(['utils.js', '*.js']))
+    .pipe(concat(`script.js`))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(uglify.default())
+    .pipe(rename(`script.min.js`))
+    .pipe(gulp.dest('dist/js'))
 }
 
 const html = () => {
