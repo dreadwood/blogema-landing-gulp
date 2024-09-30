@@ -104,6 +104,15 @@
   animation-name: ring-blue-b;
   animation-duration: 30s;
 }
+.ring-purple-a {
+  top: 50%;
+  left: 50%;
+  background: $gradient-purple;
+  rotate: -45deg;
+  opacity: 0.5;
+  animation-name: ring-purple-a;
+  animation-duration: 15s;
+}
 
 // анимация
 @keyframes ring-pink-a {
@@ -232,5 +241,26 @@
   }
   100% {
     translate: -2% -21%;
+  }
+}
+
+@keyframes ring-purple-a {
+  0% {
+    translate: 12% -11%;
+  }
+  20% {
+    translate: -45% -60%;
+  }
+  40% {
+    translate: -90% -40%;
+  }
+  60% {
+    translate: -45% -20%;
+  }
+  80% {
+    translate: -23% -14%;
+  }
+  100% {
+    translate: 12% -11%;
   }
 }

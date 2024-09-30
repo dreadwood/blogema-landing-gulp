@@ -32,13 +32,15 @@ mixin tab-categories({ className })
         }
       ]
     button.tab-categories__drop-btn.js-drop-btn
-      span Все
+      .tab-categories__drop-bg(class=btnsCategories[0].color)
+      span=btnsCategories[0].text
       +svg({ name: "arrow-circle-bottom" })
-    .tab-categories__list.js-drop-menu
-      each it in btnsCategories
-        button.tab-categories__btn.js-drop-value(
-          class=(it.isActv && "actv")
-          class=it.color
-          data-category-id-btn=it.idCategory
-        )
-          span=it.text
+    .tab-categories__menu.js-drop-menu
+      .tab-categories__list
+        each it in btnsCategories
+          button.tab-categories__btn.js-drop-value(
+            class=(it.isActv && "actv")
+            class=it.color
+            data-category-id-btn=it.idCategory
+          )
+            span=it.text
