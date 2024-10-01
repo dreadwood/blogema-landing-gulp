@@ -810,6 +810,7 @@ input[type=file].visually-hidden {
   color: #ffffff;
   letter-spacing: -0.02em;
   background-color: #000000;
+  border: 0.052083vw solid #ffffff;
   border-radius: 1.04166vw;
 }
 .b-manifest__card b {
@@ -820,7 +821,7 @@ input[type=file].visually-hidden {
     padding: 6.400008vw;
     font-size: 3.733338vw;
     line-height: 5.33334vw;
-    border: 0.266667vw solid #ffffff;
+    border-width: 0.266667vw;
     border-radius: 5.33334vw;
   }
 }
@@ -913,25 +914,70 @@ input[type=file].visually-hidden {
 }
 @media (max-width: 1023px) {
   .b-sponsors {
-    padding: 0 0 10.66668vw 0;
+    padding: 0 0 13.33335vw 0;
   }
 }
 
+.b-sponsors__content-top .b-sponsors__list {
+  gap: 11.45826vw;
+}
 @media (max-width: 1023px) {
-  .b-sponsors__content {
+  .b-sponsors__content-top {
     scrollbar-width: none;
     display: flex;
     overflow-x: hidden;
   }
-  .b-sponsors__content::-webkit-scrollbar {
+  .b-sponsors__content-top::-webkit-scrollbar {
     display: none;
+  }
+  .b-sponsors__content-top .b-sponsors__list {
+    gap: 6.400008vw;
+  }
+  .b-sponsors__content-top .b-sponsors__list.list1 {
+    animation: running-line-top1 20s infinite linear;
+    animation-delay: -20s;
+  }
+  .b-sponsors__content-top .b-sponsors__list.list2 {
+    display: flex;
+    animation: running-line-top2 20s infinite linear;
+    animation-delay: -10s;
+  }
+}
+
+.b-sponsors__content-bottom {
+  margin-top: 2.291652vw;
+}
+.b-sponsors__content-bottom .b-sponsors__list {
+  gap: 8.229114vw;
+}
+@media (max-width: 1023px) {
+  .b-sponsors__content-bottom {
+    scrollbar-width: none;
+    display: flex;
+    margin-top: 5.33334vw;
+    overflow-x: hidden;
+  }
+  .b-sponsors__content-bottom::-webkit-scrollbar {
+    display: none;
+  }
+  .b-sponsors__content-bottom .b-sponsors__list {
+    gap: 6.400008vw;
+  }
+  .b-sponsors__content-bottom .b-sponsors__list.list1 {
+    animation: running-line-bottom1 20s infinite linear;
+    animation-delay: -20s;
+  }
+  .b-sponsors__content-bottom .b-sponsors__list.list2 {
+    display: flex;
+    animation: running-line-bottom2 20s infinite linear;
+    animation-delay: -10s;
   }
 }
 
 .b-sponsors__list {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 .b-sponsors__list.list2 {
   display: none;
@@ -939,17 +985,7 @@ input[type=file].visually-hidden {
 @media (max-width: 1023px) {
   .b-sponsors__list {
     flex-shrink: 0;
-    gap: 6.400008vw;
     padding: 0 3.200004vw;
-  }
-  .b-sponsors__list.list1 {
-    animation: running-line1 20s infinite linear;
-    animation-delay: -20s;
-  }
-  .b-sponsors__list.list2 {
-    display: flex;
-    animation: running-line2 20s infinite linear;
-    animation-delay: -10s;
   }
 }
 
@@ -962,50 +998,43 @@ input[type=file].visually-hidden {
 .b-sponsors__logo {
   display: grid;
   place-items: center;
-  height: 3.541644vw;
 }
 .b-sponsors__logo img {
   height: auto;
 }
 .b-sponsors__logo .logo-president {
-  width: 14.218659vw;
-}
-.b-sponsors__logo .logo-invite {
-  width: 8.124948vw;
-}
-.b-sponsors__logo .logo-vk {
-  width: 14.270742vw;
+  width: 20.260287vw;
 }
 .b-sponsors__logo .logo-sts {
-  width: 6.718707vw;
-}
-.b-sponsors__logo .logo-smm {
-  width: 4.374972vw;
+  width: 9.322857vw;
 }
 .b-sponsors__logo .logo-bloggers {
-  width: 6.406209vw;
+  width: 8.906193vw;
 }
 .b-sponsors__logo .logo-aba {
-  width: 3.854142vw;
+  width: 6.041628vw;
+}
+.b-sponsors__logo .logo-vk {
+  width: 10.729098vw;
+}
+.b-sponsors__logo .logo-invite {
+  width: 6.093711vw;
+}
+.b-sponsors__logo .logo-perfluence {
+  width: 8.697861vw;
+}
+.b-sponsors__logo .logo-rjami-lup {
+  width: 4.999968vw;
+}
+.b-sponsors__logo .logo-smm {
+  width: 3.281229vw;
 }
 @media (max-width: 1023px) {
-  .b-sponsors__logo {
-    height: 11.733348vw;
-  }
   .b-sponsors__logo .logo-president {
     width: 48.00006vw;
   }
-  .b-sponsors__logo .logo-invite {
-    width: 27.466701vw;
-  }
-  .b-sponsors__logo .logo-vk {
-    width: 48.266727vw;
-  }
   .b-sponsors__logo .logo-sts {
     width: 22.666695vw;
-  }
-  .b-sponsors__logo .logo-smm {
-    width: 14.133351vw;
   }
   .b-sponsors__logo .logo-bloggers {
     width: 21.866694vw;
@@ -1013,26 +1042,24 @@ input[type=file].visually-hidden {
   .b-sponsors__logo .logo-aba {
     width: 13.066683vw;
   }
-}
-
-.b-sponsors__label {
-  margin-top: 0.208332vw;
-  font-size: 0.624996vw;
-  line-height: 0.729162vw;
-  font-weight: 400;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-}
-@media (max-width: 1023px) {
-  .b-sponsors__label {
-    margin-top: 0.533334vw;
-    font-size: 2.400003vw;
-    line-height: 2.933337vw;
+  .b-sponsors__logo .logo-vk {
+    width: 33.600042vw;
+  }
+  .b-sponsors__logo .logo-invite {
+    width: 19.200024vw;
+  }
+  .b-sponsors__logo .logo-perfluence {
+    width: 30.933372vw;
+  }
+  .b-sponsors__logo .logo-rjami-lup {
+    width: 17.866689vw;
+  }
+  .b-sponsors__logo .logo-smm {
+    width: 9.866679vw;
   }
 }
 
-@keyframes running-line1 {
+@keyframes running-line-top1 {
   0% {
     transform: translateX(100%);
   }
@@ -1040,12 +1067,28 @@ input[type=file].visually-hidden {
     transform: translateX(-100%);
   }
 }
-@keyframes running-line2 {
+@keyframes running-line-top2 {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(-200%);
+  }
+}
+@keyframes running-line-bottom1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes running-line-bottom2 {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 .b-stages {
@@ -2389,7 +2432,6 @@ input[type=file].visually-hidden {
   padding: 10px;
   overflow: scroll;
   background-color: rgba(0, 0, 0, 0.6);
-  border: 0.052083vw solid tomato;
   inset: 0;
 }
 .yandex-captcha::-webkit-scrollbar {
@@ -2422,7 +2464,7 @@ input[type=file].visually-hidden {
   border: 0;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
   translate: -50% 0;
 }
 .yandex-captcha__close svg {
@@ -2433,7 +2475,6 @@ input[type=file].visually-hidden {
 }
 .yandex-captcha__close:hover, .yandex-captcha__close:focus-visible {
   background-color: #ffffff;
-  opacity: 1;
 }
 
 .yandex-captcha__container {
