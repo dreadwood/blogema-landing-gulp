@@ -55,6 +55,7 @@
   color: $color-white;
   letter-spacing: -0.02em;
   background-color: $color-black;
+  border: $apx-1 solid $color-white;
   border-radius: $apx-20;
   b {
     font-weight: 500;
@@ -63,7 +64,7 @@
     padding: $apx-m-24;
     font-size: $apx-m-14;
     line-height: $apx-m-20;
-    border: $apx-m-1 solid $color-white;
+    border-width: $apx-m-1;
     border-radius: $apx-m-20;
   }
 }
