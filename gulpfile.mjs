@@ -95,15 +95,26 @@ const sprite = () => {
     .pipe(gulp.dest('dist/img'))
 }
 
-const js = () => {
+const jsLib = () => {
   return gulp
-    .src('src/js/*.js')
+    .src('src/js/lib/*.js')
     .pipe(plumber())
     .pipe(order(['utils.js', '*.js']))
-    .pipe(concat(`script.js`))
+    .pipe(concat(`lib.js`))
     .pipe(gulp.dest('dist/js'))
     .pipe(uglify.default())
-    .pipe(rename(`script.min.js`))
+    .pipe(rename(`lib.min.js`))
+    .pipe(gulp.dest('dist/js'))
+}
+
+const jsVendor = () => {
+  return gulp
+    .src('src/js/vendor/*.js')
+    .pipe(plumber())
+    .pipe(concat(`vendor.js`))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(uglify.default())
+    .pipe(rename(`vendor.min.js`))
     .pipe(gulp.dest('dist/js'))
 }
 
@@ -131,10 +142,20 @@ const server = () => {
   gulp.watch('src/pug/**/*.{pug,js}', gulp.series(html, refresh))
   gulp.watch('src/icons/*.svg', gulp.series(sprite, html, refresh))
   gulp.watch('src/scss/**/*.scss', gulp.series(css))
-  gulp.watch('src/js/**/*.js', gulp.series(js, refresh))
+  gulp.watch('src/js/lib/**/*.js', gulp.series(jsLib, refresh))
+  gulp.watch('src/js/vendor/**/*.js', gulp.series(jsVendor, refresh))
 }
 
-const common = gulp.series(clean, copy, css, js, sprite, images, html)
+const common = gulp.series(
+  clean,
+  copy,
+  css,
+  jsLib,
+  jsVendor,
+  sprite,
+  images,
+  html
+)
 
 export const image = gulp.series(webp, avif)
 export const build = gulp.series(common, image)

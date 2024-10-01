@@ -1,5 +1,5 @@
 /**
- * block-header.js
+ * block-bloggers.js
  */
 ;(() => {
   /**
@@ -13,8 +13,6 @@
 
   const key = window.location.pathname || 'index'
   const local = getLocal(KEY_LS)
-
-  console.log(local)
 
   if (local.hasOwnProperty(key)) {
     activeCard(cards, local[key])

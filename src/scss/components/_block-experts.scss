@@ -1,11 +1,14 @@
 .b-experts {
-  padding: $apx-60 $apx-108;
+  padding-top: $apx-60;
+  padding-bottom: $apx-60;
   @include mobile {
-    padding: $apx-m-60 $apx-m-24;
+    padding-top: $apx-m-60;
+    padding-bottom: $apx-m-60;
   }
 }
 .b-experts__title {
   margin: 0;
+  padding: 0 $apx-108;
   font-family: $font-title;
   font-size: $apx-80;
   line-height: $apx-96;
@@ -15,30 +18,30 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   @include mobile {
+    padding: 0 $apx-m-24;
     font-size: $apx-m-36;
     line-height: $apx-m-43;
   }
 }
-.b-experts__list {
-  @include hide-scroll;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: $apx-24;
+.b-experts__slider {
   margin-top: $apx-40;
   @include mobile {
-    display: flex;
-    align-items: stretch;
-    gap: $apx-m-24;
     margin-top: $apx-m-40;
-    margin-right: -$apx-m-24;
-    margin-left: -$apx-m-24;
-    padding-right: $apx-m-24;
-    padding-left: $apx-m-24;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 $apx-m-24;
-    & > * {
-      scroll-snap-align: start;
-    }
+  }
+}
+/* stylelint-disable declaration-no-important */
+.b-experts__track {
+  padding-right: $apx-108 !important;
+  padding-left: $apx-108 !important;
+  @include mobile {
+    padding-right: $apx-m-24 !important;
+    padding-left: $apx-m-24 !important;
+  }
+}
+/* stylelint-enable declaration-no-important */
+.b-experts__list {
+  gap: $apx-24;
+  @include mobile {
+    gap: $apx-m-24;
   }
 }

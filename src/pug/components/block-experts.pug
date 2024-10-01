@@ -11,6 +11,9 @@ mixin block-experts({ className, color })
         ...expertsMock
       ]
     h2.b-experts__title Эксперты
-    .b-experts__list
-      each it in experts
-        +card-expert({ it, color })
+    .splide.b-experts__slider.js-slider-experts
+      .splide__track.b-experts__track
+        .splide__list.b-experts__list
+          each it in experts
+            .splide__slide
+              +card-expert({ it, color })
