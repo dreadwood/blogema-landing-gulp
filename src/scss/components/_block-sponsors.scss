@@ -2,36 +2,65 @@
   min-height: $apx-134;
   padding: 0 $apx-108 $apx-48 $apx-108;
   @include mobile {
-    padding: 0 0 $apx-m-40 0;
+    padding: 0 0 $apx-m-50 0;
   }
 }
-.b-sponsors__content {
+.b-sponsors__content-top {
+  .b-sponsors__list {
+    gap: $apx-220;
+  }
   @include mobile {
     @include hide-scroll;
     display: flex;
     overflow-x: hidden;
+    .b-sponsors__list {
+      gap: $apx-m-24;
+      &.list1 {
+        animation: running-line-top1 20s infinite linear;
+        animation-delay: -20s;
+      }
+      &.list2 {
+        display: flex;
+        animation: running-line-top2 20s infinite linear;
+        animation-delay: -10s;
+      }
+    }
+  }
+}
+.b-sponsors__content-bottom {
+  margin-top: $apx-44;
+  .b-sponsors__list {
+    gap: $apx-158;
+  }
+  @include mobile {
+    @include hide-scroll;
+    display: flex;
+    margin-top: $apx-m-20;
+    overflow-x: hidden;
+    .b-sponsors__list {
+      gap: $apx-m-24;
+      &.list1 {
+        animation: running-line-bottom1 20s infinite linear;
+        animation-delay: -20s;
+      }
+      &.list2 {
+        display: flex;
+        animation: running-line-bottom2 20s infinite linear;
+        animation-delay: -10s;
+      }
+    }
   }
 }
 .b-sponsors__list {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   &.list2 {
     display: none;
   }
   @include mobile {
     flex-shrink: 0;
-    gap: $apx-m-24;
     padding: 0 $apx-m-12;
-    &.list1 {
-      animation: running-line1 20s infinite linear;
-      animation-delay: -20s;
-    }
-    &.list2 {
-      display: flex;
-      animation: running-line2 20s infinite linear;
-      animation-delay: -10s;
-    }
   }
 }
 .b-sponsors__item {
@@ -41,47 +70,42 @@
 .b-sponsors__logo {
   display: grid;
   place-items: center;
-  height: $apx-68;
   img {
     height: auto;
   }
   .logo-president {
-    width: $apx-273;
-  }
-  .logo-invite {
-    width: $apx-156;
-  }
-  .logo-vk {
-    width: $apx-274;
+    width: $apx-389;
   }
   .logo-sts {
-    width: $apx-129;
-  }
-  .logo-smm {
-    width: $apx-84;
+    width: $apx-179;
   }
   .logo-bloggers {
-    width: $apx-123;
+    width: $apx-171;
   }
   .logo-aba {
-    width: $apx-74;
+    width: $apx-116;
+  }
+  .logo-vk {
+    width: $apx-206;
+  }
+  .logo-invite {
+    width: $apx-117;
+  }
+  .logo-perfluence {
+    width: $apx-167;
+  }
+  .logo-rjami-lup {
+    width: $apx-96;
+  }
+  .logo-smm {
+    width: $apx-63;
   }
   @include mobile {
-    height: $apx-m-44;
     .logo-president {
       width: $apx-m-180;
     }
-    .logo-invite {
-      width: $apx-m-103;
-    }
-    .logo-vk {
-      width: $apx-m-181;
-    }
     .logo-sts {
       width: $apx-m-85;
-    }
-    .logo-smm {
-      width: $apx-m-53;
     }
     .logo-bloggers {
       width: $apx-m-82;
@@ -89,24 +113,25 @@
     .logo-aba {
       width: $apx-m-49;
     }
-  }
-}
-.b-sponsors__label {
-  margin-top: $apx-4;
-  font-size: $apx-12;
-  line-height: $apx-14;
-  font-weight: 400;
-  text-align: center;
-  color: color.adjust($color-white, $alpha: -0.5);
-  text-transform: uppercase;
-  @include mobile {
-    margin-top: $apx-m-2;
-    font-size: $apx-m-9;
-    line-height: $apx-m-11;
+    .logo-vk {
+      width: $apx-m-126;
+    }
+    .logo-invite {
+      width: $apx-m-72;
+    }
+    .logo-perfluence {
+      width: $apx-m-116;
+    }
+    .logo-rjami-lup {
+      width: $apx-m-67;
+    }
+    .logo-smm {
+      width: $apx-m-37;
+    }
   }
 }
 
-@keyframes running-line1 {
+@keyframes running-line-top1 {
   0% {
     transform: translateX(100%);
   }
@@ -115,11 +140,29 @@
   }
 }
 
-@keyframes running-line2 {
+@keyframes running-line-top2 {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(-200%);
+  }
+}
+
+@keyframes running-line-bottom1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes running-line-bottom2 {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
