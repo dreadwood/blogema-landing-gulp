@@ -1,3 +1,6 @@
+/**
+ * block-nominations.js
+ */
 ;(() => {
   const btnDrop = document.querySelector('.js-drop-btn')
   const btnDropText = document.querySelector('.js-drop-btn span')

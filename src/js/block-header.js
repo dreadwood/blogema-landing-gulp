@@ -1,3 +1,6 @@
+/**
+ * block-header.js
+ */
 ;(() => {
   const burger = document.querySelector('.js-burger')
   const header = document.querySelector('.js-header')

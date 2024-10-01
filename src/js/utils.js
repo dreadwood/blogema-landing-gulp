@@ -1,5 +1,8 @@
 'use strict'
 
+/**
+ * utils.js
+ */
 window.utils = {
   /**
    * @param {JSON} data

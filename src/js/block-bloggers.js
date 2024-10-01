@@ -1,3 +1,6 @@
+/**
+ * block-header.js
+ */
 ;(() => {
   /**
    * @typedef {Object.<string, string>} ILocal
@@ -11,6 +14,8 @@
   const key = window.location.pathname || 'index'
   const local = getLocal(KEY_LS)
 
+  console.log(local)
+
   if (local.hasOwnProperty(key)) {
     activeCard(cards, local[key])
   } else {
@@ -18,25 +23,32 @@
   }
 
   /**
-   * @param {Element} card
+   * @param {Element} btn
    */
-  function initCard(card) {
-    card.removeAttribute('disabled')
+  function initCard(btn) {
+    btn.removeAttribute('disabled')
 
-    card.addEventListener('click', () => {
-      if (!(card instanceof HTMLElement)) {
+    btn.addEventListener('click', () => {
+      if (!(btn instanceof HTMLElement)) {
+        throw new Error('Blogger card is broken node')
+      }
+
+      if (!btn.dataset.cardBloggerBtn) {
         throw new Error("Blogger card don't have id")
       }
 
-      if (!card.dataset.cardBloggerBtn) {
-        throw new Error("Blogger card don't have id")
-      }
-
-      activeCard(cards, card.dataset.cardBloggerBtn)
-      incrementVote(cards, card.dataset.cardBloggerBtn)
-      saveLocal(local, card.dataset.cardBloggerBtn, key, KEY_LS)
-      disableBtns(btns)
+      // leaveVote(btn.dataset.cardBloggerBtn)
     })
+  }
+
+  /**
+   * @param {string} idBlogger
+   */
+  function leaveVote(idBlogger) {
+    activeCard(cards, idBlogger)
+    incrementVote(cards, idBlogger)
+    saveLocal(local, idBlogger, key, KEY_LS)
+    disableBtns(btns)
   }
 
   /**
