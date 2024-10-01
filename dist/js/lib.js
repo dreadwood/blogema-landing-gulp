@@ -19,7 +19,7 @@ window.utils = {
 }
 
 /**
- * block-header.js
+ * block-bloggers.js
  */
 ;(() => {
   /**
@@ -33,8 +33,6 @@ window.utils = {
 
   const key = window.location.pathname || 'index'
   const local = getLocal(KEY_LS)
-
-  console.log(local)
 
   if (local.hasOwnProperty(key)) {
     activeCard(cards, local[key])
@@ -156,6 +154,40 @@ window.utils = {
   function disableBtns(btns) {
     btns.forEach((item) => item.setAttribute('disabled', 'disabled'))
   }
+})()
+
+/**
+ * block-experts.js
+ */
+;(() => {
+  const sliderExperts = document.querySelector('.js-slider-experts')
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!sliderExperts) {
+      return
+    }
+
+    if (!window.splide) {
+      console.error("Splide lib isn't exist")
+      return
+    }
+
+    if (!window.splide.Extensions) {
+      console.error("Extensions splide lib isn't exist")
+      return
+    }
+
+    const splide = new Splide('.splide', {
+      autoWidth: true,
+      arrows: false,
+      pagination: false,
+      autoScroll: {
+        speed: 1
+      }
+    })
+
+    splide.mount(window.splide.Extensions)
+  })
 })()
 
 /**
