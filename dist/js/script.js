@@ -1,5 +1,8 @@
 'use strict'
 
+/**
+ * utils.js
+ */
 window.utils = {
   /**
    * @param {JSON} data
@@ -15,6 +18,9 @@ window.utils = {
   }
 }
 
+/**
+ * block-header.js
+ */
 ;(() => {
   /**
    * @typedef {Object.<string, string>} ILocal
@@ -28,6 +34,8 @@ window.utils = {
   const key = window.location.pathname || 'index'
   const local = getLocal(KEY_LS)
 
+  console.log(local)
+
   if (local.hasOwnProperty(key)) {
     activeCard(cards, local[key])
   } else {
@@ -35,25 +43,32 @@ window.utils = {
   }
 
   /**
-   * @param {Element} card
+   * @param {Element} btn
    */
-  function initCard(card) {
-    card.removeAttribute('disabled')
+  function initCard(btn) {
+    btn.removeAttribute('disabled')
 
-    card.addEventListener('click', () => {
-      if (!(card instanceof HTMLElement)) {
+    btn.addEventListener('click', () => {
+      if (!(btn instanceof HTMLElement)) {
+        throw new Error('Blogger card is broken node')
+      }
+
+      if (!btn.dataset.cardBloggerBtn) {
         throw new Error("Blogger card don't have id")
       }
 
-      if (!card.dataset.cardBloggerBtn) {
-        throw new Error("Blogger card don't have id")
-      }
-
-      activeCard(cards, card.dataset.cardBloggerBtn)
-      incrementVote(cards, card.dataset.cardBloggerBtn)
-      saveLocal(local, card.dataset.cardBloggerBtn, key, KEY_LS)
-      disableBtns(btns)
+      leaveVote(btn.dataset.cardBloggerBtn)
     })
+  }
+
+  /**
+   * @param {string} idBlogger
+   */
+  function leaveVote(idBlogger) {
+    activeCard(cards, idBlogger)
+    incrementVote(cards, idBlogger)
+    saveLocal(local, idBlogger, key, KEY_LS)
+    disableBtns(btns)
   }
 
   /**
@@ -143,6 +158,9 @@ window.utils = {
   }
 })()
 
+/**
+ * block-header.js
+ */
 ;(() => {
   const burger = document.querySelector('.js-burger')
   const header = document.querySelector('.js-header')
@@ -178,6 +196,9 @@ window.utils = {
   }
 })()
 
+/**
+ * block-nominations.js
+ */
 ;(() => {
   const btnDrop = document.querySelector('.js-drop-btn')
   const btnDropText = document.querySelector('.js-drop-btn span')
@@ -264,3 +285,65 @@ window.utils = {
     })
   })
 })()
+
+// /**
+//  * yandex-captcha.js
+//  */
+// ;(() => {
+//   const container = document.querySelector('.js-captcha-container')
+
+//   const SITE_KEY = 'ysc1_mVbqCcsUX5BOmb1b8oDGpHU07wbauV3o2udMLkyy031f341d'
+
+//   function onSmartCaptchaReady() {
+//     if (!window.smartCaptcha) {
+//       throw new Error('SmartCaptcha is not present')
+//     }
+
+//     const widgetId = window.smartCaptcha.render(container, {
+//       sitekey: SITE_KEY,
+//       hl: 'ru'
+//     })
+
+//     window.smartCaptcha.subscribe(widgetId, 'success', handleSuccess)
+//   }
+
+//   async function handleSuccess(token) {
+//     console.log('test handleSuccess')
+//     console.log(token)
+
+//     const body = new URLSearchParams({
+//       secret: SERVER_KEY,
+//       token: token
+//     })
+
+//     try {
+//       const res = await fetch('https://smartcaptcha.yandexcloud.net/validate', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/x-www-form-urlencoded'
+//         },
+//         mode: 'no-cors',
+//         body
+//       })
+//       console.log(res)
+//     } catch (error) {
+//       console.error(error)
+//     }
+//   }
+
+//   function handleScriptLoadingError() {
+//     // Обработка ошибок
+//   }
+
+//   function onSmartCaptchaLoad() {
+//     const scriptElement = document.createElement('script')
+//     scriptElement.src =
+//       'https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=onSmartCaptchaReady'
+//     scriptElement.onerror = handleScriptLoadingError
+//     document.body.appendChild(scriptElement)
+//     scriptElement.onload
+//   }
+
+//   window.onSmartCaptchaReady = onSmartCaptchaReady
+//   window.onSmartCaptchaLoad = onSmartCaptchaLoad
+// })()

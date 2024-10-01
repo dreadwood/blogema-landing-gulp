@@ -2379,4 +2379,66 @@ input[type=file].visually-hidden {
     content: none;
   }
 }
+
+.yandex-captcha {
+  scrollbar-width: none;
+  position: fixed;
+  z-index: 9;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0.052083vw solid tomato;
+  inset: 0;
+}
+.yandex-captcha::-webkit-scrollbar {
+  display: none;
+}
+.yandex-captcha.show {
+  display: flex;
+}
+
+.yandex-captcha__dialog {
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  padding-bottom: 64px;
+}
+
+.yandex-captcha__close {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  background-color: #313036;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  translate: -50% 0;
+}
+.yandex-captcha__close svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: #000000;
+}
+.yandex-captcha__close:hover, .yandex-captcha__close:focus-visible {
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+.yandex-captcha__container {
+  width: -moz-max-content;
+  width: max-content;
+  height: 100px;
+}
 /*# sourceMappingURL=style.css.map */
