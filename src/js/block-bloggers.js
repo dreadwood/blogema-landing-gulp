@@ -37,7 +37,7 @@
         throw new Error("Blogger card don't have id")
       }
 
-      // leaveVote(btn.dataset.cardBloggerBtn)
+      leaveVote(btn.dataset.cardBloggerBtn)
     })
   }
 
