@@ -3,12 +3,10 @@
   position: fixed;
   z-index: 9;
   display: none;
-  // display: flex;
   flex-direction: column;
   padding: 10px;
   overflow: scroll;
   background-color: transparentize($color-black, 0.4);
-  border: $apx-1 solid tomato;
   inset: 0;
   &.show {
     display: flex;
@@ -31,14 +29,11 @@
   height: 44px;
   margin: 0;
   padding: 0;
-  background-color: #313036;
+  background-color: $color-black-modal;
   border: 0;
   border-radius: 50%;
   cursor: pointer;
-  transition:
-    background-color 0.5s ease-in-out,
-    opacity 0.5s ease-in-out;
-  // opacity: 0.5;
+  transition: background-color 0.5s ease-in-out;
   translate: -50% 0;
   svg {
     display: block;
@@ -49,7 +44,6 @@
   &:hover,
   &:focus-visible {
     background-color: $color-white;
-    opacity: 1;
   }
 }
 .yandex-captcha__container {
