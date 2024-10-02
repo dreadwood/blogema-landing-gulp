@@ -26,10 +26,7 @@
       pagination: false,
       autoScroll: {
         speed: 1
-      },
-      wheel: true,
-      releaseWheel: true,
-      wheelMinThreshold: 1
+      }
     })
 
     splide.mount(window.splide.Extensions)
