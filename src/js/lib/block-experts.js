@@ -2,33 +2,28 @@
  * block-experts.js
  */
 ;(() => {
-  const sliderExperts = document.querySelector('.js-slider-experts')
+  const sliderExperts = document.querySelector('.js-experts-slider')
 
   document.addEventListener('DOMContentLoaded', () => {
     if (!sliderExperts) {
       return
     }
 
-    if (!window.splide) {
-      console.error("Splide lib isn't exist")
+    if (!window.Swiper) {
+      console.error("Swiper lib isn't exist")
       return
     }
 
-    if (!window.splide.Extensions) {
-      console.error("Extensions splide lib isn't exist")
-      return
-    }
-
-    const splide = new Splide('.splide', {
-      type: 'slide',
-      autoWidth: true,
-      arrows: false,
-      pagination: false,
-      autoScroll: {
-        speed: 1
+    new Swiper(sliderExperts, {
+      mousewheel: {
+        forceToAxis: true
+      },
+      grabCursor: true,
+      slidesPerView: 'auto',
+      freeMode: {
+        enabled: true,
+        sticky: true
       }
     })
-
-    splide.mount(window.splide.Extensions)
   })
 })()
