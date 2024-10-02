@@ -31,11 +31,8 @@
 }
 /* stylelint-disable declaration-no-important */
 .b-experts__track {
-  // @include hide-scroll;
-  // display: grid;
   padding-right: $apx-108 !important;
   padding-left: $apx-108 !important;
-  // overflow: scroll;
   @include mobile {
     padding-right: $apx-m-24 !important;
     padding-left: $apx-m-24 !important;
