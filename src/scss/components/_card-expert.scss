@@ -14,6 +14,7 @@
   text-transform: uppercase;
   border: $apx-1 solid $color-white;
   border-radius: $apx-18;
+  user-select: none;
   @include mobile {
     width: $apx-m-280;
     padding: $apx-m-19 $apx-m-10 $apx-m-24 $apx-m-10;
