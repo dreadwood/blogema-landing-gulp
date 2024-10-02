@@ -178,15 +178,21 @@ window.utils = {
     }
 
     const splide = new Splide('.splide', {
+      type: 'slide',
       autoWidth: true,
       arrows: false,
       pagination: false,
       autoScroll: {
         speed: 1
-      }
+      },
+      wheel: true,
+      // wheelSleep: 100,
+      releaseWheel: true,
+      wheelMinThreshold: 1
     })
 
     splide.mount(window.splide.Extensions)
+    // splide.mount()
   })
 })()
 
