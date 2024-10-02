@@ -2034,6 +2034,9 @@ input[type=file].visually-hidden {
   text-transform: uppercase;
   border: 0.052083vw solid #ffffff;
   border-radius: 0.937494vw;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media (max-width: 1023px) {
   .c-expert {
