@@ -2,9 +2,13 @@ include ../components/btn-default
 include ../elements/images
 
 mixin social-sharing({})
-  .social-sharing
+  .social-sharing.js-sharing.show
     .social-sharing__dialog
-      button.social-sharing__close(type="button" aria-label="Закрыть" )
+      button.social-sharing__close.js-sharing-close(
+        type="button"
+        aria-label="Закрыть"
+        onclick=onclick
+      )
         +svg({ name: "cross", width: 28, height: 28 })
       .social-sharing__text Расскажи друзьям о премии
       .social-sharing__container

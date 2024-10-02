@@ -6,7 +6,7 @@
 window.utils = {
   /**
    * @param {JSON} data
-   * @param {String} url
+   * @param {string} url
    * @return {Promise<Response>}
    */
   async sendData(data, url) {
