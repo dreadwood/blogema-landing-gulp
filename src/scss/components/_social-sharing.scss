@@ -1,0 +1,107 @@
+.social-sharing {
+  @include hide-scroll;
+  position: fixed;
+  z-index: 9;
+  display: none;
+  flex-direction: column;
+  padding: $apx-10;
+  overflow: scroll;
+  background-color: transparentize($color-gray-094, 0.22);
+  inset: 0;
+  &.show {
+    display: flex;
+  }
+  @include mobile {
+    padding: $apx-m-24;
+  }
+}
+.social-sharing__dialog {
+  position: relative;
+  width: 100%;
+  max-width: $apx-600;
+  margin: auto;
+  padding: $apx-60 $apx-40;
+  font-family: $font-default;
+  font-size: $apx-24;
+  line-height: $apx-34;
+  font-weight: 300;
+  text-align: center;
+  color: $color-white;
+  letter-spacing: 0.02rem;
+  background-color: $color-black;
+  border-radius: $apx-20;
+  @include mobile {
+    max-width: $apx-m-600;
+    padding: $apx-m-30 $apx-m-20;
+    font-size: $apx-m-24;
+    line-height: $apx-m-34;
+    border-radius: $apx-m-20;
+  }
+}
+.social-sharing__close {
+  @include transition(background-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: $apx-58;
+  height: $apx-58;
+  margin: 0;
+  padding: 0;
+  background-color: $color-white;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  translate: 50% -50%;
+  svg {
+    display: block;
+    width: $apx-16;
+    height: $apx-16;
+    fill: $color-black;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: $color-gray-816;
+  }
+  @include mobile {
+    width: $apx-m-40;
+    height: $apx-m-40;
+    svg {
+      width: $apx-m-16;
+      height: $apx-m-16;
+    }
+  }
+}
+.social-sharing__text {
+  margin-bottom: $apx-46;
+  @include mobile {
+    margin-bottom: $apx-m-26;
+  }
+}
+/* stylelint-disable declaration-no-important */
+.social-sharing__container {
+  .ya-share2__item {
+    &:not(:last-child) {
+      margin-right: $apx-10 !important;
+    }
+  }
+  .ya-share2__icon {
+    width: $apx-82 !important;
+    height: $apx-82 !important;
+    background-size: contain !important;
+  }
+  @include mobile {
+    .ya-share2__item {
+      &:not(:last-child) {
+        margin-right: $apx-m-10 !important;
+      }
+    }
+    .ya-share2__icon {
+      width: $apx-m-50 !important;
+      height: $apx-m-50 !important;
+    }
+  }
+}
+/* stylelint-enable declaration-no-important */
