@@ -38,7 +38,13 @@
   @include mobile {
     width: $apx-m-236;
     height: $apx-m-236;
-    mask: radial-gradient(circle $apx-m-102, transparent 100%, #ffffff 100%);
+    border-width: $apx-m-16;
+    &::before {
+      top: -$apx-m-16;
+      left: -$apx-m-16;
+      width: calc(100% + $apx-m-16 * 2);
+      height: calc(100% + $apx-m-16 * 2);
+    }
   }
 }
 .ring-pink-a {
