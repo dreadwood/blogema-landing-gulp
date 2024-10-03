@@ -8,8 +8,6 @@ mixin card-category({ it, className })
   )
     if it.color
       .gradient(class=it.color)
-    if it.image
-      +picture({ image: it.image, className: "c-category__img" })
     if it.animation
       .ring(class=it.animation)
     .c-category__top

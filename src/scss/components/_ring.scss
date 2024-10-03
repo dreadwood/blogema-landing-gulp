@@ -5,22 +5,34 @@
   place-items: center;
   width: $apx-295;
   height: $apx-295;
+  border: $apx-22 solid transparentize($color-white, 1);
   border-radius: 50%;
   opacity: 0.3;
+  transition: border-color 0.5s ease-in-out;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  mask: radial-gradient(circle $apx-126, transparent 100%, #ffffff 100%);
+  &::before {
+    content: "";
+    position: absolute;
+    top: -$apx-22;
+    left: -$apx-22;
+    display: block;
+    width: calc(100% + $apx-22 * 2);
+    height: calc(100% + $apx-22 * 2);
+    background: $gradient-pink;
+    border-radius: 50%;
+    transition: opacity 0.5s ease-in-out;
+  }
   &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    // z-index: 1;
     display: block;
     width: 100%;
     height: 100%;
-    background-color: $color-white;
-    opacity: 0;
+    background-color: $color-black;
+    border-radius: 50%;
     transition: opacity 0.5s ease-in-out;
   }
   @include mobile {
@@ -32,62 +44,67 @@
 .ring-pink-a {
   top: 50%;
   left: 50%;
-  background: $gradient-pink;
-  // transform: translate(-50%, -50%) rotate(135deg);
   rotate: -135deg;
   animation-name: ring-pink-a;
   animation-duration: 30s;
+  &::before {
+    background: $gradient-pink;
+  }
 }
 .ring-pink-b {
   top: 50%;
   left: 50%;
-  background: $gradient-pink;
-  // transform: translate(-50%, -50%) rotate(135deg);
   rotate: -135deg;
   animation-name: ring-pink-b;
   animation-duration: 10s;
+  &::before {
+    background: $gradient-pink;
+  }
 }
 .ring-pink-c {
   top: 50%;
   left: 50%;
-  background: $gradient-pink;
-  // transform: translate(-41%, -20%) rotate(135deg);
   transform: rotate(135deg);
   animation-name: ring-pink-c;
   animation-duration: 20s;
+  &::before {
+    background: $gradient-pink;
+  }
 }
 .ring-green-a {
   top: 50%;
   left: 50%;
-  background: $gradient-green;
-  // transform: translate(-2%, -21%) rotate(-45deg);
   rotate: -45deg;
   opacity: 0.5;
   animation-name: ring-green-a;
   animation-duration: 28s;
+  &::before {
+    background: $gradient-green;
+  }
 }
 .ring-green-b {
   top: 50%;
   left: 50%;
-  background: $gradient-green;
-  // transform: translate(-50%, -50%) rotate(-45deg);
   rotate: -45deg;
   opacity: 0.5;
   animation-name: ring-green-b;
   animation-duration: 15s;
+  &::before {
+    background: $gradient-green;
+  }
 }
 .ring-blue-a {
   top: 50%;
   left: 50%;
   width: $apx-318;
   height: $apx-318;
-  background: $gradient-blue;
-  // transform: translate(-1%, -81%) rotate(-45deg);
   transform: rotate(-45deg);
   opacity: 0.5;
   animation-name: ring-blue-a;
   animation-duration: 23s;
-  mask: radial-gradient(circle $apx-139, transparent 100%, #ffffff 100%);
+  &::before {
+    background: $gradient-blue;
+  }
   @include mobile {
     width: $apx-m-236;
     height: $apx-m-236;
@@ -97,21 +114,24 @@
 .ring-blue-b {
   top: 50%;
   left: 50%;
-  background: $gradient-blue;
-  // transform: translate(-2%, -21%) rotate(-45deg);
   opacity: 0.5;
   rotate: -45deg;
   animation-name: ring-blue-b;
   animation-duration: 30s;
+  &::before {
+    background: $gradient-blue;
+  }
 }
 .ring-purple-a {
   top: 50%;
   left: 50%;
-  background: $gradient-purple;
   rotate: -45deg;
   opacity: 0.5;
   animation-name: ring-purple-a;
   animation-duration: 15s;
+  &::before {
+    background: $gradient-purple;
+  }
 }
 
 // анимация
