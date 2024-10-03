@@ -1934,8 +1934,14 @@ input[type=file].visually-hidden {
 .c-category:hover .gradient, .c-category:focus-visible .gradient {
   translate: -50% -50%;
 }
+.c-category:hover .ring, .c-category:focus-visible .ring {
+  border-color: #ffffff;
+}
+.c-category:hover .ring::before, .c-category:focus-visible .ring::before {
+  opacity: 0;
+}
 .c-category:hover .ring::after, .c-category:focus-visible .ring::after {
-  opacity: 1;
+  opacity: 0;
 }
 .c-category:hover .c-category__link, .c-category:focus-visible .c-category__link {
   color: rgba(255, 255, 255, 0.8);
@@ -1947,18 +1953,6 @@ input[type=file].visually-hidden {
     border-width: 0.266667vw;
     border-radius: 4.000005vw;
   }
-}
-
-.c-category__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .c-category__top {
@@ -2189,12 +2183,24 @@ input[type=file].visually-hidden {
   place-items: center;
   width: 15.364485vw;
   height: 15.364485vw;
+  border: 1.145826vw solid rgba(255, 255, 255, 0);
   border-radius: 50%;
   opacity: 0.3;
+  transition: border-color 0.5s ease-in-out;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  -webkit-mask: radial-gradient(circle 6.562458vw, transparent 100%, #ffffff 100%);
-          mask: radial-gradient(circle 6.562458vw, transparent 100%, #ffffff 100%);
+}
+.ring::before {
+  content: "";
+  position: absolute;
+  top: -1.145826vw;
+  left: -1.145826vw;
+  display: block;
+  width: calc(100% + 2.291652vw);
+  height: calc(100% + 2.291652vw);
+  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
+  border-radius: 50%;
+  transition: opacity 0.5s ease-in-out;
 }
 .ring::after {
   content: "";
@@ -2204,8 +2210,8 @@ input[type=file].visually-hidden {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
-  opacity: 0;
+  background-color: #000000;
+  border-radius: 50%;
   transition: opacity 0.5s ease-in-out;
 }
 @media (max-width: 1023px) {
@@ -2220,48 +2226,58 @@ input[type=file].visually-hidden {
 .ring-pink-a {
   top: 50%;
   left: 50%;
-  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
   rotate: -135deg;
   animation-name: ring-pink-a;
   animation-duration: 30s;
+}
+.ring-pink-a::before {
+  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
 }
 
 .ring-pink-b {
   top: 50%;
   left: 50%;
-  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
   rotate: -135deg;
   animation-name: ring-pink-b;
   animation-duration: 10s;
+}
+.ring-pink-b::before {
+  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
 }
 
 .ring-pink-c {
   top: 50%;
   left: 50%;
-  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
   transform: rotate(135deg);
   animation-name: ring-pink-c;
   animation-duration: 20s;
+}
+.ring-pink-c::before {
+  background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
 }
 
 .ring-green-a {
   top: 50%;
   left: 50%;
-  background: linear-gradient(90deg, #6bc59b 0%, #394058 100%);
   rotate: -45deg;
   opacity: 0.5;
   animation-name: ring-green-a;
   animation-duration: 28s;
 }
+.ring-green-a::before {
+  background: linear-gradient(90deg, #6bc59b 0%, #394058 100%);
+}
 
 .ring-green-b {
   top: 50%;
   left: 50%;
-  background: linear-gradient(90deg, #6bc59b 0%, #394058 100%);
   rotate: -45deg;
   opacity: 0.5;
   animation-name: ring-green-b;
   animation-duration: 15s;
+}
+.ring-green-b::before {
+  background: linear-gradient(90deg, #6bc59b 0%, #394058 100%);
 }
 
 .ring-blue-a {
@@ -2269,13 +2285,13 @@ input[type=file].visually-hidden {
   left: 50%;
   width: 16.562394vw;
   height: 16.562394vw;
-  background: linear-gradient(90deg, #1e3ed7 0%, #02061b 100%);
   transform: rotate(-45deg);
   opacity: 0.5;
   animation-name: ring-blue-a;
   animation-duration: 23s;
-  -webkit-mask: radial-gradient(circle 7.239537vw, transparent 100%, #ffffff 100%);
-          mask: radial-gradient(circle 7.239537vw, transparent 100%, #ffffff 100%);
+}
+.ring-blue-a::before {
+  background: linear-gradient(90deg, #1e3ed7 0%, #02061b 100%);
 }
 @media (max-width: 1023px) {
   .ring-blue-a {
@@ -2289,21 +2305,25 @@ input[type=file].visually-hidden {
 .ring-blue-b {
   top: 50%;
   left: 50%;
-  background: linear-gradient(90deg, #1e3ed7 0%, #02061b 100%);
   opacity: 0.5;
   rotate: -45deg;
   animation-name: ring-blue-b;
   animation-duration: 30s;
 }
+.ring-blue-b::before {
+  background: linear-gradient(90deg, #1e3ed7 0%, #02061b 100%);
+}
 
 .ring-purple-a {
   top: 50%;
   left: 50%;
-  background: linear-gradient(90deg, #b882f3 0%, #4c4482 100%);
   rotate: -45deg;
   opacity: 0.5;
   animation-name: ring-purple-a;
   animation-duration: 15s;
+}
+.ring-purple-a::before {
+  background: linear-gradient(90deg, #b882f3 0%, #4c4482 100%);
 }
 
 @keyframes ring-pink-a {
