@@ -31,7 +31,6 @@
   height: $apx-238;
   border-radius: 50%;
   opacity: 0.5;
-  mask: radial-gradient(circle $apx-103, transparent 100%, $color-white 100%);
   &.pink {
     background: $gradient-pink;
   }
@@ -47,18 +46,13 @@
   @include mobile {
     width: $apx-m-164;
     height: $apx-m-164;
-    mask: radial-gradient(
-      circle $apx-m-70,
-      transparent 100%,
-      $color-white 100%
-    );
   }
 }
 .c-expert__photo {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: -1;
+  z-index: 1;
   display: block;
   width: $apx-206;
   height: $apx-206;
