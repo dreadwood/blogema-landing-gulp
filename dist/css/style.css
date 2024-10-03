@@ -1643,22 +1643,17 @@ input[type=file].visually-hidden {
   position: absolute;
   top: 0;
   left: 50%;
-  z-index: 2;
   display: block;
   width: 12.395754vw;
   height: 12.395754vw;
   border-radius: 50%;
   transform: translateX(-50%);
   opacity: 0.5;
-  -webkit-mask: radial-gradient(circle 5.104134vw, transparent 100%, #ffffff 100%);
-          mask: radial-gradient(circle 5.104134vw, transparent 100%, #ffffff 100%);
 }
 @media (max-width: 1023px) {
   .c-blogger__photo-border {
     width: 50.66673vw;
     height: 50.66673vw;
-    -webkit-mask: radial-gradient(circle 21.066693vw, transparent 100%, #ffffff 100%);
-            mask: radial-gradient(circle 21.066693vw, transparent 100%, #ffffff 100%);
   }
 }
 
@@ -2051,8 +2046,6 @@ input[type=file].visually-hidden {
   height: 12.395754vw;
   border-radius: 50%;
   opacity: 0.5;
-  -webkit-mask: radial-gradient(circle 5.364549vw, transparent 100%, #ffffff 100%);
-          mask: radial-gradient(circle 5.364549vw, transparent 100%, #ffffff 100%);
 }
 .c-expert__photo-border.pink {
   background: linear-gradient(90deg, #ed90c8 0%, #ffaf88 100%);
@@ -2070,8 +2063,6 @@ input[type=file].visually-hidden {
   .c-expert__photo-border {
     width: 43.733388vw;
     height: 43.733388vw;
-    -webkit-mask: radial-gradient(circle 18.66669vw, transparent 100%, #ffffff 100%);
-            mask: radial-gradient(circle 18.66669vw, transparent 100%, #ffffff 100%);
   }
 }
 
@@ -2079,7 +2070,7 @@ input[type=file].visually-hidden {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: -1;
+  z-index: 1;
   display: block;
   width: 10.729098vw;
   height: 10.729098vw;
@@ -2218,8 +2209,13 @@ input[type=file].visually-hidden {
   .ring {
     width: 62.933412vw;
     height: 62.933412vw;
-    -webkit-mask: radial-gradient(circle 27.200034vw, transparent 100%, #ffffff 100%);
-            mask: radial-gradient(circle 27.200034vw, transparent 100%, #ffffff 100%);
+    border-width: 4.266672vw;
+  }
+  .ring::before {
+    top: -4.266672vw;
+    left: -4.266672vw;
+    width: calc(100% + 8.533344vw);
+    height: calc(100% + 8.533344vw);
   }
 }
 
