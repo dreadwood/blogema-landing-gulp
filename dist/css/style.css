@@ -355,10 +355,12 @@ input[type=file].visually-hidden {
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
   transition-property: background-color;
+  position: relative;
   display: block;
   width: 100%;
   margin: 0;
   padding: 1.249992vw;
+  overflow: hidden;
   font-family: "KazukiReiwa", serif;
   font-size: 1.249992vw;
   line-height: 1.56249vw;
@@ -368,14 +370,59 @@ input[type=file].visually-hidden {
   background-color: #ffffff;
   border: 0;
 }
-.f-btn:hover, .f-btn:focus-visible {
-  background-color: #d0d0d0;
+.f-btn span {
+  position: relative;
+  z-index: 1;
+}
+.f-btn::before, .f-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 1.718739vw;
+  height: 7.499952vw;
+  background: linear-gradient(150.76deg, #81aac5 32.48%, #3b3740 69.76%, #000000 108.57%);
+  opacity: 0;
+  filter: blur(0.260415vw);
+  transition: left 0.5s ease-in-out, rotate 0.5s ease-in-out;
+  translate: -50% -50%;
+}
+.f-btn::before {
+  left: -1.718739vw;
+  opacity: 0;
+  rotate: 0deg;
+}
+.f-btn::after {
+  left: calc(100% + 1.718739vw);
+  opacity: 0.5;
+  rotate: 20deg;
+}
+.f-btn:hover::before, .f-btn:focus-visible::before {
+  left: 50%;
+  opacity: 0.5;
+  rotate: 41deg;
+}
+.f-btn:hover::after, .f-btn:focus-visible::after {
+  left: 50%;
+  opacity: 0;
+  rotate: 41deg;
 }
 @media (max-width: 1023px) {
   .f-btn {
     padding: 5.33334vw 5.33334vw;
     font-size: 5.33334vw;
     line-height: 6.400008vw;
+  }
+  .f-btn::before, .f-btn::after {
+    width: 8.800011vw;
+    height: 38.400048vw;
+    filter: blur(1.333335vw);
+  }
+  .f-btn::before {
+    left: -8.800011vw;
+  }
+  .f-btn::after {
+    left: calc(100% + 8.800011vw);
   }
 }
 
@@ -550,31 +597,28 @@ input[type=file].visually-hidden {
   transition-property: opacity;
   content: "";
   position: absolute;
+  top: 50%;
+  left: 50%;
   display: block;
   background-color: #ffffff;
   border-radius: 0.104166vw;
+  translate: -50% -50%;
 }
-.f-field-group__btn.plus::before {
-  top: 50%;
-  left: 50%;
+.f-field-group__btn::before {
   width: 1.302075vw;
   height: 0.104166vw;
-  translate: -50% -50%;
 }
-.f-field-group__btn.plus::after {
-  top: 50%;
-  left: 50%;
+.f-field-group__btn::after {
   width: 0.104166vw;
   height: 1.302075vw;
-  translate: -50% -50%;
 }
 .f-field-group__btn.minus::before {
-  top: 50%;
-  left: 50%;
   width: 1.145826vw;
   height: 0.104166vw;
-  translate: -50% -50%;
   scale: 0.7;
+}
+.f-field-group__btn.minus::after {
+  content: none;
 }
 .f-field-group__btn:hover::before, .f-field-group__btn:hover::after, .f-field-group__btn:focus-visible::before, .f-field-group__btn:focus-visible::after {
   opacity: 0.5;
@@ -587,11 +631,11 @@ input[type=file].visually-hidden {
   .f-field-group__btn::before, .f-field-group__btn::after {
     border-radius: 0.533334vw;
   }
-  .f-field-group__btn.plus::before {
+  .f-field-group__btn::before {
     width: 5.33334vw;
     height: 0.533334vw;
   }
-  .f-field-group__btn.plus::after {
+  .f-field-group__btn::after {
     width: 0.533334vw;
     height: 5.33334vw;
   }
@@ -746,6 +790,7 @@ input[type=file].visually-hidden {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  resize: none;
 }
 .f-textarea::-webkit-scrollbar {
   display: none;
@@ -2210,10 +2255,10 @@ input[type=file].visually-hidden {
   top: 50%;
   display: block;
   width: 1.718739vw;
-  height: 144px;
+  height: 7.499952vw;
   background: linear-gradient(150.76deg, #81aac5 32.48%, #3b3740 69.76%, #000000 108.57%);
   opacity: 0;
-  filter: blur(5px);
+  filter: blur(0.260415vw);
   transition: left 0.5s ease-in-out, rotate 0.5s ease-in-out;
   translate: -50% -50%;
 }
@@ -2241,15 +2286,9 @@ input[type=file].visually-hidden {
   padding: 1.145826vw 2.499984vw;
   border: 0.104166vw solid #ffffff;
 }
-.btn-default.ghost::before, .btn-default.ghost::after {
-  background: linear-gradient(150.76deg, #81aac5 32.48%, #3b3740 69.76%, #000000 108.57%);
-}
 .btn-default.white {
   color: #000000;
   background-color: #ffffff;
-}
-.btn-default.white::before, .btn-default.white::after {
-  background: linear-gradient(150.76deg, #81aac5 32.48%, #3b3740 69.76%, #000000 108.57%);
 }
 @media (max-width: 1023px) {
   .btn-default {
@@ -2258,6 +2297,17 @@ input[type=file].visually-hidden {
     font-size: 4.800006vw;
     line-height: 5.866674vw;
     border-radius: 10.66668vw;
+  }
+  .btn-default::before, .btn-default::after {
+    width: 8.800011vw;
+    height: 38.400048vw;
+    filter: blur(1.333335vw);
+  }
+  .btn-default::before {
+    left: -8.800011vw;
+  }
+  .btn-default::after {
+    left: calc(100% + 8.800011vw);
   }
   .btn-default.ghost {
     padding: 4.800006vw 7.733343vw;

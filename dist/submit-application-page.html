@@ -71,20 +71,16 @@
           <div class="b-application__el js-el">
             <label class="f-label" for="applicationDescription"><span class="f-label__text">Краткое описание проекта*</span>
             </label>
-            <textarea class="f-textarea js-el-field" id="applicationDescription" maxlength="512" required="required" placeholder="Пример заполнения текстом"></textarea>
+            <textarea class="f-textarea js-el-field" id="applicationDescription" name="description" maxlength="512" required="required" placeholder="Пример заполнения текстом"></textarea>
             <div class="f-sub-element js-el-maxlength"></div>
           </div>
           <div class="b-application__el">
             <label class="f-label" for="applicationPresentation"><span class="f-label__text">Презентация*</span><span class="f-label__subtext">ссылка на презентацию в формате pdf</span>
             </label>
-            <div class="f-field-group">
-              <div class="f-field-group__el">
-                <input class="f-field" type="text"/>
-                <button class="f-field-group__btn plus" type="submit"></button>
-              </div>
-              <div class="f-field-group__el">
-                <input class="f-field" type="text"/>
-                <button class="f-field-group__btn minus" type="submit"></button>
+            <div class="f-field-group js-field-group">
+              <div class="f-field-group__el js-field-group-example">
+                <input class="f-field js-field-group-field" type="text" id="applicationPresentation" name="presentation" required="required" placeholder="Введите url"/>
+                <button class="f-field-group__btn js-field-group-btn" type="button"></button>
               </div>
             </div>
           </div>
@@ -112,7 +108,7 @@
               </label>
             </div>
           </div>
-          <button class="f-btn" type="submit">Отправить заявку</button>
+          <button class="f-btn" type="submit"><span>Отправить заявку</span></button>
         </form>
       </section>
       <section class="b-faq">
