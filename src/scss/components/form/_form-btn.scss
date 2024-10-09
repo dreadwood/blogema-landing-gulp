@@ -1,0 +1,24 @@
+.f-btn {
+  @include transition(background-color);
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: $apx-24;
+  font-family: $font-title;
+  font-size: $apx-24;
+  line-height: $apx-30;
+  font-weight: 400;
+  color: $color-black;
+  text-transform: uppercase;
+  background-color: $color-white;
+  border: 0;
+  &:hover,
+  &:focus-visible {
+    background-color: $color-gray-816;
+  }
+  @include mobile {
+    padding: $apx-m-20 $apx-m-20;
+    font-size: $apx-m-20;
+    line-height: $apx-m-24;
+  }
+}

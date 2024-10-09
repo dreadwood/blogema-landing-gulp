@@ -1,0 +1,8 @@
+mixin form-textarea({ value, name, id, isRequired, placeholder, className })
+  textarea.f-textarea(
+    id=id
+    name=name
+    required=isRequired
+    placeholder=placeholder
+    class=className
+  )=value

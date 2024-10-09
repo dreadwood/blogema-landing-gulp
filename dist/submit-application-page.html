@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Блогема. Премия блогеров и инфлюенсоров</title>
+    <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml"/>
+    <link rel="icon" href="/favicon/favicon.png" type="image/png"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <script src="https://yastatic.net/share2/share.js"></script>
+    <link rel="stylesheet" href="/css/style.css"/>
+  </head>
+  <body>
+    <div class="b-backgroung">
+      <picture>
+        <source type="image/avif" srcset="/img/submit-application.avif"/>
+        <source type="image/webp" srcset="/img/submit-application.webp"/><img class="b-backgroung__img desktop" src="/img/submit-application.jpg"/>
+      </picture>
+      <picture>
+        <source type="image/avif" srcset=".avif"/>
+        <source type="image/webp" srcset=".webp"/><img class="b-backgroung__img mobile" src=""/>
+      </picture>
+    </div>
+    <header class="b-header js-header">
+      <div class="b-header__content"><a class="b-header__logo" href="/">
+          <svg width="88" height="52">
+            <use xlink:href="img/sprite.svg#logo-blogema-header"></use>
+          </svg></a>
+        <nav class="b-header__menu js-menu">
+          <ul class="b-header__list">
+            <li><a class="b-header__link js-link" href="#manifest">
+                <div class="b-header__link-text">О премии</div></a></li>
+            <li><a class="b-header__link js-link" href="#categories">
+                <div class="b-header__link-text">Номинации</div></a></li>
+            <li><a class="b-header__link js-link" href="#">
+                <div class="b-header__link-text">Прямая трансляция</div></a></li>
+          </ul>
+        </nav>
+        <button class="b-header__burger js-burger"></button>
+      </div>
+    </header>
+    <main>
+      <section class="b-hero-category">
+        <svg class="b-hero-category__star mobile">
+          <use xlink:href="img/sprite.svg#start"></use>
+        </svg>
+        <h1 class="b-hero-category__title desktop">B2B номинация</h1>
+        <h1 class="b-hero-category__title mobile">B2B номинация</h1>
+        <div class="b-hero-category__content">
+          <svg class="b-hero-category__star desktop">
+            <use xlink:href="img/sprite.svg#start"></use>
+          </svg>
+          <div><span class="b-hero-category__slogan">Описание</span><span class="b-hero-category__text">Номинация призвана отметить креативные проекты продвижения брендов с интеграцией блогеров, вызвавшие обсуждение маркетингового сообщества в 2024 году. Это могут быть нестандартные рекламные решения, уникальные способы бренд-активаций, вирусная реклама и т.д.</span></div>
+        </div>
+      </section>
+      <section class="b-application">
+        <h2 class="b-application__title">Подать заявку</h2>
+        <div class="b-application__subtitle">Сроки подачи заявки до 20 октября 2024 года</div>
+        <form class="b-application__form">
+          <div class="b-application__el">
+            <label class="f-label" for="applicationCompany"><span class="f-label__text">Наименование компании*</span>
+            </label>
+            <input class="f-field" type="text" id="applicationCompany" name="company" required="required" placeholder="Пример заполнения текстом"/>
+          </div>
+          <div class="b-application__el">
+            <label class="f-label" for="applicationProject"><span class="f-label__text">Название проекта/кейс*</span>
+            </label>
+            <input class="f-field" type="text" id="applicationProject" name="project" required="required" placeholder="Пример заполнения текстом"/>
+          </div>
+          <div class="b-application__el">
+            <label class="f-label" for="applicationDescription"><span class="f-label__text">Краткое описание проекта*</span>
+            </label>
+            <textarea class="f-textarea" id="applicationDescription" required="required" placeholder="Пример заполнения текстом"></textarea>
+            <div class="f-sub-element">осталось 512 символов</div>
+          </div>
+          <div class="b-application__el">
+            <label class="f-label" for="applicationPresentation"><span class="f-label__text">Презентация*</span><span class="f-label__subtext">ссылка на презентацию в формате pdf</span>
+            </label>
+            <div class="f-field-group">
+              <div class="f-field-group__el">
+                <input class="f-field" type="text"/>
+                <button class="f-field-group__btn plus" type="submit"></button>
+              </div>
+              <div class="f-field-group__el">
+                <input class="f-field" type="text"/>
+                <button class="f-field-group__btn minus" type="submit"></button>
+              </div>
+            </div>
+          </div>
+          <div class="b-application__el">
+            <label class="f-label" for="applicationCompany"><span class="f-label__text">Ссылка на видео</span>
+            </label>
+            <input class="f-field" type="text" id="applicationCompany" name="company" placeholder="Пример заполнения текстом"/>
+          </div>
+          <div class="b-application__el">
+            <label class="f-label" for="applicationCompany"><span class="f-label__text">Наименование компании*</span><span class="f-label__subtext">Email /телефон/ник в Telegram</span>
+            </label>
+            <input class="f-field" type="text" id="applicationCompany" name="company" required="required" placeholder="Пример заполнения текстом"/>
+            <div class="f-sub-element">осталось 256 символов</div>
+          </div>
+          <div class="b-application__el">
+            <div class="f-captcha b-application__captcha">
+              <input class="visually-hidden" type="checkbox" id="captcha" name="captcha" required="required"/>
+              <label class="f-captcha__label" for="captcha">
+                <div class="f-captcha__icon">
+                  <svg width="16" height="16">
+                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                  </svg>
+                </div>
+                <div class="f-captcha__text">yandex.capatcha</div>
+              </label>
+            </div>
+          </div>
+          <div class="b-application__el">
+            <div class="f-checkbox b-application__checkbox">
+              <input class="visually-hidden" type="checkbox" id="agree" name="agree" required="required"/>
+              <label class="f-checkbox__label" for="agree">
+                <div class="f-checkbox__icon">
+                  <svg width="16" height="16">
+                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                  </svg>
+                </div>
+                <div class="f-checkbox__text">Нажимая на кнопку «Отправить заявку» вы даёте соглашение на сбор и обработку персональных данных</div>
+              </label>
+            </div>
+          </div>
+          <button class="f-btn" type="submit">Отправить заявку</button>
+        </form>
+      </section>
+      <section class="b-faq">
+        <div class="b-faq__wrp">
+          <h2 class="b-faq__title">FAQ</h2>
+          <div class="b-faq__list">
+            <div class="accordion js-accordion">
+              <button class="accordion__btn js-accordion-btn">Как принять участие в премии?
+                <div class="accordion__icon"></div>
+              </button>
+              <div class="accordion__content js-accordion-content">
+                <div class="accordion__body">
+                  <p>С 8 по 20 октября идет принем заявок на сайте.</p>
+                  <p>С 20 по 22 октября Экспертный комитет отбирает проекты в шорт-лист номинации.</p>
+                  <p>С 22 октября по 7 ноября Жюри отбирает победителей номинации.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion js-accordion">
+              <button class="accordion__btn js-accordion-btn">Какие критерии отбора проектов?
+                <div class="accordion__icon"></div>
+              </button>
+              <div class="accordion__content js-accordion-content">
+                <div class="accordion__body">
+                  <p>С 8 по 20 октября идет принем заявок на сайте.</p>
+                  <p>С 20 по 22 октября Экспертный комитет отбирает проекты в шорт-лист номинации.</p>
+                  <p>С 22 октября по 7 ноября Жюри отбирает победителей номинации.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion js-accordion">
+              <button class="accordion__btn js-accordion-btn">Какие сроки рассмотрения заявок?
+                <div class="accordion__icon"></div>
+              </button>
+              <div class="accordion__content js-accordion-content">
+                <div class="accordion__body">
+                  <p>С 8 по 20 октября идет принем заявок на сайте.</p>
+                  <p>С 20 по 22 октября Экспертный комитет отбирает проекты в шорт-лист номинации.</p>
+                  <p>С 22 октября по 7 ноября Жюри отбирает победителей номинации.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="b-footer">
+      <div class="b-footer__top">
+        <svg class="b-footer__logo" width="337" height="60">
+          <use xlink:href="img/sprite.svg#logo-blogema-footer"></use>
+        </svg>
+        <div class="b-footer__content">
+          <div class="b-footer__col">
+            <div class="b-footer__col-title">Быстрые ссылки</div>
+            <ul class="b-footer__list">
+              <li><a class="b-footer__link" href="#categories">Номинации</a></li>
+              <li><a class="b-footer__link" href="#stages">Этапы голосования</a></li>
+              <li><a class="b-footer__link" href="#sponsors">Спонсоры</a></li>
+            </ul>
+          </div>
+          <div class="b-footer__col">
+            <div class="b-footer__col-title">Разделы</div>
+            <nav>
+              <ul class="b-footer__list">
+                <li><a class="b-footer__link" href="#manifest">О премии</a></li>
+                <li><a class="b-footer__link" href="#">Номинации</a></li>
+                <li><a class="b-footer__link" href="#">Прямая трансляция</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="b-footer__copywriting">БЛОГЕМА©2024. Все права защищены.</div>
+    </footer>
+    <div class="yandex-captcha js-captcha">
+      <div class="yandex-captcha__dialog">
+        <button class="yandex-captcha__close js-captcha-close" type="button" aria-label="Закрыть">
+          <svg width="28" height="28">
+            <use xlink:href="img/sprite.svg#cross"></use>
+          </svg>
+        </button>
+        <div class="yandex-captcha__container js-captcha-container"></div>
+      </div>
+    </div>
+    <div class="social-sharing js-sharing">
+      <div class="social-sharing__dialog">
+        <button class="social-sharing__close js-sharing-close" type="button" aria-label="Закрыть">
+          <svg width="28" height="28">
+            <use xlink:href="img/sprite.svg#cross"></use>
+          </svg>
+        </button>
+        <div class="social-sharing__text">Расскажи друзьям о премии</div>
+        <div class="social-sharing__container">
+          <div class="ya-share2" data-curtain="data-curtain" data-size="l" data-shape="round" data-services="vkontakte,twitter,telegram"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/lib.js"></script>
+  </body>
+</html>

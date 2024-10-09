@@ -1,0 +1,83 @@
+include /components/form-label
+include /components/form-field
+include /components/form-sub-element
+include /components/form-textarea
+include /components/form-field-group
+include /components/form-captcha
+include /components/form-checkbox
+include /components/form-btn
+
+mixin block-application({})
+  section.b-application
+    h2.b-application__title Подать заявку
+    .b-application__subtitle Сроки подачи заявки до 20 октября 2024 года
+    form.b-application__form
+      .b-application__el
+        +form-label({ id: "applicationCompany", text: "Наименование компании*" })
+        +form-field({
+          name: "company",
+          id: "applicationCompany",
+          isRequired: true,
+          placeholder: "Пример заполнения текстом"
+        })
+      .b-application__el
+        +form-label({ id: "applicationProject", text: "Название проекта/кейс*" })
+        +form-field({
+          name: "project",
+          id: "applicationProject",
+          isRequired: true,
+          placeholder: "Пример заполнения текстом"
+        })
+      .b-application__el
+        +form-label({ id: "applicationDescription", text: "Краткое описание проекта*" })
+        +form-textarea({
+          id: "applicationDescription",
+          text: "Краткое описание проекта*",
+          isRequired: true,
+          placeholder: "Пример заполнения текстом"
+        })
+        +form-sub-element({ text: "осталось 512 символов" })
+      .b-application__el
+        +form-label({
+          id: "applicationPresentation",
+          text: "Презентация*",
+          subtext: "ссылка на презентацию в формате pdf"
+        })
+        +form-field-group({})
+      .b-application__el
+        +form-label({ id: "applicationCompany", text: "Ссылка на видео" })
+        +form-field({
+          name: "company",
+          id: "applicationCompany",
+          placeholder: "Пример заполнения текстом"
+        })
+      .b-application__el
+        +form-label({
+          id: "applicationCompany",
+          text: "Наименование компании*",
+          subtext: "Email /телефон/ник в Telegram"
+        })
+        +form-field({
+          name: "company",
+          id: "applicationCompany",
+          isRequired: true,
+          placeholder: "Пример заполнения текстом"
+        })
+        +form-sub-element({ text: "осталось 256 символов" })
+      .b-application__el
+        +form-captcha({
+          text: "yandex.capatcha",
+          name: "captcha",
+          id: "captcha",
+          className: "b-application__captcha",
+          isRequired: true
+        })
+      .b-application__el
+        +form-checkbox({
+          text: "Нажимая на кнопку «Отправить заявку» вы даёте соглашение на сбор и обработку персональных данных",
+          name: "agree",
+          id: "agree",
+          className: "b-application__checkbox",
+          isRequired: true
+        })
+      +form-btn({ text: "Отправить заявку" })

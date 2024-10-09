@@ -1,0 +1,65 @@
+.b-application {
+  max-width: $apx-1000;
+  margin: 0 auto;
+  padding: 0 $apx-108;
+  color: $color-white;
+  @include mobile {
+    max-width: none;
+    padding: $apx-m-60 $apx-m-24 0 $apx-m-24;
+  }
+}
+.b-application__title {
+  margin: 0;
+  font-family: $font-title;
+  font-size: $apx-72;
+  line-height: $apx-86;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: $apx-m-32;
+    line-height: $apx-m-40;
+  }
+}
+.b-application__subtitle {
+  margin-top: $apx-4;
+  font-family: $font-default;
+  font-size: $apx-20;
+  line-height: $apx-24;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.02em;
+  @include mobile {
+    margin-top: $apx-m-4;
+    font-size: $apx-m-16;
+    line-height: $apx-m-20;
+  }
+}
+.b-application__form {
+  display: block;
+  width: $apx-712;
+  margin: $apx-82 auto 0 auto;
+  @include mobile {
+    width: 100%;
+    margin-top: $apx-m-40;
+  }
+}
+.b-application__el {
+  display: grid;
+  gap: $apx-9;
+  margin-bottom: $apx-35; // TODO: 2024-10-09 /
+  @include mobile {
+    gap: $apx-m-9;
+    margin-bottom: $apx-m-35; // TODO: 2024-10-09 /
+  }
+}
+.b-application__captcha {
+  width: max-content;
+  margin: 0 auto;
+}
+.b-application__checkbox {
+  padding: 0 $apx-40;
+  @include mobile {
+    padding: 0;
+  }
+}

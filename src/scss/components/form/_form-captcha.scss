@@ -1,0 +1,57 @@
+.f-captcha {
+  input:checked + .f-captcha__label {
+    color: $color-white;
+  }
+  input:checked + .f-captcha__label svg {
+    opacity: 1;
+  }
+}
+.f-captcha__label {
+  @include transition(color);
+  display: flex;
+  align-items: center;
+  column-gap: $apx-64;
+  font-family: $font-default;
+  font-size: $apx-32;
+  line-height: $apx-38;
+  font-weight: 300;
+  text-align: left;
+  color: transparentize($color-white, 0.6);
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    color: transparentize($color-white, 0.2);
+  }
+  @include mobile {
+    column-gap: $apx-m-10;
+    font-size: $apx-m-32;
+    line-height: $apx-m-38;
+  }
+}
+.f-captcha__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: $apx-32;
+  height: $apx-32;
+  border: $apx-1 solid $color-white;
+  svg {
+    @include transition(opacity);
+    display: block;
+    width: $apx-24;
+    height: $apx-24;
+    opacity: 0;
+    fill: $color-white;
+  }
+  @include mobile {
+    width: $apx-m-24;
+    height: $apx-m-24;
+    border-width: $apx-m-1;
+    svg {
+      width: $apx-m-20;
+      height: $apx-m-20;
+    }
+  }
+}

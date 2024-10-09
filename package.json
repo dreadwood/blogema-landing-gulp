@@ -4,6 +4,7 @@
     "dev": "gulp dev",
     "build": "gulp build",
     "image": "gulp image",
+    "sprite": "gulp spriteBuild",
     "stylelint": "stylelint \"src/scss/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/scss/**/*.scss\" --fix",
     "gh-pages": "push-dir --dir=dist --branch=gh-pages",

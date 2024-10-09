@@ -1,0 +1,30 @@
+.f-textarea {
+  @include transition(color, border-color);
+  @include hide-scroll;
+  display: block;
+  width: 100%;
+  height: $apx-280;
+  padding: $apx-24;
+  font-family: $font-default;
+  font-size: $apx-16;
+  line-height: $apx-20;
+  font-weight: 300;
+  text-align: left;
+  color: $color-white;
+  background-color: transparent;
+  border: $apx-1 solid $color-white;
+  outline: none;
+  appearance: none;
+  &::placeholder {
+    font: inherit;
+    color: $color-white;
+    opacity: 0.7;
+  }
+  @include mobile {
+    height: $apx-m-180;
+    padding: $apx-m-14;
+    font-size: $apx-m-16;
+    line-height: $apx-m-20;
+    border-width: $apx-m-1;
+  }
+}

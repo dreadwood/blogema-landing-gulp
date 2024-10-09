@@ -1,0 +1,91 @@
+.f-field-group {
+  display: grid;
+  gap: $apx-17;
+  @include mobile {
+    gap: $apx-m-17;
+  }
+}
+.f-field-group__el {
+  display: flex;
+  align-items: center;
+  gap: $apx-10;
+  @include mobile {
+    gap: $apx-m-10;
+  }
+}
+.f-field-group__btn {
+  position: relative;
+  flex-shrink: 0;
+  width: $apx-40;
+  height: $apx-40;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  &::before,
+  &::after {
+    @include transition(opacity);
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $color-white;
+    border-radius: $apx-2;
+  }
+  &.plus {
+    &::before {
+      top: 50%;
+      left: 50%;
+      width: $apx-25;
+      height: $apx-2;
+      translate: -50% -50%;
+    }
+    &::after {
+      top: 50%;
+      left: 50%;
+      width: $apx-2;
+      height: $apx-25;
+      translate: -50% -50%;
+    }
+  }
+  &.minus {
+    &::before {
+      top: 50%;
+      left: 50%;
+      width: $apx-22;
+      height: $apx-2;
+      translate: -50% -50%;
+      scale: 0.7;
+    }
+  }
+  &:hover,
+  &:focus-visible {
+    &::before,
+    &::after {
+      opacity: 0.5;
+    }
+  }
+  @include mobile {
+    width: $apx-m-30;
+    height: $apx-m-30;
+    &::before,
+    &::after {
+      border-radius: $apx-m-2;
+    }
+    &.plus {
+      &::before {
+        width: $apx-m-20;
+        height: $apx-m-2;
+      }
+      &::after {
+        width: $apx-m-2;
+        height: $apx-m-20;
+      }
+    }
+    &.minus {
+      &::before {
+        width: $apx-m-18;
+        height: $apx-m-2;
+      }
+    }
+  }
+}

@@ -120,8 +120,9 @@ const jsVendor = () => {
 
 const html = () => {
   return gulp
-    .src('src/pug/pages/*.pug')
-    .pipe(pug({ pretty: true }))
+    .src('src/pug/pages/**/*.pug')
+    .pipe(plumber())
+    .pipe(pug({ pretty: true, basedir: 'src/pug' }))
     .pipe(gulp.dest('dist'))
 }
 
@@ -158,5 +159,6 @@ const common = gulp.series(
 )
 
 export const image = gulp.series(webp, avif)
+export const spriteBuild = sprite
 export const build = gulp.series(common, image)
 export const dev = gulp.series(common, server)

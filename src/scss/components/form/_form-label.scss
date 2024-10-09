@@ -1,0 +1,32 @@
+.f-label {
+  display: block;
+  font-family: $font-title;
+  font-size: $apx-20;
+  line-height: $apx-24;
+  font-weight: 400;
+  color: $color-white;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: $apx-m-20;
+    line-height: $apx-m-24;
+  }
+}
+.f-label__text {
+  display: block;
+}
+.f-label__subtext {
+  display: block;
+  margin-top: $apx-2;
+  font-family: $font-default;
+  font-size: $apx-14;
+  line-height: $apx-17;
+  font-weight: 300;
+  color: $color-white;
+  letter-spacing: -0.02em;
+  opacity: 0.4;
+  @include mobile {
+    margin-top: $apx-m-2;
+    font-size: $apx-m-14;
+    line-height: $apx-m-17;
+  }
+}

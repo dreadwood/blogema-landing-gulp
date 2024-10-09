@@ -1,0 +1,10 @@
+include /components/accordion
+
+mixin block-faq({})
+  section.b-faq
+    .b-faq__wrp
+      h2.b-faq__title FAQ
+      .b-faq__list
+        +accordion({ title: "Как принять участие в премии?" })
+        +accordion({ title: "Какие критерии отбора проектов?" })
+        +accordion({ title: "Какие сроки рассмотрения заявок?" })

@@ -1,0 +1,11 @@
+include /components/form-field
+
+mixin form-field-group({})
+  .f-field-group
+    .f-field-group__el
+      +form-field({})
+      button.f-field-group__btn.plus(type="submit")
+    .f-field-group__el
+      +form-field({})
+      button.f-field-group__btn.minus(type="submit")
+

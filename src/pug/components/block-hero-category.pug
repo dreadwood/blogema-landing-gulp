@@ -1,6 +1,6 @@
 include ../elements/images
 
-mixin block-hero-category({ title, titleMobile, className })
+mixin block-hero-category({ title, titleMobile, subtitle, text, className })
   section.b-hero-category(class=className)
     +svg({ name: "start", className: "b-hero-category__star mobile" })
     h1.b-hero-category__title.desktop !{title}
@@ -8,5 +8,5 @@ mixin block-hero-category({ title, titleMobile, className })
     .b-hero-category__content
       +svg({ name: "start", className: "b-hero-category__star desktop" })
       div
-        span.b-hero-category__slogan Номинация призвана отметить талантливых креаторов контента
-        span.b-hero-category__text которые оказали значимое влияние на цифровое сообщество и внесли существенный вклад в сферу инфлюенс-маркетинга.
+        span.b-hero-category__slogan=(subtitle || "Номинация призвана отметить талантливых креаторов контента")
+        span.b-hero-category__text=(text || "которые оказали значимое влияние на цифровое сообщество и внесли существенный вклад в сферу инфлюенс-маркетинга.")
