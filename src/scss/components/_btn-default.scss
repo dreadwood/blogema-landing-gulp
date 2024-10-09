@@ -4,12 +4,6 @@ $ghost-gradiend: linear-gradient(
   #3b3740 69.76%,
   #000000 108.57%
 );
-$white-gradiend: linear-gradient(
-  150.76deg,
-  #81aac5 32.48%,
-  #3b3740 69.76%,
-  #000000 108.57%
-);
 .btn-default {
   position: relative;
   display: block;
@@ -36,10 +30,10 @@ $white-gradiend: linear-gradient(
     top: 50%;
     display: block;
     width: $apx-33;
-    height: 144px;
-    background: $ghost-gradiend;
+    height: $apx-144;
+    background: $white-gradiend;
     opacity: 0;
-    filter: blur(5px);
+    filter: blur($apx-5);
     transition:
       left 0.5s ease-in-out,
       rotate 0.5s ease-in-out;
@@ -71,18 +65,10 @@ $white-gradiend: linear-gradient(
   &.ghost {
     padding: $apx-22 $apx-48;
     border: $apx-2 solid $color-white;
-    &::before,
-    &::after {
-      background: $ghost-gradiend;
-    }
   }
   &.white {
     color: $color-black;
     background-color: $color-white;
-    &::before,
-    &::after {
-      background: $white-gradiend;
-    }
   }
   @include mobile {
     width: 100%;
@@ -90,6 +76,18 @@ $white-gradiend: linear-gradient(
     font-size: $apx-m-18;
     line-height: $apx-m-22;
     border-radius: $apx-m-40;
+    &::before,
+    &::after {
+      width: $apx-m-33;
+      height: $apx-m-144;
+      filter: blur($apx-m-5);
+    }
+    &::before {
+      left: -$apx-m-33;
+    }
+    &::after {
+      left: calc(100% + $apx-m-33);
+    }
     &.ghost {
       padding: $apx-m-18 $apx-m-29;
       border-width: $apx-m-1;

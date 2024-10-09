@@ -1,9 +1,11 @@
 .f-btn {
   @include transition(background-color);
+  position: relative;
   display: block;
   width: 100%;
   margin: 0;
   padding: $apx-24;
+  overflow: hidden;
   font-family: $font-title;
   font-size: $apx-24;
   line-height: $apx-30;
@@ -12,13 +14,65 @@
   text-transform: uppercase;
   background-color: $color-white;
   border: 0;
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: $apx-33;
+    height: $apx-144;
+    background: $white-gradiend;
+    opacity: 0;
+    filter: blur($apx-5);
+    transition:
+      left 0.5s ease-in-out,
+      rotate 0.5s ease-in-out;
+    translate: -50% -50%;
+  }
+  &::before {
+    left: -$apx-33;
+    opacity: 0;
+    rotate: 0deg;
+  }
+  &::after {
+    left: calc(100% + $apx-33);
+    opacity: 0.5;
+    rotate: 20deg;
+  }
   &:hover,
   &:focus-visible {
-    background-color: $color-gray-816;
+    // background-color: $color-gray-816;
+    &::before {
+      left: 50%;
+      opacity: 0.5;
+      rotate: 41deg;
+    }
+    &::after {
+      left: 50%;
+      opacity: 0;
+      rotate: 41deg;
+    }
   }
   @include mobile {
     padding: $apx-m-20 $apx-m-20;
     font-size: $apx-m-20;
     line-height: $apx-m-24;
+    &::before,
+    &::after {
+      width: $apx-m-33;
+      height: $apx-m-144;
+      filter: blur($apx-m-5);
+    }
+    &::before {
+      left: -$apx-m-33;
+    }
+    &::after {
+      left: calc(100% + $apx-m-33);
+    }
   }
 }
