@@ -4,7 +4,7 @@
 ;(() => {
   const accordions = document.querySelectorAll('.js-accordion')
 
-  if (!accordions) {
+  if (accordions.length === 0) {
     return
   }
 

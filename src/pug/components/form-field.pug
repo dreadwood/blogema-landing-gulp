@@ -1,9 +1,10 @@
-mixin form-field({ value, name, type, id, isRequired, placeholder, className })
+mixin form-field({ value, name, type, id, isRequired, maxlength, placeholder, className })
   input.f-field(
     type=(type || "text")
     id=id
     name=name
     value=value
+    maxlength=maxlength
     required=isRequired
     placeholder=placeholder
     class=className

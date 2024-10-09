@@ -28,15 +28,17 @@ mixin block-application({})
           isRequired: true,
           placeholder: "Пример заполнения текстом"
         })
-      .b-application__el
+      .b-application__el.js-el
         +form-label({ id: "applicationDescription", text: "Краткое описание проекта*" })
         +form-textarea({
           id: "applicationDescription",
           text: "Краткое описание проекта*",
           isRequired: true,
-          placeholder: "Пример заполнения текстом"
+          placeholder: "Пример заполнения текстом",
+          maxlength: 512,
+          className: "js-el-field"
         })
-        +form-sub-element({ text: "осталось 512 символов" })
+        +form-sub-element({ className: "js-el-maxlength" })
       .b-application__el
         +form-label({
           id: "applicationPresentation",
@@ -51,7 +53,7 @@ mixin block-application({})
           id: "applicationCompany",
           placeholder: "Пример заполнения текстом"
         })
-      .b-application__el
+      .b-application__el.js-el
         +form-label({
           id: "applicationCompany",
           text: "Наименование компании*",
@@ -61,17 +63,19 @@ mixin block-application({})
           name: "company",
           id: "applicationCompany",
           isRequired: true,
-          placeholder: "Пример заполнения текстом"
+          placeholder: "Пример заполнения текстом",
+          maxlength: 256,
+          className: "js-el-field"
         })
-        +form-sub-element({ text: "осталось 256 символов" })
-      .b-application__el
-        +form-captcha({
-          text: "yandex.capatcha",
-          name: "captcha",
-          id: "captcha",
-          className: "b-application__captcha",
-          isRequired: true
-        })
+        +form-sub-element({ className: "js-el-maxlength" })
+      //- .b-application__el
+      //-   +form-captcha({
+      //-     text: "yandex.capatcha",
+      //-     name: "captcha",
+      //-     id: "captcha",
+      //-     className: "b-application__captcha",
+      //-     isRequired: true
+      //-   })
       .b-application__el
         +form-checkbox({
           text: "Нажимая на кнопку «Отправить заявку» вы даёте соглашение на сбор и обработку персональных данных",

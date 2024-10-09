@@ -1,4 +1,5 @@
 .f-sub-element {
+  @include transition(opacity, color);
   display: block;
   font-family: $font-default;
   font-size: $apx-14;
@@ -8,6 +9,13 @@
   color: $color-white;
   letter-spacing: 0.02rem;
   opacity: 0.4;
+  &:empty {
+    display: none;
+  }
+  &.error {
+    color: $color-error;
+    opacity: 1;
+  }
   @include mobile {
     font-size: $apx-m-14;
     line-height: $apx-m-17;
