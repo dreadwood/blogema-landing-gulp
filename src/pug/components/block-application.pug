@@ -31,8 +31,8 @@ mixin block-application({})
       .b-application__el.js-el
         +form-label({ id: "applicationDescription", text: "Краткое описание проекта*" })
         +form-textarea({
+          name: "description",
           id: "applicationDescription",
-          text: "Краткое описание проекта*",
           isRequired: true,
           placeholder: "Пример заполнения текстом",
           maxlength: 512,
@@ -45,7 +45,12 @@ mixin block-application({})
           text: "Презентация*",
           subtext: "ссылка на презентацию в формате pdf"
         })
-        +form-field-group({})
+        +form-field-group({
+          name: "presentation",
+          id: "applicationPresentation",
+          placeholder: "Введите url",
+          isRequired: true
+        })
       .b-application__el
         +form-label({ id: "applicationCompany", text: "Ссылка на видео" })
         +form-field({

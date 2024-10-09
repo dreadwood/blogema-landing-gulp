@@ -27,34 +27,29 @@
     @include transition(opacity);
     content: "";
     position: absolute;
+    top: 50%;
+    left: 50%;
     display: block;
     background-color: $color-white;
     border-radius: $apx-2;
+    translate: -50% -50%;
   }
-  &.plus {
-    &::before {
-      top: 50%;
-      left: 50%;
-      width: $apx-25;
-      height: $apx-2;
-      translate: -50% -50%;
-    }
-    &::after {
-      top: 50%;
-      left: 50%;
-      width: $apx-2;
-      height: $apx-25;
-      translate: -50% -50%;
-    }
+  &::before {
+    width: $apx-25;
+    height: $apx-2;
+  }
+  &::after {
+    width: $apx-2;
+    height: $apx-25;
   }
   &.minus {
     &::before {
-      top: 50%;
-      left: 50%;
       width: $apx-22;
       height: $apx-2;
-      translate: -50% -50%;
       scale: 0.7;
+    }
+    &::after {
+      content: none;
     }
   }
   &:hover,
@@ -71,15 +66,13 @@
     &::after {
       border-radius: $apx-m-2;
     }
-    &.plus {
-      &::before {
-        width: $apx-m-20;
-        height: $apx-m-2;
-      }
-      &::after {
-        width: $apx-m-2;
-        height: $apx-m-20;
-      }
+    &::before {
+      width: $apx-m-20;
+      height: $apx-m-2;
+    }
+    &::after {
+      width: $apx-m-2;
+      height: $apx-m-20;
     }
     &.minus {
       &::before {

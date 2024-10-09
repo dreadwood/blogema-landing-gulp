@@ -1,11 +1,13 @@
 include /components/form-field
 
-mixin form-field-group({})
-  .f-field-group
-    .f-field-group__el
-      +form-field({})
-      button.f-field-group__btn.plus(type="submit")
-    .f-field-group__el
-      +form-field({})
-      button.f-field-group__btn.minus(type="submit")
-
+mixin form-field-group({ name, id, placeholder, isRequired })
+  .f-field-group.js-field-group
+    .f-field-group__el.js-field-group-example
+      +form-field({
+        name,
+        id,
+        isRequired,
+        placeholder,
+        className: "js-field-group-field"
+      })
+      button.f-field-group__btn.js-field-group-btn(type="button")
