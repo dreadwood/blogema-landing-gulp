@@ -1,0 +1,55 @@
+.f-checkbox-betboom {
+  input:checked + .f-checkbox-betboom__label {
+    color: $color-white;
+  }
+  input:checked + .f-checkbox-betboom__label svg {
+    opacity: 1;
+  }
+}
+.f-checkbox-betboom__label {
+  @include transition(color);
+  display: flex;
+  align-items: center;
+  column-gap: $apx-11;
+  font-family: $font-default-betboom;
+  font-size: $apx-12;
+  line-height: $apx-14;
+  font-weight: 300;
+  text-align: left;
+  color: transparentize($color-white, 0.6);
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    color: transparentize($color-white, 0.2);
+  }
+  @include mobile {
+    column-gap: $apx-m-10;
+    font-size: $apx-m-12;
+    line-height: $apx-m-14;
+  }
+}
+.f-checkbox-betboom__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: $apx-19;
+  height: $apx-19;
+  border: $apx-1 solid $color-white;
+  @include mobile {
+    width: $apx-m-19;
+    height: $apx-m-19;
+    border-width: $apx-m-1;
+  }
+  svg {
+    @include transition(opacity);
+    display: block;
+    width: $apx-16;
+    height: $apx-16;
+    opacity: 0;
+    fill: $color-white;
+    @include mobile {
+      width: $apx-m-16;
+      height: $apx-m-16;
+    }
+  }
+}

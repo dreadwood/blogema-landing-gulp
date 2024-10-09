@@ -1,0 +1,51 @@
+.f-textarea-betboom {
+  height: $apx-80;
+  padding: $apx-6 $apx-12;
+  font-family: $font-default-betboom;
+  background-color: $color-bg-field;
+  border-radius: $apx-6;
+  @include mobile {
+    height: $apx-m-80;
+    padding: $apx-m-6 $apx-m-12;
+    border-radius: $apx-m-6;
+  }
+}
+.f-textarea-betboom__label {
+  display: block;
+  font-family: inherit;
+  font-size: $apx-12;
+  line-height: $apx-16;
+  font-weight: 400;
+  text-align: left;
+  color: $color-text-field;
+  @include mobile {
+    font-size: $apx-m-12;
+    line-height: $apx-m-16;
+  }
+}
+.f-textarea-betboom__field {
+  @include hide-scroll;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: $apx-14;
+  line-height: $apx-20;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  appearance: none;
+  resize: none;
+  &::placeholder {
+    font: inherit;
+    color: $color-text-field-fade;
+  }
+  @include mobile {
+    font-size: $apx-m-14;
+    line-height: $apx-m-20;
+  }
+}

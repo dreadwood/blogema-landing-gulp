@@ -1,0 +1,141 @@
+.f-field-group-betboom {
+  display: grid;
+  gap: $apx-12;
+  @include mobile {
+    gap: $apx-m-12;
+  }
+}
+.f-field-group-betboom__el {
+  position: relative;
+  padding: $apx-6 $apx-40 $apx-6 $apx-12;
+  background-color: $color-bg-field;
+  border-radius: $apx-6;
+  @include mobile {
+    padding: $apx-m-6 $apx-m-40 $apx-m-6 $apx-m-12;
+    border-radius: $apx-m-6;
+  }
+}
+.f-field-group-betboom__label {
+  display: block;
+  font-family: inherit;
+  font-size: $apx-12;
+  line-height: $apx-16;
+  font-weight: 400;
+  text-align: left;
+  color: $color-text-field;
+  @include mobile {
+    font-size: $apx-m-12;
+    line-height: $apx-m-16;
+  }
+}
+.f-field-group-betboom__field {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: $apx-14;
+  line-height: $apx-20;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  appearance: none;
+  &::placeholder {
+    font: inherit;
+    color: $color-text-field-fade;
+  }
+  &::-webkit-credentials-auto-fill-button {
+    // for hidden key icon in safari
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  &[type="number"]::-webkit-outer-spin-button, // webkit
+  &[type="number"]::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+  &[type="number"] {
+    // firefox
+    appearance: textfield;
+  }
+  @include mobile {
+    font-size: $apx-m-14;
+    line-height: $apx-m-20;
+  }
+}
+.f-field-group-betboom__btn {
+  position: absolute;
+  top: 50%;
+  right: $apx-6;
+  display: block;
+  flex-shrink: 0;
+  width: $apx-30;
+  height: $apx-30;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  translate: 0 -50%;
+  &::before,
+  &::after {
+    @include transition(background-color);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background-color: $color-white;
+    translate: -50% -50%;
+  }
+  &::before {
+    width: $apx-18;
+    height: $apx-2;
+  }
+  &::after {
+    width: $apx-2;
+    height: $apx-18;
+  }
+  &.minus {
+    &::before {
+      width: $apx-18;
+      height: $apx-2;
+      scale: 0.7 1.2;
+    }
+    &::after {
+      content: none;
+    }
+  }
+  &:hover,
+  &:focus-visible {
+    &::before,
+    &::after {
+      background-color: transparentize($color-white, 0.5);
+    }
+  }
+  @include mobile {
+    right: $apx-m-6;
+    width: $apx-m-30;
+    height: $apx-m-30;
+    &::before {
+      width: $apx-m-18;
+      height: $apx-m-2;
+    }
+    &::after {
+      width: $apx-m-2;
+      height: $apx-m-18;
+    }
+    &.minus {
+      &::before {
+        width: $apx-m-18;
+        height: $apx-m-2;
+      }
+    }
+  }
+}

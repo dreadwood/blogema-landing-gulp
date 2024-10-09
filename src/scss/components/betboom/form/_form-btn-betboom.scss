@@ -1,0 +1,30 @@
+.f-btn-betboom {
+  @include transition(background-color);
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: $apx-15 $apx-20;
+  font-family: $font-default-betboom;
+  font-size: $apx-14;
+  line-height: $apx-18;
+  font-weight: 600;
+  text-align: center;
+  color: $color-black;
+  background-color: $color-text-accent;
+  border: 0;
+  border-radius: $apx-8;
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: color.adjust($color-text-accent, $blackness: 20%);
+  }
+  @include mobile {
+    padding: $apx-m-15 $apx-m-20;
+    font-size: $apx-m-14;
+    line-height: $apx-m-18;
+    border-radius: $apx-m-8;
+  }
+}

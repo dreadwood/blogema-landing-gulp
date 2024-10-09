@@ -1,0 +1,121 @@
+.accordion {
+  border: $apx-1 solid $color-white;
+  &.show .accordion__icon {
+    rotate: 180deg;
+    &::after {
+      opacity: 0;
+    }
+    &::before {
+      scale: 0.7;
+    }
+  }
+  &.show .accordion__body {
+    opacity: 1;
+  }
+  @include mobile {
+    border-width: $apx-m-1;
+  }
+}
+.accordion__btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $apx-10;
+  width: 100%;
+  margin: 0;
+  padding: $apx-23 $apx-26 $apx-23 $apx-43;
+  font-family: $font-title;
+  font-size: $apx-24;
+  line-height: $apx-30;
+  text-align: left;
+  text-transform: uppercase;
+  background-color: $color-black;
+  border: 0;
+  @include mobile {
+    gap: $apx-m-10;
+    padding: $apx-m-23 $apx-m-16 $apx-m-23 $apx-m-16;
+    font-size: $apx-m-18;
+    line-height: $apx-m-22;
+  }
+}
+.accordion__icon {
+  @include transition(rotate);
+  position: relative;
+  flex-shrink: 0;
+  width: $apx-25;
+  height: $apx-25;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $color-white;
+    border-radius: $apx-2;
+  }
+  &::before {
+    @include transition(scale);
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: $apx-2;
+    translate: 0 -50%;
+  }
+  &::after {
+    @include transition(opacity);
+    top: 0;
+    left: 50%;
+    width: $apx-2;
+    height: 100%;
+    translate: -50% 0;
+  }
+  @include mobile {
+    width: $apx-m-20;
+    height: $apx-m-20;
+    &::before,
+    &::after {
+      border-radius: $apx-m-2;
+    }
+    &::before {
+      height: $apx-m-2;
+    }
+    &::after {
+      width: $apx-m-2;
+    }
+  }
+}
+.accordion__content {
+  @include transition(padding, height);
+  height: 0;
+  overflow: hidden;
+  font-size: $apx-16;
+  line-height: $apx-23;
+  font-weight: 300;
+  letter-spacing: 0.02rem;
+  @include mobile {
+    font-size: $apx-m-16;
+    line-height: $apx-m-23;
+  }
+}
+.accordion__body {
+  @include transition(opacity);
+  padding: 0 $apx-43 0 $apx-43;
+  padding-top: $apx-12;
+  padding-bottom: $apx-50;
+  opacity: 0;
+  p {
+    margin-bottom: 0;
+    &:not(:first-child) {
+      margin-top: $apx-20;
+    }
+  }
+  @include mobile {
+    padding: 0 $apx-m-16 0 $apx-m-16;
+    padding-top: 0;
+    padding-bottom: $apx-m-20;
+    p {
+      &:not(:first-child) {
+        margin-top: $apx-m-16;
+      }
+    }
+  }
+}
