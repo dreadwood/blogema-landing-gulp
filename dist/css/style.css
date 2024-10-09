@@ -698,6 +698,9 @@ input[type=file].visually-hidden {
 }
 
 .f-sub-element {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: opacity, color;
   display: block;
   font-family: "Roboto", sans-serif;
   font-size: 0.729162vw;
@@ -707,6 +710,13 @@ input[type=file].visually-hidden {
   color: #ffffff;
   letter-spacing: 0.02rem;
   opacity: 0.4;
+}
+.f-sub-element:empty {
+  display: none;
+}
+.f-sub-element.error {
+  color: #ff4242;
+  opacity: 1;
 }
 @media (max-width: 1023px) {
   .f-sub-element {

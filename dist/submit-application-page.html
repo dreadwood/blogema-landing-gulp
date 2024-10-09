@@ -45,8 +45,8 @@
         <svg class="b-hero-category__star mobile">
           <use xlink:href="img/sprite.svg#start"></use>
         </svg>
-        <h1 class="b-hero-category__title desktop">B2B номинация</h1>
-        <h1 class="b-hero-category__title mobile">B2B номинация</h1>
+        <h1 class="b-hero-category__title desktop">Лучшая рекламная <br> кампания с блогерами</h1>
+        <h1 class="b-hero-category__title mobile">Лучшая рекламная кампания с блогерами</h1>
         <div class="b-hero-category__content">
           <svg class="b-hero-category__star desktop">
             <use xlink:href="img/sprite.svg#start"></use>
@@ -68,11 +68,11 @@
             </label>
             <input class="f-field" type="text" id="applicationProject" name="project" required="required" placeholder="Пример заполнения текстом"/>
           </div>
-          <div class="b-application__el">
+          <div class="b-application__el js-el">
             <label class="f-label" for="applicationDescription"><span class="f-label__text">Краткое описание проекта*</span>
             </label>
-            <textarea class="f-textarea" id="applicationDescription" required="required" placeholder="Пример заполнения текстом"></textarea>
-            <div class="f-sub-element">осталось 512 символов</div>
+            <textarea class="f-textarea js-el-field" id="applicationDescription" maxlength="512" required="required" placeholder="Пример заполнения текстом"></textarea>
+            <div class="f-sub-element js-el-maxlength"></div>
           </div>
           <div class="b-application__el">
             <label class="f-label" for="applicationPresentation"><span class="f-label__text">Презентация*</span><span class="f-label__subtext">ссылка на презентацию в формате pdf</span>
@@ -93,24 +93,11 @@
             </label>
             <input class="f-field" type="text" id="applicationCompany" name="company" placeholder="Пример заполнения текстом"/>
           </div>
-          <div class="b-application__el">
+          <div class="b-application__el js-el">
             <label class="f-label" for="applicationCompany"><span class="f-label__text">Наименование компании*</span><span class="f-label__subtext">Email /телефон/ник в Telegram</span>
             </label>
-            <input class="f-field" type="text" id="applicationCompany" name="company" required="required" placeholder="Пример заполнения текстом"/>
-            <div class="f-sub-element">осталось 256 символов</div>
-          </div>
-          <div class="b-application__el">
-            <div class="f-captcha b-application__captcha">
-              <input class="visually-hidden" type="checkbox" id="captcha" name="captcha" required="required"/>
-              <label class="f-captcha__label" for="captcha">
-                <div class="f-captcha__icon">
-                  <svg width="16" height="16">
-                    <use xlink:href="img/sprite.svg#icon-check"></use>
-                  </svg>
-                </div>
-                <div class="f-captcha__text">yandex.capatcha</div>
-              </label>
-            </div>
+            <input class="f-field js-el-field" type="text" id="applicationCompany" name="company" maxlength="256" required="required" placeholder="Пример заполнения текстом"/>
+            <div class="f-sub-element js-el-maxlength"></div>
           </div>
           <div class="b-application__el">
             <div class="f-checkbox b-application__checkbox">
