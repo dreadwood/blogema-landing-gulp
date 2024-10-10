@@ -434,7 +434,6 @@ window.utils = {
 
     const num = container.children.length + 1
 
-    field.name = `${field.name}_${num}`
     field.value = ''
     field.removeAttribute('id')
     field.removeAttribute('required')
