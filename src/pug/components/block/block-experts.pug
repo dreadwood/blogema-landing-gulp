@@ -1,0 +1,26 @@
+include /components/card/card-expert
+
+mixin block-experts({ className, color })
+  section.b-experts(class=className)
+    include /mocks/experts
+    -
+      let experts = [
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+        ...expertsMock,
+      ]
+    h2.b-experts__title Эксперты
+    .swiper.b-experts__slider.js-experts-slider
+      .swiper-wrapper
+        each it in experts
+          .swiper-slide
+            +card-expert({ it, color })

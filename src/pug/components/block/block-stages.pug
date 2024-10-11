@@ -1,0 +1,35 @@
+include /elements/images
+
+mixin block-stages({ className })
+  section.b-stages#stages(class=className)
+    -
+      let stages = [
+        {
+          date: '1 сентября - 30 сентября',
+          name: 'Формирование лонг-листа <br> номинантов'
+        },
+        {
+          date: '1 октября - 15 октября',
+          name: 'Народное голосование и <br> формирование шорт-листа'
+        },
+        {
+          date: '16 октября - 25 октября',
+          name: 'Определение <br> победителей'
+        },
+        {
+          date: '25 октября',
+          name: 'Церемония награждения <br> LIVE-трансляция'
+        }
+      ]
+    h2.b-stages__title Этапы #[span голосования]
+    .b-stages__list
+      each it, i in stages
+        .b-stages__stage
+          .b-stages__date=it.date
+          .b-stages__name !{it.name}
+          .b-stages__progress(
+            class=(i === 0 ? "first" : "")
+            class=(i !== 0 && i !== stages.length - 1 ? "mid" : "")
+            class=(i === stages.length - 1 ? "last" : "")
+            class=(i < 1 ? "actv" : "")
+          )

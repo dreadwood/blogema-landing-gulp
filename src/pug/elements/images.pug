@@ -34,4 +34,4 @@ mixin svg({ name, width, height, className })
     img(class=(className || null) src=name width=width height=height alt="")
   else
     svg(class=(className || null) width=width height=height )
-      use(xlink:href=`img/sprite.svg#${name}`)
+      use(xlink:href=`/img/sprite.svg#${name}`)

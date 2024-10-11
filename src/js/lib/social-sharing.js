@@ -13,7 +13,6 @@
 
   btnClose?.addEventListener('click', (evt) => {
     if (evt.currentTarget === btnClose) {
-      console.log('test')
       overlay.classList.remove('show')
     }
   })
