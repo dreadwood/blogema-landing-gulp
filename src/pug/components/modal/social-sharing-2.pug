@@ -1,0 +1,23 @@
+include /components/btn-default
+include /elements/images
+
+mixin social-sharing-2({ id })
+  include /data/social
+  .social-sharing.js-sharing.js-sharing-time(id=id)
+    .social-sharing__dialog
+      button.social-sharing__close.js-sharing-close(
+        type="button"
+        aria-label="Закрыть"
+        onclick=onclick
+      )
+        +svg({ name: "cross", width: 28, height: 28 })
+      .social-sharing__title Подписывайтесь на наши соцсети
+      .social-sharing__list
+        each it in socialData
+          a.social-sharing__link(
+            href=it.link
+            target="_black"
+            rel="noopener noreferrer"
+            aria-label=it.label
+          )
+            +svg({ name: it.icon, width: 60, height: 60 })

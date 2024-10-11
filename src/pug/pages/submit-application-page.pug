@@ -5,6 +5,7 @@ include /components/block/block-application
 include /components/block/block-faq
 include /components/yandex-captcha
 include /components/social-sharing
+include /components/modal/social-sharing-2
 
 
 block data
@@ -33,3 +34,4 @@ block content
 block modal
   +yandex-captcha({})
   +social-sharing({})
+  +social-sharing-2({ id: "modal-subscribe" })
