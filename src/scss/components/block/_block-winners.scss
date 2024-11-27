@@ -1,0 +1,32 @@
+.b-winners {
+  padding: $apx-60 $apx-108;
+  @include mobile {
+    padding: $apx-m-60 $apx-m-24;
+  }
+}
+.b-winners__title {
+  margin: 0;
+  font-family: $font-title;
+  font-size: $apx-80;
+  line-height: $apx-115;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: $apx-m-32;
+    line-height: $apx-m-46;
+  }
+}
+.b-winners__list {
+  display: flex;
+  flex-direction: column;
+  // display: grid;
+  gap: $apx-34;
+  margin-top: $apx-34;
+  @include mobile {
+    gap: $apx-m-40;
+    margin-top: $apx-m-34;
+  }
+}

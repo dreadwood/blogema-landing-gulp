@@ -68,8 +68,21 @@
       }
     }
   }
+  &.winner {
+    .c-blogger__card {
+      padding-bottom: 0;
+    }
+    .c-blogger__list {
+      margin-top: $apx-24;
+    }
+  }
   @include mobile {
     padding-top: $apx-m-75;
+    &.winner {
+      .c-blogger__list {
+        margin-top: $apx-m-19;
+      }
+    }
   }
 }
 .c-blogger__photo-border {
@@ -204,6 +217,19 @@
     line-height: $apx-m-13;
   }
 }
+.c-blogger__big-social {
+  flex-shrink: 0;
+  width: $apx-37;
+  height: $apx-37;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  @include mobile {
+    width: $apx-m-37;
+    height: $apx-m-37;
+  }
+}
 .c-blogger__social-count {
   display: flex;
   align-items: center;
@@ -302,5 +328,29 @@
       width: $apx-m-19;
       height: $apx-m-19;
     }
+  }
+}
+.c-blogger__position {
+  width: calc(100% + (2 * $apx-15));
+  margin-top: $apx-45;
+  margin-right: -#{$apx-15};
+  margin-left: -#{$apx-15};
+  padding: $apx-12 $apx-32;
+  font-size: $apx-32;
+  line-height: $apx-38;
+  text-align: center;
+  color: $color-black;
+  text-transform: uppercase;
+  background-color: $color-white;
+  border-radius: $apx-18 $apx-18 0 0;
+  @include mobile {
+    width: calc(100% + (2 * $apx-m-12));
+    margin-top: $apx-m-35;
+    margin-right: -#{$apx-m-12};
+    margin-left: -#{$apx-m-12};
+    padding: $apx-m-12 $apx-m-32;
+    font-size: $apx-m-28;
+    line-height: $apx-m-33;
+    border-radius: $apx-m-14 $apx-m-14 0 0;
   }
 }

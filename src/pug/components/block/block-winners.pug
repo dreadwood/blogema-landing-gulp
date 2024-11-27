@@ -1,0 +1,10 @@
+include /elements/images
+include /components/card/card-winner
+
+mixin block-winners({ className })
+  .b-winners(class=className)
+    include /data/winners-category
+    h2.b-winners__title Победители и финалисты номинаций
+    .b-winners__list
+      each it, i in winnersCategoryData
+        +card-winner({ title: it, isShow: i === 0 })

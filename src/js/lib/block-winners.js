@@ -1,12 +1,11 @@
 /**
- * accordion.js
+ * block-winners.js
  */
 ;(() => {
-  const accordions = document.querySelectorAll('.js-accordion')
+  console.log('test')
+  const accordions = document.querySelectorAll('.js-winner')
 
-  if (accordions.length === 0) {
-    return
-  }
+  console.log(accordions)
 
   accordions.forEach((it) => {
     const btn = it.querySelector('.js-accordion-btn')
@@ -20,6 +19,7 @@
 
     btn.addEventListener('click', () => {
       it.classList.toggle('show')
+
       setContentHeight(it, content)
     })
   })

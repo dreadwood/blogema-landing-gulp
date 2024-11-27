@@ -1,0 +1,201 @@
+.c-winner {
+  position: relative;
+  overflow: hidden;
+  font-family: $font-default;
+  text-align: left;
+  color: $color-white;
+  &.show {
+    .c-winner__icon {
+      &::before {
+        rotate: 45deg;
+        transform-origin: 50% 0;
+        translate: -30% -94%;
+      }
+      &::after {
+        rotate: -45deg;
+        transform-origin: 50% 0;
+        translate: -70% -94%;
+      }
+    }
+    .c-winner__drop {
+      height: auto;
+      margin-top: -#{$apx-100};
+      opacity: 1;
+    }
+  }
+  @include mobile {
+    &.show {
+      .c-winner__icon {
+        &::before {
+          rotate: 45deg;
+          transform-origin: 50% 0;
+          translate: -30% -94%;
+        }
+        &::after {
+          rotate: -45deg;
+          transform-origin: 50% 0;
+          translate: -70% -94%;
+        }
+      }
+      .c-winner__drop {
+        height: auto;
+        margin-top: -#{$apx-m-100};
+        opacity: 1;
+      }
+    }
+  }
+}
+.c-winner__btn {
+  @include transition(background-color, color);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: $apx-222;
+  margin: 0;
+  padding: $apx-24;
+  font-family: $font-default;
+  font-weight: 400;
+  text-align: left;
+  color: $color-white;
+  text-transform: uppercase;
+  background-color: transparent;
+  background-color: $color-black;
+  border: $apx-1 solid $color-white;
+  border-radius: $apx-42;
+  @include mobile {
+    height: auto;
+    min-height: $apx-m-177;
+    padding: $apx-m-14;
+    border-width: $apx-m-1;
+    border-radius: $apx-m-18;
+  }
+}
+.c-winner__category {
+  font-size: $apx-28;
+  line-height: $apx-33;
+  opacity: 0.5;
+  @include mobile {
+    margin-bottom: $apx-m-20;
+    font-size: $apx-m-14;
+    line-height: $apx-m-16;
+  }
+}
+.c-winner__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: $apx-10;
+  width: 100%;
+  margin-top: auto;
+  @include mobile {
+    gap: $apx-m-10;
+  }
+}
+.c-winner__title {
+  @include word-break;
+  margin-bottom: $apx-6;
+  font-family: $font-title;
+  font-size: $apx-42;
+  line-height: $apx-61;
+  @include mobile {
+    margin-bottom: 0;
+    font-size: $apx-m-24;
+    line-height: $apx-m-35;
+  }
+}
+.c-winner__subtitle {
+  width: max-content;
+  font-size: $apx-28;
+  line-height: $apx-33;
+  @include mobile {
+    font-size: $apx-m-12;
+    line-height: $apx-m-14;
+  }
+}
+.c-winner__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: $apx-75;
+  background-color: $color-white;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $apx-4;
+    height: $apx-40;
+    background-color: $color-black;
+    border-radius: $apx-4;
+    translate: -50% -50%;
+    // transform-origin: -100% -100%;
+  }
+  &::before,
+  &::after {
+    @include transition(rotate, translate);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $apx-4;
+    height: $apx-20;
+    background-color: $color-black;
+    border-radius: $apx-4;
+    translate: -50% -50%;
+  }
+  &::before {
+    rotate: 135deg;
+    translate: -30% 94%;
+    transform-origin: 50% 0;
+  }
+  &::after {
+    transform-origin: 50% 0;
+    rotate: -135deg;
+    translate: -70% 94%;
+  }
+  @include mobile {
+    width: $apx-m-42;
+    div {
+      width: $apx-m-2;
+      height: $apx-m-20;
+      border-radius: $apx-m-4;
+    }
+    &::before,
+    &::after {
+      width: $apx-m-2;
+      height: $apx-m-12;
+      border-radius: $apx-m-4;
+    }
+  }
+}
+.c-winner__drop {
+  @include transition(height, margin-top, opacity);
+  position: relative;
+  z-index: 1;
+  height: 0;
+  border: $apx-1 solid transparentize($color-white, 0.5);
+  border-radius: $apx-42;
+  opacity: 0;
+  @include mobile {
+    border-radius: $apx-m-20;
+  }
+}
+.c-winner__content {
+  display: flex;
+  justify-content: center;
+  gap: $apx-106;
+  padding: $apx-139 $apx-39 $apx-39 $apx-39;
+  & > * {
+    width: $apx-408;
+  }
+  @include mobile {
+    flex-direction: column;
+    gap: $apx-m-39;
+    padding: $apx-m-127 $apx-m-12 $apx-m-12 $apx-m-12;
+    & > * {
+      width: auto;
+    }
+  }
+}

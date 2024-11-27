@@ -1,10 +1,11 @@
 include /elements/images
 include /elements/console
 
-mixin card-blogger({ it, color, className })
+mixin card-blogger({ it, color, winner, className })
   .c-blogger(
     class=color
     class=className
+    class=winner && "winner"
     data-card-blogger=it.id
   )
     -
@@ -46,17 +47,26 @@ mixin card-blogger({ it, color, className })
       .c-blogger__background-gradient
       .c-blogger__name
         div=it.name
-        div
-      .c-blogger__list
-        each item in it.socialType === 1 ? socials.slice(0, 4) : socials.slice(2, 6)
-          a.c-blogger__social(href="#")
-            .c-blogger__social-count
-              +svg({ name: item.icon })
-              .visually-hidden=item.label
-              .c-blogger__social-count-text(aria-hidden="true")=item.value
-            .c-blogger__social-text подписчиков
-      button.c-blogger__btn(data-card-blogger-btn=it.id disabled) Голосовать
-      .c-blogger__vote
-        +svg({ name: `like-${color}` })
-        span(data-card-blogger-vote)=it.vote
-        | голосов
+        div=(it.name === "ИВАН ИВАНОВ" ? "ИВАНОВИЧ" : "")
+      if winner
+        .c-blogger__list
+          each it in ["twitch", "saturn", "youtube", "vk"]
+            a.c-blogger__big-social(href="#" aria-label=it)
+              +svg({ name: `icon-${it}` })
+      else
+        .c-blogger__list
+          each item in it.socialType === 1 ? socials.slice(0, 4) : socials.slice(2, 6)
+            a.c-blogger__social(href="#")
+              .c-blogger__social-count
+                +svg({ name: item.icon })
+                .visually-hidden=item.label
+                .c-blogger__social-count-text(aria-hidden="true")=item.value
+              .c-blogger__social-text подписчиков
+      if winner
+        .c-blogger__position #{winner} место
+      else
+        button.c-blogger__btn(data-card-blogger-btn=it.id disabled) Голосовать
+        .c-blogger__vote
+          +svg({ name: `like-${color}` })
+          span(data-card-blogger-vote)=it.vote
+          | голосов

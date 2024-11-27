@@ -1,0 +1,15 @@
+extends /elements/layout-page
+include /components/block/block-winners
+
+
+block data
+  - title = "Блогема. Победители и финалисты"
+
+block background
+  //- +block-backgroung({
+  //-   img: "/img/hero-main-creative-project-year.jpg",
+  //-   imgMobile: "/img/hero-main-creative-project-year-mobile.jpg"
+  //- })
+
+block content
+  +block-winners({})
