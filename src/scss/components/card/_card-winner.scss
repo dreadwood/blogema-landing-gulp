@@ -66,8 +66,8 @@
   border: $apx-1 solid $color-white;
   border-radius: $apx-42;
   .gradient {
-    width: $apx-1690;
-    height: $apx-1690;
+    width: $apx-1700;
+    height: $apx-1700;
   }
   &:hover,
   &:focus-visible {
@@ -90,6 +90,10 @@
     padding: $apx-m-14;
     border-width: $apx-m-1;
     border-radius: $apx-m-18;
+    .gradient {
+      width: $apx-m-1000;
+      height: $apx-m-1000;
+    }
   }
 }
 .c-winner__category {

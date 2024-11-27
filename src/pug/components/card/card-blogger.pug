@@ -50,7 +50,7 @@ mixin card-blogger({ it, color, winner, className })
         div=(it.name === "ИВАН ИВАНОВ" ? "ИВАНОВИЧ" : "")
       if winner
         .c-blogger__list
-          each it in ["twitch", "saturn", "youtube", "vk"]
+          each it in ["twitch", "saturn", "youtube", "vk", "instagram", "telegram"]
             a.c-blogger__big-social(href="#" aria-label=it)
               +svg({ name: `icon-${it}` })
       else
