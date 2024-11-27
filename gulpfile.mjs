@@ -17,6 +17,13 @@ import gulpSass from 'gulp-sass'
 import sourcemap from 'gulp-sourcemaps'
 import svgstore from 'gulp-svgstore'
 import sync from 'browser-sync'
+import { nanoid } from 'nanoid'
+import postcssUrl from 'postcss-url'
+
+const baseUrl = '.'
+const searchId = nanoid(10)
+
+const sass = gulpSass(dartSass)
 
 const clean = async () => {
   return await deleteAsync(['dist'])
@@ -38,13 +45,24 @@ const copy = () => {
 }
 
 const css = () => {
-  const sass = gulpSass(dartSass)
   return gulp
     .src('src/scss/index.scss')
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass.sync().on('error', sass.logError))
-    .pipe(postcss([autoprefixer({ remove: false })]))
+    .pipe(
+      postcss([
+        postcssUrl({
+          url: (asset) => {
+            if (asset.url.startsWith('/')) {
+              return `${baseUrl}${asset.url}?v=${searchId}`
+            }
+            return asset.url
+          }
+        }),
+        autoprefixer({ remove: false })
+      ])
+    )
     .pipe(rename('style.css'))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('dist/css'))
@@ -98,7 +116,14 @@ const sprite = () => {
 const jsLib = () => {
   return gulp
     .src('src/js/lib/*.js')
-    .pipe(plumber())
+    .pipe(
+      plumber({
+        errorHandler(err) {
+          console.error(err.toString())
+          this.emit('end')
+        }
+      })
+    )
     .pipe(order(['utils.js', '*.js']))
     .pipe(concat(`lib.js`))
     .pipe(gulp.dest('dist/js'))
@@ -110,7 +135,14 @@ const jsLib = () => {
 const jsVendor = () => {
   return gulp
     .src('src/js/vendor/*.js')
-    .pipe(plumber())
+    .pipe(
+      plumber({
+        errorHandler(err) {
+          console.error(err.toString())
+          this.emit('end')
+        }
+      })
+    )
     .pipe(concat(`vendor.js`))
     .pipe(gulp.dest('dist/js'))
     .pipe(uglify.default())
@@ -122,7 +154,13 @@ const html = () => {
   return gulp
     .src('src/pug/pages/**/*.pug')
     .pipe(plumber())
-    .pipe(pug({ pretty: true, basedir: 'src/pug' }))
+    .pipe(
+      pug({
+        pretty: true,
+        basedir: 'src/pug',
+        locals: { baseUrl, searchId }
+      })
+    )
     .pipe(gulp.dest('dist'))
 }
 
