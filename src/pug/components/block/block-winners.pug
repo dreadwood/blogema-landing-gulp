@@ -7,4 +7,9 @@ mixin block-winners({ className })
     h2.b-winners__title Победители и финалисты номинаций
     .b-winners__list
       each it, i in winnersCategoryData
-        +card-winner({ title: it, isShow: i === 0 })
+        +card-winner({
+          title: it.name,
+          gradient: it.color,
+          ring: it.ring,
+          isShow: i === 0
+        })

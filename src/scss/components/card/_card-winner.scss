@@ -55,6 +55,7 @@
   height: $apx-222;
   margin: 0;
   padding: $apx-24;
+  overflow: hidden;
   font-family: $font-default;
   font-weight: 400;
   text-align: left;
@@ -64,6 +65,25 @@
   background-color: $color-black;
   border: $apx-1 solid $color-white;
   border-radius: $apx-42;
+  .gradient {
+    width: $apx-1690;
+    height: $apx-1690;
+  }
+  &:hover,
+  &:focus-visible {
+    .gradient {
+      translate: -50% -50%;
+    }
+    .ring {
+      border-color: $color-white;
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
   @include mobile {
     height: auto;
     min-height: $apx-m-177;

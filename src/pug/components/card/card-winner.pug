@@ -1,9 +1,12 @@
 include /components/card/card-blogger
 
-mixin card-winner({ title, isShow, className })
+mixin card-winner({ title, gradient, ring, isShow, className })
   include /mocks/bloggers
   .c-winner.js-accordion(class=className class=isShow && "show")
+
     button.c-winner__btn.js-accordion-btn
+      .gradient(class=gradient)
+      .ring(class=ring)
       .c-winner__category Категория
       .c-winner__bottom
         div
@@ -15,4 +18,4 @@ mixin card-winner({ title, isShow, className })
       .c-winner__content
         each it, i in bloggersMock
           if (i < 3)
-            +card-blogger({ it, color: "pink", winner: i + 1 })
+            +card-blogger({ it, color: gradient, winner: i + 1 })
