@@ -2321,6 +2321,7 @@ input[type=file].visually-hidden {
   height: 11.562426vw;
   margin: 0;
   padding: 1.249992vw;
+  overflow: hidden;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-align: left;
@@ -2330,6 +2331,22 @@ input[type=file].visually-hidden {
   background-color: #000000;
   border: 0.052083vw solid #ffffff;
   border-radius: 2.187486vw;
+}
+.c-winner__btn .gradient {
+  width: 88.02027vw;
+  height: 88.02027vw;
+}
+.c-winner__btn:hover .gradient, .c-winner__btn:focus-visible .gradient {
+  translate: -50% -50%;
+}
+.c-winner__btn:hover .ring, .c-winner__btn:focus-visible .ring {
+  border-color: #ffffff;
+}
+.c-winner__btn:hover .ring::before, .c-winner__btn:focus-visible .ring::before {
+  opacity: 0;
+}
+.c-winner__btn:hover .ring::after, .c-winner__btn:focus-visible .ring::after {
+  opacity: 0;
 }
 @media (max-width: 1023px) {
   .c-winner__btn {
