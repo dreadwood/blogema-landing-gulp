@@ -2333,8 +2333,8 @@ input[type=file].visually-hidden {
   border-radius: 2.187486vw;
 }
 .c-winner__btn .gradient {
-  width: 88.02027vw;
-  height: 88.02027vw;
+  width: 88.5411vw;
+  height: 88.5411vw;
 }
 .c-winner__btn:hover .gradient, .c-winner__btn:focus-visible .gradient {
   translate: -50% -50%;
@@ -2355,6 +2355,10 @@ input[type=file].visually-hidden {
     padding: 3.733338vw;
     border-width: 0.266667vw;
     border-radius: 4.800006vw;
+  }
+  .c-winner__btn .gradient {
+    width: 266.667vw;
+    height: 266.667vw;
   }
 }
 
